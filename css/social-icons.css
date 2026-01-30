@@ -1,0 +1,130 @@
+/* Social Icons in Navigation */
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    right: 0;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.7);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-icon::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #D4AF37, #00D4FF);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.social-icon svg {
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    border-color: rgba(212, 175, 55, 0.5);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.social-icon:hover::before {
+    opacity: 0.15;
+}
+
+.social-icon:hover svg {
+    transform: scale(1.1);
+}
+
+/* Email Icon Special Styling */
+.email-icon {
+    position: relative;
+}
+
+.email-icon.copied {
+    border-color: #4CAF50;
+    background: rgba(76, 175, 80, 0.1);
+}
+
+.email-icon.copied svg {
+    color: #4CAF50;
+    animation: checkmark 0.5s ease;
+}
+
+@keyframes checkmark {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Tooltip for email copy */
+.email-tooltip {
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(20, 20, 20, 0.95);
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s;
+    border: 1px solid rgba(76, 175, 80, 0.5);
+    z-index: 1000;
+}
+
+.email-tooltip.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+    .nav-container {
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .social-icons {
+        position: static;
+        gap: 0.5rem;
+    }
+
+    .social-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .social-icon svg {
+        width: 16px;
+        height: 16px;
+    }
+}
