@@ -128,3 +128,15 @@
         height: 16px;
     }
 }
+
+/* Footer Social Icons Override */
+.footer-section .social-icons {
+    position: static;
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-section .social-icon {
+    width: 40px;
+    height: 40px;
+}

@@ -417,35 +417,130 @@ $$('.form-control').forEach(input => {
     });
 });
 
-contactForm.addEventListener('submit', (e) => {
+// Form submission with loading state and toast notifications
+contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    if (validateForm()) {
-        // Form is valid - here you would normally send the data
-        const formData = {
-            name: $('#name').value,
-            email: $('#email').value,
-            phone: $('#phone').value,
-            service: $('#service').value,
-            message: $('#message').value
-        };
+    if (!validateForm()) {
+        return;
+    }
 
-        console.log('Form data:', formData);
+    // Get form data
+    const formData = {
+        name: $('#name').value,
+        email: $('#email').value,
+        phone: $('#phone').value,
+        service: $('#service').value,
+        message: $('#message').value
+    };
 
-        // Show success message
-        alert('Děkuji za zprávu! Brzy se vám ozvu.');
+    // Get submit button
+    const submitBtn = contactForm.querySelector('.form-submit');
+    const originalText = submitBtn.textContent;
 
-        // Reset form
-        contactForm.reset();
+    // Show loading state
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Odesílání...';
+    submitBtn.style.opacity = '0.7';
 
-        // In production, you would send this to a backend:
-        // fetch('/api/contact', {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify(formData)
-        // });
+    try {
+        // Send to Netlify Function
+        const response = await fetch('/.netlify/functions/submit-contact', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            // Success!
+            showToast('✅ Zpráva byla úspěšně odeslána! Brzy se vám ozvu.', 'success');
+            contactForm.reset();
+        } else {
+            // Server error
+            showToast('❌ ' + (result.error || 'Něco se pokazilo. Zkuste to prosím znovu.'), 'error');
+        }
+
+    } catch (error) {
+        // Network error
+        console.error('Form submission error:', error);
+        showToast('❌ Chyba připojení. Zkontrolujte internet a zkuste to znovu.', 'error');
+    } finally {
+        // Reset button state
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        submitBtn.style.opacity = '1';
     }
 });
+
+// Toast notification system
+function showToast(message, type = 'info') {
+    // Remove existing toasts
+    const existingToast = document.querySelector('.toast-notification');
+    if (existingToast) {
+        existingToast.remove();
+    }
+
+    // Create toast element
+    const toast = document.createElement('div');
+    toast.className = `toast-notification toast-${type}`;
+    toast.textContent = message;
+
+    // Add styles
+    toast.style.cssText = `
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: ${type === 'success' ? 'rgba(76, 175, 80, 0.95)' : 'rgba(244, 67, 54, 0.95)'};
+        color: white;
+        padding: 16px 24px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        z-index: 10000;
+        animation: slideIn 0.3s ease;
+        max-width: 400px;
+        border: 1px solid ${type === 'success' ? 'rgba(76, 175, 80, 0.3)' : 'rgba(244, 67, 54, 0.3)'};
+    `;
+
+    // Add animation
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+
+    document.body.appendChild(toast);
+
+    // Auto remove after 5 seconds
+    setTimeout(() => {
+        toast.style.animation = 'slideOut 0.3s ease';
+        setTimeout(() => toast.remove(), 300);
+    }, 5000);
+}
 
 // ===== MOBILE MENU =====
 const mobileMenuBtn = $('#mobileMenuBtn');
