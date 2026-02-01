@@ -2,6 +2,10 @@
 // FILIP HIRT PORTFOLIO - JAVASCRIPT
 // ===================================
 
+// ===== HELPER FUNCTIONS =====
+const $ = (selector) => document.querySelector(selector);
+const $$ = (selector) => document.querySelectorAll(selector);
+
 // ===== PROJECT DATA =====
 const projects = [
     {
@@ -66,10 +70,6 @@ const projects = [
 // ===== STATE MANAGEMENT =====
 let currentProjectIndex = 0;
 let currentDevice = 'desktop';
-
-// ===== UTILITY FUNCTIONS =====
-const $ = (selector) => document.querySelector(selector);
-const $$ = (selector) => document.querySelectorAll(selector);
 
 // ===== NAVIGATION =====
 // Smooth scroll for navigation links
@@ -542,25 +542,6 @@ function showToast(message, type = 'info') {
     }, 5000);
 }
 
-// ===== MOBILE MENU =====
-const mobileMenuBtn = $('#mobileMenuBtn');
-const navLinks = $('.nav-links');
-
-if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        mobileMenuBtn.classList.toggle('active');
-    });
-
-    // Close menu when clicking a link
-    $$('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
-            mobileMenuBtn.classList.remove('active');
-        });
-    });
-}
-
 
 // ===== VERTICAL LOGO SCROLL BEHAVIOR =====
 function initVerticalLogoScroll() {
@@ -570,14 +551,40 @@ function initVerticalLogoScroll() {
     if (!verticalLogo || !footer) return;
 
     window.addEventListener('scroll', () => {
+        // Only apply scroll behavior on large screens (> 1500px)
+        if (window.innerWidth <= 1500) {
+            // Reset to default positioning on smaller screens
+            verticalLogo.style.position = '';
+            verticalLogo.style.top = '';
+            verticalLogo.style.bottom = '';
+            return;
+        }
+
         const footerTop = footer.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
+        const logoHeight = verticalLogo.offsetHeight;
 
-        // Hide logo when footer is 200px from viewport
-        if (footerTop < windowHeight + 200) {
-            verticalLogo.classList.add('hidden');
+        // Stop logo scrolling before footer (leave space)
+        if (footerTop < windowHeight - logoHeight / 2) {
+            // Change to absolute positioning - logo stops here
+            verticalLogo.style.position = 'absolute';
+            verticalLogo.style.top = 'auto';
+            const footerOffsetTop = footer.offsetTop;
+            verticalLogo.style.bottom = (document.body.scrollHeight - footerOffsetTop + 100) + 'px';
         } else {
-            verticalLogo.classList.remove('hidden');
+            // Keep fixed positioning (centered on screen)
+            verticalLogo.style.position = 'fixed';
+            verticalLogo.style.top = '50%';
+            verticalLogo.style.bottom = 'auto';
+        }
+    });
+
+    // Also check on resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth <= 1500) {
+            verticalLogo.style.position = '';
+            verticalLogo.style.top = '';
+            verticalLogo.style.bottom = '';
         }
     });
 }
@@ -586,12 +593,21 @@ function initVerticalLogoScroll() {
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize all components
     // Render portfolio projects
-    renderProjects(); // Assuming this is part of initPortfolio or remains standalone
+    renderProjects();
+
     // Initialize mobile menu
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', () => {
+    const mobileMenuBtn = document.querySelector('#mobileMenuBtn');
+    const navLinks = document.querySelector('.nav-links');
+
+    console.log('Mobile menu init:', mobileMenuBtn, navLinks); // Debug
+
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            console.log('Burger clicked!'); // Debug
             navLinks.classList.toggle('active');
             mobileMenuBtn.classList.toggle('active');
+            console.log('Menu active:', navLinks.classList.contains('active')); // Debug
         });
 
         // Close menu when clicking a link
@@ -601,9 +617,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileMenuBtn.classList.remove('active');
             });
         });
+    } else {
+        console.error('Mobile menu elements not found!', { mobileMenuBtn, navLinks });
     }
+
     initScrollAnimations();
-    initVerticalLogoScroll(); // NEW: Hide logo before footer
+    initVerticalLogoScroll(); // Logo stops above footer
 
     // Observe hero stats for counter animation
     const heroStats = $('.hero-stats');

@@ -288,14 +288,30 @@ a:hover {
   min-height: 40px;
 }
 
-/* Vertical Logo */
-.vertical-logo-container-old {
-  position: fixed;
-  left: -140px;
-  top: 50%;
-  transform: translateY(-50%);
+/* Vertical Logo - Responsive */
+.vertical-logo-container {
   z-index: 999;
   transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Large screens (> 1500px): Fixed position, scrolls with page */
+@media (min-width: 1501px) {
+  .vertical-logo-container {
+    position: fixed;
+    left: -140px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+/* Medium screens (769px - 1500px): Only in hero section */
+@media (min-width: 769px) and (max-width: 1500px) {
+  .vertical-logo-container {
+    position: absolute;
+    left: -140px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }
 
 .vertical-logo-container.hidden {
@@ -390,6 +406,7 @@ a:hover {
   align-items: center;
   position: relative;
   padding-top: 80px;
+  padding-left: 180px;
   overflow: hidden;
 }
 
