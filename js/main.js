@@ -567,13 +567,50 @@ if (mobileMenuBtn) {
     });
 }
 
+// ===== VERTICAL LOGO SCROLL BEHAVIOR =====
+function initVerticalLogoScroll() {
+    const verticalLogo = document.querySelector('.vertical-logo-container');
+    const footer = document.querySelector('.footer');
+
+    if (!verticalLogo || !footer) return;
+
+    window.addEventListener('scroll', () => {
+        const footerTop = footer.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        // Hide logo when footer is 200px from viewport
+        if (footerTop < windowHeight + 200) {
+            verticalLogo.classList.add('hidden');
+        } else {
+            verticalLogo.classList.remove('hidden');
+        }
+    });
+}
+
 // ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize all components
     // Render portfolio projects
-    renderProjects();
-
-    // Initialize scroll animations
+    renderProjects(); // Assuming this is part of initPortfolio or remains standalone
+    // Initialize mobile menu
+    if (mobileMenuBtn) { // Re-integrating existing mobile menu logic
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            if (navLinks.classList.contains('active')) {
+                mobileMenuBtn.textContent = '✕';
+            } else {
+                mobileMenuBtn.textContent = '☰';
+            }
+        });
+        $$('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+    }
     initScrollAnimations();
+    initVerticalLogoScroll(); // NEW: Hide logo before footer
 
     // Observe hero stats for counter animation
     const heroStats = $('.hero-stats');
