@@ -119,7 +119,7 @@ exports.handler = async (event) => {
         // ============================================
         // 1. SAVE TO DATABASE
         // ============================================
-        const sql = neon(process.env.NEON_DATABASE_URL);
+        const sql = neon(process.env.NETLIFY_DATABASE_URL);
 
         await sql`
       INSERT INTO contact_submissions (name, email, phone, service, message)
@@ -174,7 +174,7 @@ exports.handler = async (event) => {
         // Specific error handling
         let errorMessage = 'Něco se pokazilo. Zkuste to prosím znovu.';
 
-        if (error.message?.includes('NEON_DATABASE_URL')) {
+        if (error.message?.includes('NETLIFY_DATABASE_URL') || error.message?.includes('database')) {
             errorMessage = 'Chyba databáze. Kontaktujte správce.';
         } else if (error.message?.includes('RESEND')) {
             errorMessage = 'Chyba při odesílání emailu.';
