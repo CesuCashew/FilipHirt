@@ -72,16 +72,22 @@ exports.handler = async (event) => {
         // ============================================
         // 2. SEND EMAIL NOTIFICATION
         // ============================================
-        const resend = new Resend(process.env.RESEND_API_KEY);
+        let emailResult = null;
+        try {
+            const resend = new Resend(process.env.RESEND_API_KEY);
 
-        const emailResult = await resend.emails.send({
-            from: 'Portfolio <onboarding@resend.dev>', // Resend default for testing
-            to: process.env.RECIPIENT_EMAIL || 'f.hirt@seznam.cz',
-            subject: `🎯 Nová poptávka: ${formData.name}`,
-            html: getContactEmailHTML(formData),
-        });
+            emailResult = await resend.emails.send({
+                from: 'Portfolio <onboarding@resend.dev>', // Resend default for testing
+                to: process.env.RECIPIENT_EMAIL || 'f.hirt@seznam.cz',
+                subject: `🎯 Nová poptávka: ${formData.name}`,
+                html: getContactEmailHTML(formData),
+            });
 
-        console.log('✅ Email sent:', emailResult.id);
+            console.log('✅ Email sent:', emailResult.id);
+        } catch (emailError) {
+            console.error('⚠️ Email failed but continuing:', emailError.message);
+            // Don't fail the whole request if email fails
+        }
 
         // ============================================
         // 3. RETURN SUCCESS
@@ -92,7 +98,8 @@ exports.handler = async (event) => {
             body: JSON.stringify({
                 success: true,
                 message: 'Zpráva byla úspěšně odeslána!',
-                emailId: emailResult.id
+                emailId: emailResult?.id,
+                emailSent: !!emailResult
             })
         };
 
