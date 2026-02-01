@@ -593,19 +593,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // Render portfolio projects
     renderProjects(); // Assuming this is part of initPortfolio or remains standalone
     // Initialize mobile menu
-    if (mobileMenuBtn) { // Re-integrating existing mobile menu logic
+    if (mobileMenuBtn) {
         mobileMenuBtn.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            if (navLinks.classList.contains('active')) {
-                mobileMenuBtn.textContent = '✕';
-            } else {
-                mobileMenuBtn.textContent = '☰';
-            }
+            mobileMenuBtn.classList.toggle('active');
         });
+
+        // Close menu when clicking a link
         $$('.nav-link').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
-                mobileMenuBtn.textContent = '☰';
+                mobileMenuBtn.classList.remove('active');
             });
         });
     }
