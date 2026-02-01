@@ -289,7 +289,7 @@ a:hover {
 }
 
 /* Vertical Logo */
-.vertical-logo-container {
+.vertical-logo-container-old {
   position: fixed;
   left: -140px;
   top: 50%;
@@ -1420,7 +1420,7 @@ textarea.form-control {
 @media (max-width: 1024px) {
 
   /* Vertical logo - smaller on tablet */
-  .vertical-logo-container {
+  .vertical-logo-container-old {
     left: -100px;
   }
 
@@ -1461,7 +1461,7 @@ textarea.form-control {
 @media (max-width: 768px) {
 
   /* ===== VERTICAL LOGO - FLOATING MOBILE ===== */
-  .vertical-logo-container {
+  .vertical-logo-container-old {
     position: fixed;
     left: auto;
     right: 20px;
