@@ -549,23 +549,18 @@ const navLinks = $('.nav-links');
 if (mobileMenuBtn) {
     mobileMenuBtn.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-
-        // Toggle icon
-        if (navLinks.classList.contains('active')) {
-            mobileMenuBtn.textContent = '✕';
-        } else {
-            mobileMenuBtn.textContent = '☰';
-        }
+        mobileMenuBtn.classList.toggle('active');
     });
 
     // Close menu when clicking a link
     $$('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
-            mobileMenuBtn.textContent = '☰';
+            mobileMenuBtn.classList.remove('active');
         });
     });
 }
+
 
 // ===== VERTICAL LOGO SCROLL BEHAVIOR =====
 function initVerticalLogoScroll() {

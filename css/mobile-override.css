@@ -3,28 +3,69 @@
 /* Critical fix for mobile issues */
 @media (max-width: 768px) {
 
-    /* 1. HIDE VERTICAL LOGO ON MOBILE */
-    .vertical-logo-container {
-        display: none !important;
-    }
-
-    /* 2. FIX VIEWPORT OVERFLOW */
+    /* 1. FIX VIEWPORT OVERFLOW - PREVENT HORIZONTAL SCROLLING */
     html,
     body {
         overflow-x: hidden !important;
         max-width: 100vw !important;
+        width: 100% !important;
     }
 
     * {
         max-width: 100%;
     }
 
-    .container {
+    .container,
+    .container-wide {
         padding-left: 1.5rem !important;
         padding-right: 1.5rem !important;
+        max-width: 100% !important;
     }
 
-    /* 3. FULLSCREEN BURGER MENU */
+    /* 2. HIDE SOCIAL ICONS ON MOBILE NAVBAR */
+    .nav-container .social-icons {
+        display: none !important;
+    }
+
+    /* 3. SHOW AND STYLE BURGER MENU BUTTON */
+    .mobile-menu-btn {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 5px !important;
+        width: 40px !important;
+        height: 40px !important;
+        background: none !important;
+        border: none !important;
+        cursor: pointer !important;
+        position: absolute !important;
+        right: 1rem !important;
+        z-index: 1001 !important;
+    }
+
+    .mobile-menu-btn span {
+        display: block !important;
+        width: 25px !important;
+        height: 2px !important;
+        background: var(--color-white) !important;
+        transition: all 0.3s ease !important;
+    }
+
+    /* Burger menu animation when active */
+    .mobile-menu-btn.active span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px) !important;
+    }
+
+    .mobile-menu-btn.active span:nth-child(2) {
+        opacity: 0 !important;
+    }
+
+    .mobile-menu-btn.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px) !important;
+    }
+
+    /* 4. FULLSCREEN MOBILE MENU */
     .nav-links {
         position: fixed !important;
         top: 0 !important;
@@ -40,39 +81,87 @@
         gap: 2.5rem !important;
         transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
         z-index: 1000 !important;
+        padding: 0 !important;
+        margin: 0 !important;
     }
 
     .nav-links.active {
         left: 0 !important;
     }
 
+    .nav-links li {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
     .nav-links a {
         font-size: 1.5rem !important;
         padding: 1rem 2rem !important;
+        display: block !important;
+        width: 100% !important;
     }
 
-    /* 4. BURGER ICON ANIMATION */
-    .mobile-menu-btn {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 5px !important;
-    }
-
-    .mobile-menu-btn.active span:nth-child(1) {
-        transform: rotate(45deg) translate(6px, 6px) !important;
-    }
-
-    .mobile-menu-btn.active span:nth-child(2) {
-        opacity: 0 !important;
-    }
-
-    .mobile-menu-btn.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px, -6px) !important;
-    }
-
-    /* 5. HERO FIX */
+    /* 5. HERO SECTION FIX */
     .hero {
         padding-left: 0 !important;
+        padding-right: 0 !important;
         max-width: 100% !important;
+        min-height: auto !important;
+        padding-top: 100px !important;
+        padding-bottom: 3rem !important;
+    }
+
+    .hero-content {
+        max-width: 100% !important;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem !important;
+        line-height: 1.2 !important;
+    }
+
+    .hero-description {
+        font-size: 1rem !important;
+    }
+
+    .hero-cta {
+        flex-direction: column !important;
+        width: 100% !important;
+    }
+
+    .hero-cta .btn {
+        width: 100% !important;
+    }
+
+    /* 6. FIX PORTFOLIO GRID */
+    .portfolio-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+        padding: 1rem !important;
+    }
+
+    /* 7. FIX SERVICES GRID */
+    .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    /* 8. FIX SECTIONS PADDING */
+    .section {
+        padding: 3rem 0 !important;
+    }
+
+    /* 9. FIX PROCESS TIMELINE */
+    .process-timeline {
+        padding: 0 !important;
+    }
+
+    .process-step {
+        padding: 0 !important;
+    }
+
+    /* 10. FIX TESTIMONIALS */
+    .testimonials-grid {
+        grid-template-columns: 1fr !important;
     }
 }
