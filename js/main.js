@@ -551,40 +551,27 @@ function initVerticalLogoScroll() {
     if (!verticalLogo || !footer) return;
 
     window.addEventListener('scroll', () => {
-        // Only apply scroll behavior on large screens (> 1500px)
+        // Only apply behavior on large screens (> 1500px)
         if (window.innerWidth <= 1500) {
-            // Reset to default positioning on smaller screens
-            verticalLogo.style.position = '';
-            verticalLogo.style.top = '';
-            verticalLogo.style.bottom = '';
+            verticalLogo.classList.remove('hidden');
             return;
         }
 
         const footerTop = footer.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
-        const logoHeight = verticalLogo.offsetHeight;
 
-        // Stop logo scrolling before footer (leave space)
-        if (footerTop < windowHeight - logoHeight / 2) {
-            // Change to absolute positioning - logo stops here
-            verticalLogo.style.position = 'absolute';
-            verticalLogo.style.top = 'auto';
-            const footerOffsetTop = footer.offsetTop;
-            verticalLogo.style.bottom = (document.body.scrollHeight - footerOffsetTop + 100) + 'px';
+        // Hide logo smoothly when footer is approaching
+        if (footerTop < windowHeight - 100) {
+            verticalLogo.classList.add('hidden');
         } else {
-            // Keep fixed positioning (centered on screen)
-            verticalLogo.style.position = 'fixed';
-            verticalLogo.style.top = '50%';
-            verticalLogo.style.bottom = 'auto';
+            verticalLogo.classList.remove('hidden');
         }
     });
 
     // Also check on resize
     window.addEventListener('resize', () => {
         if (window.innerWidth <= 1500) {
-            verticalLogo.style.position = '';
-            verticalLogo.style.top = '';
-            verticalLogo.style.bottom = '';
+            verticalLogo.classList.remove('hidden');
         }
     });
 }

@@ -192,18 +192,40 @@
     .hero {
         padding-left: 0 !important;
         padding-right: 0 !important;
-        padding-top: 80px !important;
+        padding-top: 100px !important;
         padding-bottom: 3rem !important;
         min-height: 80vh !important;
     }
 
     .hero-content {
+        flex-direction: column !important;
+        text-align: center !important;
         max-width: 100% !important;
     }
 
+    .hero-text {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 0 1rem !important;
+    }
+
     .hero-text h1 {
-        font-size: 2rem !important;
+        font-size: 2.2rem !important;
         line-height: 1.2 !important;
+    }
+
+    .availability-pill {
+        font-size: 0.8rem !important;
+        padding: 0.4rem 1rem !important;
+        margin: 0 auto 1.5rem !important;
+    }
+
+    .hero-visual {
+        margin-top: 3rem !important;
+        max-width: 280px !important;
+        width: 100% !important;
+        order: 2 !important;
     }
 
     .hero-description {
@@ -213,6 +235,8 @@
     .hero-cta {
         flex-direction: column !important;
         gap: 1rem !important;
+        width: 100% !important;
+        justify-content: center !important;
     }
 
     .hero-cta .btn {
