@@ -153,7 +153,13 @@ a:hover {
   margin-bottom: var(--spacing-lg);
 }
 
+.section-title h2 {
+  font-family: 'Space Mono', monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas;
+  font-size: 3.5rem;
+}
+
 .section-subtitle {
+  font-family: 'Space Mono', monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas;
   text-align: center;
   font-size: var(--font-size-lg);
   color: var(--color-gray-text);
@@ -256,6 +262,8 @@ a:hover {
   box-shadow: var(--glow-purple-soft);
   transform: translateY(-2px);
 }
+
+/* Hero Trust Badge Removed */
 
 /* ===== NAVIGATION ===== */
 .navbar {
@@ -502,6 +510,37 @@ a:hover {
 
   50% {
     background-position: 100% 50%;
+  }
+}
+
+/* Hero Fluid Sticker (Moon) */
+.hero-sticker {
+  position: absolute;
+  top: -15%;
+  left: -35%;
+  width: 280px;
+  height: auto;
+  z-index: 10;
+  animation:
+    floatMoon 8s ease-in-out infinite,
+    liquidPulse 10s ease-in-out infinite alternate;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.hero-sticker:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+@keyframes floatMoon {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-15px) rotate(3deg);
   }
 }
 
@@ -863,6 +902,7 @@ a:hover {
 /* ===== PORTFOLIO SECTION ===== */
 /* ===== PORTFOLIO TYPOGRAPHY ===== */
 #portfolio .section-title h2 {
+  font-family: 'Space Mono', monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas;
   font-size: 3.5rem;
   letter-spacing: -0.02em;
   background: linear-gradient(180deg, #FFFFFF 0%, #A0A0A0 100%);
@@ -873,6 +913,7 @@ a:hover {
 }
 
 .portfolio-subtitle {
+  font-family: 'Space Mono', monospace, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas;
   font-size: 1.1rem;
   font-weight: 400 !important;
   color: #86868b !important;
