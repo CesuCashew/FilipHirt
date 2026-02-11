@@ -290,30 +290,14 @@ a:hover {
   min-height: 40px;
 }
 
-/* Vertical Logo - Responsive */
+/* Vertical Logo - Positioned in hero only */
 .vertical-logo-container {
-  z-index: 999;
+  position: absolute;
+  left: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
   transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-/* Large screens (> 1500px): Fixed position, scrolls with page */
-@media (min-width: 1501px) {
-  .vertical-logo-container {
-    position: fixed;
-    left: -140px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-}
-
-/* Medium screens (769px - 1500px): Only in hero section */
-@media (min-width: 769px) and (max-width: 1500px) {
-  .vertical-logo-container {
-    position: absolute;
-    left: -140px;
-    top: 50%;
-    transform: translateY(-50%);
-  }
 }
 
 .vertical-logo-container.hidden {
@@ -334,6 +318,26 @@ a:hover {
 .vertical-logo:hover {
   filter: brightness(1.7) contrast(1.4) drop-shadow(0 0 25px rgba(255, 255, 255, 0.5));
   transform: rotate(-90deg) scale(1.02);
+}
+
+/* Hide vertical logo on screens smaller than 1500px */
+@media (max-width: 1500px) {
+  .vertical-logo-container {
+    display: none;
+  }
+}
+
+/* Footer Logo */
+.footer-logo {
+  width: 180px;
+  height: auto;
+  filter: brightness(1.3) contrast(1.2);
+  transition: all var(--transition-normal);
+  margin-bottom: 1rem;
+}
+
+.footer-logo:hover {
+  filter: brightness(1.6) contrast(1.3) drop-shadow(0 0 15px rgba(255, 255, 255, 0.3));
 }
 
 .nav-links {
