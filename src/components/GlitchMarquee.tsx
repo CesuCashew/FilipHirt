@@ -1,21 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 
 const WORDS = [
-  "REACT",
-  "AI",
-  "SEO",
-  "UX/UI",
-  "RESTAURACE",
-  "E-COMMERCE",
-  "PERFORMANCE",
-  "MOTION",
-  "BRAND",
-  "FIGMA",
-  "TYPESCRIPT",
-  "ANALYTICS",
+  { text: "REACT", color: "#61DAFB" },        // React cyan
+  { text: "AI", color: "#E8A238" },             // Warm amber (brand)
+  { text: "SEO", color: "#F97583" },            // Soft pink/red (keyword)
+  { text: "UX/UI", color: "#B392F0" },          // Purple (type)
+  { text: "RESTAURACE", color: "#FFAB70" },     // Warm orange (string)
+  { text: "E-COMMERCE", color: "#79B8FF" },     // Light blue (variable)
 ];
 
-const CHARS = "!<>-_\\/[]{}—=+*^?#§$%&@";
+const CHARS = "!</>-_\\/[]{}—=+*^?#§$%&@";
 
 function scrambleWord(word: string): string {
   return word
@@ -34,7 +28,7 @@ export default function GlitchMarquee() {
     const tick = () => {
       const idx = Math.floor(Math.random() * WORDS.length);
       setGlitchIndex(idx);
-      const target = WORDS[idx];
+      const target = WORDS[idx].text;
       let frame = 0;
       const max = 14;
       const animate = () => {
@@ -62,8 +56,11 @@ export default function GlitchMarquee() {
     <div className="glitch-marquee-row" aria-hidden={aria}>
       {WORDS.map((w, i) => (
         <span key={i} className="glitch-marquee-item">
-          <span className="glitch-marquee-word">
-            {glitchIndex === i && glitchedWord ? glitchedWord : w}
+          <span
+            className={`glitch-marquee-word${glitchIndex === i ? " glitch-active" : ""}`}
+            style={{ "--word-color": w.color } as React.CSSProperties}
+          >
+            {glitchIndex === i && glitchedWord ? glitchedWord : w.text}
           </span>
           <span className="glitch-marquee-sep">●</span>
         </span>

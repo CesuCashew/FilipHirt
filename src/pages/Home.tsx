@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
+import AboutMe from "../components/AboutMe";
 import Stats from "../components/Stats";
 import Services from "../components/Services";
 import Portfolio from "../components/Portfolio";
@@ -9,7 +10,6 @@ import Process from "../components/Process";
 import Testimonials from "../components/Testimonials";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import AsciiBar from "../components/AsciiBar";
 import GlitchMarquee from "../components/GlitchMarquee";
 
 export default function Home() {
@@ -102,10 +102,10 @@ export default function Home() {
       )}
 
       <div style={{ opacity: pageVisible ? 1 : 0, transition: "opacity 0.4s ease 0.2s" }}>
-        <AsciiBar />
         <Navbar />
         <main>
           <Hero />
+          <AboutMe />
           <Stats />
           <GlitchMarquee />
           <Services />

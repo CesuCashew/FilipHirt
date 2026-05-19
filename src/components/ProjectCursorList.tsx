@@ -7,7 +7,7 @@ const projects = [
     title: "Restaurace La Cucina",
     category: "F&B / Rezervace",
     color1: "#1a1a12",
-    color2: "#C8F135",
+    color2: "#E8A238",
     url: "https://lacucina.cz",
   },
   {

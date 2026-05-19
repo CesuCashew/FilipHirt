@@ -84,13 +84,13 @@ export default function Cursor() {
         {/* Blurred glow layer */}
         <path
           d="M4 4L24 12L14 14L12 24L4 4Z"
-          fill="#C8F135"
+          fill="#E8A238"
           className="cursor-arrow__glow-path"
         />
         {/* Solid arrow */}
         <path
           d="M4 4L24 12L14 14L12 24L4 4Z"
-          fill="#C8F135"
+          fill="#E8A238"
         />
         {/* Inner highlight */}
         <path
