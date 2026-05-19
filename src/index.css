@@ -612,15 +612,36 @@ section {
   overflow: hidden;
 }
 
-.hero::before {
-  content: '';
+.hero-bg-wrapper {
   position: absolute;
-  top: 20%;
-  left: 15%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(232, 162, 56, 0.04) 0%, transparent 65%);
-  pointer-events: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.hero-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: left center;
+  opacity: 0.85;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Gradient blends the right side and bottom seamlessly into the background */
+  background: linear-gradient(to right, transparent 0%, rgba(8, 8, 8, 0.5) 40%, var(--col-bg) 80%),
+              linear-gradient(to top, var(--col-bg) 0%, transparent 20%);
 }
 
 .hero-inner {
@@ -629,8 +650,30 @@ section {
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
   position: relative;
+}
+
+.hero-content-wrapper {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1024px) {
+  .hero-bg-image {
+    background-position: center;
+  }
+  .hero-bg-overlay {
+    background: linear-gradient(to top, var(--col-bg) 0%, rgba(8, 8, 8, 0.7) 40%, rgba(8, 8, 8, 0.5) 100%);
+  }
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+  .hero-content-wrapper {
+    grid-column: 1;
+  }
 }
 
 .hero-eyebrow {
@@ -655,13 +698,13 @@ section {
 
 .hero-heading {
   font-family: 'Clash Display', sans-serif;
-  font-size: clamp(56px, 9vw, 140px);
+  font-size: clamp(56px, 6vw, 120px);
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1;
   color: var(--col-text);
   margin: 0 0 40px;
-  max-width: 75%;
+  max-width: 100%;
 }
 
 .hero-heading .lime {
@@ -687,7 +730,14 @@ section {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  gap: 40px;
+  gap: 30px;
+}
+
+@media (max-width: 1024px) {
+  .hero-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .hero-desc {

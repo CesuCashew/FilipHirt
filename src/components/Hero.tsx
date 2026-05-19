@@ -72,6 +72,12 @@ export default function Hero() {
 
   return (
     <section className="hero" id="home">
+      {/* Background Image Setup */}
+      <div className="hero-bg-wrapper">
+        <div className="hero-bg-image" style={{ backgroundImage: "url('/hero-bg.JPG')" }}></div>
+        <div className="hero-bg-overlay"></div>
+      </div>
+
       {/* SVG distort filter for heading — ramps up on scroll */}
       <svg style={{ position: "absolute", width: 0, height: 0 }} aria-hidden="true">
         <defs>
@@ -119,9 +125,10 @@ export default function Hero() {
       </div>
 
       <div ref={heroInnerRef} className="hero-inner" style={{ position: "relative", zIndex: 1, willChange: "opacity" }}>
-        <div className="hero-eyebrow">
-          <ScrambleText text="Filip Hirt — Webový Designer & Vývojář" trigger="mount" duration={50} delay={1500} />
-        </div>
+        <div className="hero-content-wrapper">
+          <div className="hero-eyebrow">
+            <ScrambleText text="Filip Hirt — Webový Designer & Vývojář" trigger="mount" duration={50} delay={1500} />
+          </div>
 
         <h1
           ref={headingRef}
@@ -178,6 +185,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
+      </div>
       </div>
 
     </section>
