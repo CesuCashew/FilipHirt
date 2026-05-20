@@ -3,36 +3,51 @@ export default function AboutMe() {
     <section id="about" className="about-section">
       <div className="container-wide">
         <div className="about-grid reveal">
-          {/* Photo column */}
+          {/* Video column with Op-Art warped grid */}
           <div className="about-photo-col">
-            <div className="about-photo-wrap">
-              {/*
-                TODO: Nahraď placeholder svou fotkou:
-                <img src="/your-photo.jpg" className="about-photo-img" alt="Filip Hirt" />
-                Doporučení: casual portrét, vertikální orientace (3:4)
-              */}
-              <div className="about-photo-placeholder">
-                <div className="about-photo-initials">FH</div>
-                <span className="about-photo-label">Vaše fotka</span>
+            <div className="op-art-container">
+              {/* Warped Op-Art Grid (SVG) */}
+              <div className="op-art-grid-wrap">
+                <svg viewBox="0 0 400 500" fill="none" xmlns="http://www.w3.org/2000/svg" className="op-art-svg">
+                  <defs>
+                    <radialGradient id="opglow" cx="50%" cy="50%" r="50%">
+                      <stop offset="0%" stopColor="rgba(255, 255, 255, 0.12)" />
+                      <stop offset="60%" stopColor="rgba(255, 255, 255, 0.03)" />
+                      <stop offset="100%" stopColor="rgba(255, 255, 255, 0)" />
+                    </radialGradient>
+                  </defs>
+                  <rect width="100%" height="100%" fill="url(#opglow)" />
+
+                  {/* Warped Horizontal Lines */}
+                  <path d="M 0,50 Q 200,90 400,50" stroke="rgba(255, 255, 255, 0.08)" strokeWidth="1.5" />
+                  <path d="M 0,120 Q 200,180 400,120" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="2" />
+                  <path d="M 0,200 Q 200,280 400,200" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="3" />
+                  <path d="M 0,300 Q 200,220 400,300" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="3" />
+                  <path d="M 0,380 Q 200,320 400,380" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="2" />
+                  <path d="M 0,450 Q 200,410 400,450" stroke="rgba(255, 255, 255, 0.08)" strokeWidth="1.5" />
+
+                  {/* Warped Vertical Lines */}
+                  <path d="M 50,0 Q 90,250 50,500" stroke="rgba(255, 255, 255, 0.08)" strokeWidth="1.5" />
+                  <path d="M 120,0 Q 180,250 120,500" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="2" />
+                  <path d="M 200,0 Q 280,250 200,500" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="3" />
+                  <path d="M 280,0 Q 220,250 280,500" stroke="rgba(255, 255, 255, 0.35)" strokeWidth="3" />
+                  <path d="M 350,0 Q 310,250 350,500" stroke="rgba(255, 255, 255, 0.08)" strokeWidth="1.5" />
+                </svg>
               </div>
 
-              {/* Glass overlay card */}
-              <div className="about-photo-overlay">
-                <div className="about-overlay-item">
-                  <span className="about-overlay-num">18</span>
-                  <span className="about-overlay-label">let</span>
-                </div>
-                <div className="about-overlay-sep" />
-                <div className="about-overlay-item">
-                  <span className="about-overlay-num">Cheb</span>
-                  <span className="about-overlay-label">Česká republika</span>
-                </div>
-                <div className="about-overlay-sep" />
-                <div className="about-overlay-item">
-                  <span className="about-overlay-num">30+</span>
-                  <span className="about-overlay-label">projektů</span>
-                </div>
+              {/* Video Card (Pure White Frame) */}
+              <div className="op-art-video-card">
+                <video
+                  src="/about-me-animation.webm"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="op-art-video-el"
+                />
               </div>
+
+
             </div>
           </div>
 

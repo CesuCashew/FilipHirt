@@ -864,6 +864,65 @@ section {
   position: relative;
 }
 
+/* --- Op-Art Warped Space Wrapper --- */
+.op-art-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  background: var(--col-bg); /* #080808 */
+  border: 1px solid var(--col-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.op-art-grid-wrap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.op-art-svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.75;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.op-art-container:hover .op-art-svg {
+  transform: scale(1.06) rotate(1deg);
+}
+
+/* --- Video Card (pure white frame) --- */
+.op-art-video-card {
+  position: relative;
+  z-index: 2;
+  width: 68%;
+  aspect-ratio: 1 / 1;
+  background: #ffffff;
+  padding: 10px;
+  box-shadow: 
+    0 0 45px rgba(255, 255, 255, 0.08),
+    0 25px 60px rgba(0, 0, 0, 0.8);
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.op-art-container:hover .op-art-video-card {
+  transform: scale(1.02);
+}
+
+.op-art-video-el {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #ffffff;
+}
+
 .about-photo-wrap {
   position: relative;
   aspect-ratio: 3 / 4;
@@ -927,6 +986,7 @@ section {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(240, 237, 230, 0.06);
   border-radius: 4px;
+  z-index: 3;
 }
 
 .about-overlay-item {
