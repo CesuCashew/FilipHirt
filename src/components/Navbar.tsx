@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import BrandLogo from "./BrandLogo";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,9 +20,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`navbar${scrolled ? " scrolled" : ""}`}>
-        <BrandLogo />
-
+      <nav className={`navbar${scrolled ? " scrolled" : ""}${menuOpen ? " menu-open" : ""}`}>
         <ul className="nav-links">
           {navItems.map((item) => (
             <li key={item.href}>
