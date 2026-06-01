@@ -23,7 +23,7 @@ export default function Footer() {
                 ["Domů", "#home"],
                 ["Služby", "#services"],
                 ["Portfolio", "#portfolio"],
-                ["Jak Pracuji", "#process"],
+                ["AI Asistent", "#chatbot"],
                 ["Kontakt", "#contact"],
               ].map(([label, href]) => (
                 <li key={href}>

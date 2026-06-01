@@ -14,7 +14,7 @@ export default function Navbar() {
     { label: "Domů", href: "#home" },
     { label: "Služby", href: "#services" },
     { label: "Portfolio", href: "#portfolio" },
-    { label: "Jak Pracuji", href: "#process" },
+    { label: "AI Asistent", href: "#chatbot" },
     { label: "Kontakt", href: "#contact" },
   ];
 
