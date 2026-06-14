@@ -100,7 +100,7 @@ function CircularDial({ pct, label }: { pct: number; label: string }) {
             dominantBaseline="central"
             fill="var(--col-text)"
             fontSize="8.5"
-            fontFamily="JetBrains Mono, monospace"
+            fontFamily="Hanken Grotesk, sans-serif"
             fontWeight="bold"
           >
             {pct}%
@@ -153,7 +153,7 @@ const DesignHologram = () => (
         <line x1="15" y1="94" x2="65" y2="94" strokeOpacity="0.7" />
         <line x1="15" y1="91" x2="15" y2="97" strokeOpacity="0.7" />
         <line x1="65" y1="91" x2="65" y2="97" strokeOpacity="0.7" />
-        <text x="40" y="89" fill="var(--theme-color)" fontSize="7" fontFamily="JetBrains Mono, monospace" textAnchor="middle" stroke="none">50px</text>
+        <text x="40" y="89" fill="var(--theme-color)" fontSize="7" fontFamily="Hanken Grotesk, sans-serif" textAnchor="middle" stroke="none">50px</text>
         
         {/* Node selector box */}
         <rect x="10" y="96" width="60" height="38" stroke="var(--theme-color)" strokeWidth="1" strokeOpacity="0.7" fill="var(--theme-color)" fillOpacity="0.04" />
@@ -167,9 +167,9 @@ const DesignHologram = () => (
     {/* Peripheral technical UI markers */}
     <path d="M 45 90 L 25 90 L 25 70" stroke="var(--theme-color)" strokeWidth="1" strokeOpacity="0.25" />
     <path d="M 355 90 L 375 90 L 375 70" stroke="var(--theme-color)" strokeWidth="1" strokeOpacity="0.25" />
-    <text x="30" y="105" fill="var(--theme-color)" fontSize="8" fontFamily="JetBrains Mono, monospace" fillOpacity="0.35" stroke="none">SYS_CANVAS: ON</text>
-    <text x="30" y="120" fill="var(--theme-color)" fontSize="8" fontFamily="JetBrains Mono, monospace" fillOpacity="0.35" stroke="none">SCALE: 1.0</text>
-    <text x="30" y="135" fill="var(--theme-color)" fontSize="8" fontFamily="JetBrains Mono, monospace" fillOpacity="0.35" stroke="none">UX_ENG: READY</text>
+    <text x="30" y="105" fill="var(--theme-color)" fontSize="8" fontFamily="Hanken Grotesk, sans-serif" fillOpacity="0.35" stroke="none">SYS_CANVAS: ON</text>
+    <text x="30" y="120" fill="var(--theme-color)" fontSize="8" fontFamily="Hanken Grotesk, sans-serif" fillOpacity="0.35" stroke="none">SCALE: 1.0</text>
+    <text x="30" y="135" fill="var(--theme-color)" fontSize="8" fontFamily="Hanken Grotesk, sans-serif" fillOpacity="0.35" stroke="none">UX_ENG: READY</text>
   </svg>
 );
 
@@ -219,7 +219,7 @@ const DevHologram = () => (
     </g>
 
     {/* Tech Stack Code overlays */}
-    <g fill="var(--theme-color)" fillOpacity="0.35" fontSize="8" fontFamily="JetBrains Mono, monospace" stroke="none">
+    <g fill="var(--theme-color)" fillOpacity="0.35" fontSize="8" fontFamily="Hanken Grotesk, sans-serif" stroke="none">
       <text x="50" y="75">import &#123; useState &#125; from 'react';</text>
       <text x="50" y="90">const sys = await initialize();</text>
       <text x="260" y="345">api.sync(&#123; active: true &#125;);</text>
@@ -250,7 +250,7 @@ const SeoHologram = () => (
       
       {/* Readout values */}
       <text x="0" y="42" fill="var(--col-text)" fontSize="26" fontFamily="Clash Display, sans-serif" fontWeight="700" textAnchor="middle" stroke="none">99</text>
-      <text x="0" y="58" fill="var(--theme-color)" fontSize="8.5" fontFamily="JetBrains Mono, monospace" fontWeight="bold" letterSpacing="0.08em" textAnchor="middle" stroke="none">LIGHTHOUSE</text>
+      <text x="0" y="58" fill="var(--theme-color)" fontSize="8.5" fontFamily="Hanken Grotesk, sans-serif" fontWeight="bold" letterSpacing="0.08em" textAnchor="middle" stroke="none">LIGHTHOUSE</text>
       
       {/* Circular Dial ticks */}
       {[-120, -90, -60, -30, 0, 30, 60, 90, 120].map((deg) => (
@@ -296,11 +296,11 @@ const SeoHologram = () => (
       <circle cx="260" cy="0" r="7" stroke="var(--theme-color)" strokeWidth="1" strokeOpacity="0.45" className="anim-pulse-soft" />
 
       {/* Axis readouts */}
-      <text x="-10" y="4" fill="var(--theme-color)" fillOpacity="0.35" fontSize="7" fontFamily="JetBrains Mono, monospace" textAnchor="end" stroke="none">100%</text>
-      <text x="-10" y="32" fill="var(--theme-color)" fillOpacity="0.35" fontSize="7" fontFamily="JetBrains Mono, monospace" textAnchor="end" stroke="none">50%</text>
-      <text x="0" y="70" fill="var(--theme-color)" fillOpacity="0.35" fontSize="7" fontFamily="JetBrains Mono, monospace" stroke="none">APR</text>
-      <text x="130" y="70" fill="var(--theme-color)" fillOpacity="0.35" fontSize="7" fontFamily="JetBrains Mono, monospace" textAnchor="middle" stroke="none">MAY</text>
-      <text x="260" y="70" fill="var(--theme-color)" fillOpacity="0.35" fontSize="7" fontFamily="JetBrains Mono, monospace" textAnchor="end" stroke="none">JUN</text>
+      <text x="-10" y="4" fill="var(--theme-color)" fillOpacity="0.35" fontSize="7" fontFamily="Hanken Grotesk, sans-serif" textAnchor="end" stroke="none">100%</text>
+      <text x="-10" y="32" fill="var(--theme-color)" fillOpacity="0.35" fontSize="7" fontFamily="Hanken Grotesk, sans-serif" textAnchor="end" stroke="none">50%</text>
+      <text x="0" y="70" fill="var(--theme-color)" fillOpacity="0.35" fontSize="7" fontFamily="Hanken Grotesk, sans-serif" stroke="none">APR</text>
+      <text x="130" y="70" fill="var(--theme-color)" fillOpacity="0.35" fontSize="7" fontFamily="Hanken Grotesk, sans-serif" textAnchor="middle" stroke="none">MAY</text>
+      <text x="260" y="70" fill="var(--theme-color)" fillOpacity="0.35" fontSize="7" fontFamily="Hanken Grotesk, sans-serif" textAnchor="end" stroke="none">JUN</text>
     </g>
   </svg>
 );
@@ -335,8 +335,8 @@ export default function WhyWorkWithMe() {
       <div className="container">
         <div className="section-header reveal">
           <span className="section-number">03</span>
-          <div className="section-label">O mně</div>
-          <h2 className="section-title">Proč navázat<br />spolupráci?</h2>
+          <div className="section-label">Proč já</div>
+          <h2 className="section-title">Proč navázat<br /><span className="it">spolupráci</span></h2>
         </div>
 
         {/* Dynamic theme wrapper switches colors on tab transition */}
@@ -350,11 +350,11 @@ export default function WhyWorkWithMe() {
             <div className="hud-crop-mark hud-crop-bl" />
             <div className="hud-crop-mark hud-crop-br" />
 
-            {/* Corner telemetry status readouts */}
-            <div className="hud-readout hud-readout-tl">SYS_DIAG: ACTIVE</div>
-            <div className="hud-readout hud-readout-tr">MODE: INTERACTIVE</div>
-            <div className="hud-readout hud-readout-bl">REFRESH: 120HZ</div>
-            <div className="hud-readout hud-readout-br">ACCENT_LOCK: TRUE</div>
+            {/* Corner blueprint annotations */}
+            <div className="hud-readout hud-readout-tl">Náčrt — aktivní</div>
+            <div className="hud-readout hud-readout-tr">Režim — interaktivní</div>
+            <div className="hud-readout hud-readout-bl">Měřítko 1:1</div>
+            <div className="hud-readout hud-readout-br">Detail — zaostřeno</div>
 
             {/* Glowing blur backlight */}
             <div className="hud-hologram-glow" />
@@ -386,7 +386,7 @@ export default function WhyWorkWithMe() {
               onClick={() => setActiveTab(0)}
             >
               <div className="hud-tab-header">
-                <span className="hud-tab-meta">01 / BRAND & BLUEPRINT</span>
+                <span className="hud-tab-meta">01 — Náčrt &amp; vizuál</span>
               </div>
               <h3 className="hud-tab-title">Design & UX Estetika</h3>
               
@@ -428,7 +428,7 @@ export default function WhyWorkWithMe() {
               onClick={() => setActiveTab(1)}
             >
               <div className="hud-tab-header">
-                <span className="hud-tab-meta">02 / CORE ENGINE</span>
+                <span className="hud-tab-meta">02 — Jádro &amp; kód</span>
               </div>
               <h3 className="hud-tab-title">Vývoj na míru & Architektura</h3>
               
@@ -470,7 +470,7 @@ export default function WhyWorkWithMe() {
               onClick={() => setActiveTab(2)}
             >
               <div className="hud-tab-header">
-                <span className="hud-tab-meta">03 / CONVERSION TELEMETRY</span>
+                <span className="hud-tab-meta">03 — Výkon &amp; růst</span>
               </div>
               <h3 className="hud-tab-title">Rychlost & SEO Optimalizace</h3>
               

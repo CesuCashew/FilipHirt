@@ -1,9 +1,13 @@
 # Dependencies
 node_modules/
 
+# Build output
+dist/
+
 # Environment variables
 .env
 .env.local
+.env.*.local
 
 # Netlify
 .netlify/
@@ -11,9 +15,30 @@ node_modules/
 # OS
 .DS_Store
 Thumbs.db
+desktop.ini
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+
+# AI tool configs
+.claude/
+.agents/
+.gemini/
+.impeccable/
+
+# Raw source assets (not for repo)
+podklady/
+
+# Bug screenshots / working materials
+chyby/
+
+# Internal planning docs
+DESIGN.md
+PRODUCT.md
+
+# Temp files
+*.webm
+deno.lock

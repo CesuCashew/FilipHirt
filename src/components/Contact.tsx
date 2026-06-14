@@ -59,13 +59,14 @@ export default function Contact() {
           <span className="section-number">06</span>
         </div>
         <div className="contact-inner reveal">
-          <h2 className="contact-headline">Začněme<br />Váš Projekt</h2>
-          <p className="contact-sub">Připraveni na váš další úspěšný web? Napišme mi!</p>
+          <h2 className="contact-headline">Pojďme spolu<br />něco <span className="it">postavit</span></h2>
+          <p className="contact-sub">Máte nápad, web k oživení, nebo jen chuť to probrat? Napište pár vět — ozvu se obvykle do dne.</p>
 
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
-              <label className="form-label">Jméno *</label>
+              <label htmlFor="field-name" className="form-label">Jméno *</label>
               <input
+                id="field-name"
                 type="text"
                 className="form-input"
                 placeholder="Vaše jméno"
@@ -75,8 +76,9 @@ export default function Contact() {
               />
             </div>
             <div className="form-group">
-              <label className="form-label">Email *</label>
+              <label htmlFor="field-email" className="form-label">Email *</label>
               <input
+                id="field-email"
                 type="email"
                 className="form-input"
                 placeholder="vas@email.cz"
@@ -86,8 +88,9 @@ export default function Contact() {
               />
             </div>
             <div className="form-group">
-              <label className="form-label">Telefon</label>
+              <label htmlFor="field-phone" className="form-label">Telefon</label>
               <input
+                id="field-phone"
                 type="tel"
                 className="form-input"
                 placeholder="+420 123 456 789"
@@ -96,8 +99,9 @@ export default function Contact() {
               />
             </div>
             <div className="form-group">
-              <label className="form-label">Typ webu</label>
+              <label htmlFor="field-service" className="form-label">Typ webu</label>
               <select
+                id="field-service"
                 className="form-select"
                 value={formData.service}
                 onChange={(e) => setFormData({ ...formData, service: e.target.value })}
@@ -111,8 +115,9 @@ export default function Contact() {
               </select>
             </div>
             <div className="form-group full">
-              <label className="form-label">Zpráva *</label>
+              <label htmlFor="field-message" className="form-label">Zpráva *</label>
               <textarea
+                id="field-message"
                 className="form-textarea"
                 placeholder="Popište váš projekt..."
                 required
@@ -121,11 +126,11 @@ export default function Contact() {
               />
             </div>
             {submitError && (
-              <div className="form-group full" style={{ color: "red", textAlign: "center", marginBottom: "10px" }}>
+              <div role="alert" className="form-group full form-error-banner">
                 {submitError}
               </div>
             )}
-            
+
             <div className="form-group full" style={{ textAlign: "center" }}>
               <button type="submit" className="btn-primary" disabled={isSubmitting}>
                 {isSubmitting ? "Odesílám..." : submitted ? "Odesláno ✓" : "Odeslat Zprávu"}
@@ -135,7 +140,11 @@ export default function Contact() {
 
           <div className="email-copy-block">
             <p className="email-copy-label">Nebo mi napište rovnou:</p>
-            <button className="email-copy-link" onClick={copyEmail}>
+            <button
+              className="email-copy-link"
+              onClick={copyEmail}
+              aria-label="Kopírovat emailovou adresu do schránky"
+            >
               f.hirt@seznam.cz
             </button>
             <div className={`copy-toast${copied ? " show" : ""}`}>Email zkopírován ✓</div>

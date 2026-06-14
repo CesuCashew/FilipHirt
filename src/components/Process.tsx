@@ -178,7 +178,7 @@ export default function Chatbot() {
                 </div>
                 <div className="chatbox-title">
                   <Bot className="w-4 h-4 text-lime" />
-                  <span>filip_hirt_assistant.exe</span>
+                  <span>asistent — filip hirt</span>
                 </div>
                 <div className="chatbox-active-badge">
                   <span className="active-dot" />

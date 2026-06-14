@@ -84,18 +84,18 @@ export default function Cursor() {
         {/* Blurred glow layer */}
         <path
           d="M4 4L24 12L14 14L12 24L4 4Z"
-          fill="#E8A238"
+          fill="#D2641E"
           className="cursor-arrow__glow-path"
         />
         {/* Solid arrow */}
         <path
           d="M4 4L24 12L14 14L12 24L4 4Z"
-          fill="#E8A238"
+          fill="#D2641E"
         />
         {/* Inner highlight */}
         <path
           d="M6 6L20 12.5L13.2 14L11.8 20.5L6 6Z"
-          fill="rgba(255,255,255,0.25)"
+          fill="rgba(255,244,228,0.45)"
         />
       </svg>
     </div>

@@ -7,29 +7,29 @@ const projects = [
     title: "Restaurace La Cucina",
     category: "Restaurace & Rezervace",
     url: "https://lacucina.cz",
-    desc: "Moderní web s rezervačním systémem a digitálním menu",
-    color: "#1a1a12",
+    desc: "Web, ze kterého máte hlad — rezervační systém a digitální menu v jednom.",
+    color: "#B23A17",
   },
   {
     title: "TechShop CZ",
     category: "E-commerce",
     url: "https://techshop.cz",
-    desc: "E-shop s AI chatbotem a pokročilou konverzní optimalizací",
-    color: "#0f1a1a",
+    desc: "E-shop s AI asistentem a každým krokem nákupu vyladěným ke konverzi.",
+    color: "#A9761B",
   },
   {
     title: "BuildCorp s.r.o.",
-    category: "Firemní Prezentace",
+    category: "Firemní prezentace",
     url: "https://buildcorp.cz",
-    desc: "Firemní prezentace s moderním designem a SEO strategií",
-    color: "#12121a",
+    desc: "Reprezentativní firemní web s jasnou strukturou a SEO strategií.",
+    color: "#8A5A33",
   },
   {
     title: "Yoga Studio Lucie",
     category: "Health & Wellness",
     url: "https://yogalucie.cz",
-    desc: "Minimalistický web pro jógové studio s online rezervacemi",
-    color: "#1a1208",
+    desc: "Klidný, minimalistický web pro jógové studio s online rezervacemi.",
+    color: "#6E2A18",
   },
 ];
 
@@ -63,9 +63,9 @@ export default function Portfolio() {
       <div className="container" style={{ paddingTop: "140px", paddingBottom: "60px" }}>
         <div className="section-header reveal">
           <span className="section-number">02</span>
-          <div className="section-label">Portfolio</div>
-          <h2 className="section-title">Moje Práce</h2>
-          <p className="section-subtitle">Posouvejte stránku — projekty se odhalují horizontálně</p>
+          <div className="section-label">Vybraná práce</div>
+          <h2 className="section-title">Co už <span className="it">stojí</span></h2>
+          <p className="section-subtitle">Posouvejte dál — projekty se odvíjejí jako stránky časopisu.</p>
         </div>
       </div>
 
@@ -81,7 +81,7 @@ export default function Portfolio() {
               <div
                 className="portfolio-h-card"
                 key={i}
-                style={{ background: `linear-gradient(135deg, ${p.color} 0%, #0f0f0f 100%)` }}
+                style={{ background: `linear-gradient(135deg, var(--surface) 0%, var(--surface) 55%, ${p.color}1f 100%)`, borderColor: `${p.color}55` }}
               >
                 <div className="portfolio-h-card-num">
                   {String(i + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
@@ -104,9 +104,9 @@ export default function Portfolio() {
               </div>
             ))}
             <div className="portfolio-end-card">
-              <div className="portfolio-end-text">Více projektů<br />na vyžádání</div>
+              <div className="portfolio-end-text">Další projekty<br />rád ukážu osobně</div>
               <a href="#contact" className="btn-primary" style={{ marginTop: "32px" }}>
-                Kontaktujte mě
+                Napište mi
               </a>
             </div>
           </div>
@@ -122,7 +122,7 @@ export default function Portfolio() {
           {/* Scroll hint */}
           <div className="portfolio-scroll-hint">
             <span>SCROLL</span>
-            <span style={{ fontFamily: "'Clash Display', sans-serif", color: "var(--col-lime)" }}>
+            <span style={{ fontFamily: "var(--font-display)", color: "var(--terracotta)" }}>
               {String(Math.min(projects.length, Math.floor(progress * projects.length) + 1)).padStart(2, "0")}
               <span style={{ opacity: 0.3 }}>/{String(projects.length).padStart(2, "0")}</span>
             </span>

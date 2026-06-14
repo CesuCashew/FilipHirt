@@ -1,193 +1,93 @@
 import { useEffect, useRef } from "react";
-import ScrambleText from "./ScrambleText";
 
-const words = ["Vytvářím", "webové", "stránky,", "které", "vám", "přinesou"];
-
+/**
+ * Framed-collage cover — a warm "mixtape zine" front page.
+ * Big frame: hero photo + FILIP HIRT + web designer.
+ * Two side frames act as navigation tiles: About Me / Social Sites.
+ */
 export default function Hero() {
-  const wordsRef = useRef<HTMLSpanElement[]>([]);
-  const sigRef = useRef<HTMLDivElement>(null);
-  const headingRef = useRef<HTMLHeadingElement>(null);
-  const heroInnerRef = useRef<HTMLDivElement>(null);
-  const distortRef = useRef<SVGFEDisplacementMapElement>(null);
+  const rootRef = useRef<HTMLElement>(null);
 
+  // gentle pointer parallax on the cover background
   useEffect(() => {
-    const timer = setTimeout(() => {
-      wordsRef.current.forEach((el, i) => {
-        if (el) {
-          setTimeout(() => el.classList.add("visible"), i * 80);
-        }
-      });
-    }, 1400);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
+    const root = rootRef.current;
+    if (!root) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const bg = root.querySelector<HTMLElement>(".cover-bg-img");
+    if (!bg) return;
     let raf = 0;
-    const onScroll = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        const y = window.scrollY;
-        if (sigRef.current) {
-          sigRef.current.style.transform = `translateY(calc(-50% + ${y * 0.25}px)) scale(${1 + y * 0.0003})`;
-          sigRef.current.style.opacity = String(Math.max(0, 0.35 - y * 0.0006));
-        }
-        if (headingRef.current) {
-          headingRef.current.style.transform = `translateY(${y * -0.15}px)`;
-        }
-        if (heroInnerRef.current) {
-          // Fade only in the last ~30% of hero so description + CTA stay readable & clickable
-          const vh = window.innerHeight;
-          const fadeStart = vh * 0.7;
-          const fadeEnd = vh * 1.0;
-          const t = Math.min(1, Math.max(0, (y - fadeStart) / (fadeEnd - fadeStart)));
-          heroInnerRef.current.style.opacity = String(1 - t);
-          heroInnerRef.current.style.pointerEvents = t > 0.5 ? "none" : "auto";
-        }
-        // Distort: ramp displacement scale on scroll. Turbulence stays static so
-        // the noise pattern doesn't get regenerated every frame.
-        if (distortRef.current) {
-          const distortAmount = Math.min(40, y * 0.12);
-          distortRef.current.setAttribute("scale", String(distortAmount));
-        }
-      });
+    const target = { x: 0, y: 0 };
+    const cur = { x: 0, y: 0 };
+    const onMove = (e: MouseEvent) => {
+      target.x = (e.clientX / window.innerWidth - 0.5) * 2;
+      target.y = (e.clientY / window.innerHeight - 0.5) * 2;
     };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      cancelAnimationFrame(raf);
+    const tick = () => {
+      cur.x += (target.x - cur.x) * 0.06;
+      cur.y += (target.y - cur.y) * 0.06;
+      bg.style.transform = `scale(1.08) translate(${cur.x * -14}px, ${cur.y * -14}px)`;
+      raf = requestAnimationFrame(tick);
     };
+    window.addEventListener("mousemove", onMove);
+    tick();
+    return () => { window.removeEventListener("mousemove", onMove); cancelAnimationFrame(raf); };
   }, []);
 
-  const handleMagnet = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
-    const btn = e.currentTarget;
-    const rect = btn.getBoundingClientRect();
-    const x = e.clientX - rect.left - rect.width / 2;
-    const y = e.clientY - rect.top - rect.height / 2;
-    btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+  const scrollToAbout = (e: React.MouseEvent) => {
+    e.preventDefault();
+    document.getElementById("about")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
-
-  const handleMagnetLeave = (e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>) => {
-    e.currentTarget.style.transform = "";
+  // The socials live at the very end of the horizontal journey (outro panel).
+  // Panels share a vertical offset, so jump to the bottom of the page instead.
+  const scrollToSocial = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
   };
 
   return (
-    <section className="hero" id="home">
-      {/* Background Image Setup */}
-      <div className="hero-bg-wrapper">
-        <div className="hero-bg-image" style={{ backgroundImage: "url('/hero-bg.JPG')" }}></div>
-        <div className="hero-bg-overlay"></div>
+    <section id="home" className="cover" ref={rootRef}>
+      <div className="cover-bg" aria-hidden="true">
+        <div className="cover-bg-img" style={{ backgroundImage: "url('/hero-art.jpg')" }} />
+        <div className="cover-bg-wash" />
       </div>
 
-      {/* SVG distort filter for heading — ramps up on scroll */}
-      <svg style={{ position: "absolute", width: 0, height: 0 }} aria-hidden="true">
-        <defs>
-          <filter id="hero-distort" x="-2%" y="-2%" width="104%" height="104%">
-            <feTurbulence
-              type="fractalNoise"
-              baseFrequency="0.012"
-              numOctaves="2"
-              seed="3"
-              result="noise"
-            />
-            <feDisplacementMap
-              ref={distortRef}
-              in="SourceGraphic"
-              in2="noise"
-              scale="0"
-            />
-          </filter>
-        </defs>
-      </svg>
+      <div className="cover-inner">
+        <header className="cover-masthead">
+          <span className="cover-kicker"><span className="cover-dot" /> Portfolio — vol. 01 / ’25</span>
+          <span className="cover-meta">Cheb · Česko</span>
+          <span className="cover-scroll">(Scroll)<span className="cover-scroll-arrow">↓</span></span>
+        </header>
 
-      {/* Large decorative signature watermark with parallax */}
-      <div
-        ref={sigRef}
-        style={{
-          position: "absolute",
-          right: "5%",
-          top: "50%",
-          transform: "translateY(-50%)",
-          width: "clamp(400px, 46vw, 700px)",
-          pointerEvents: "none",
-          zIndex: 0,
-          opacity: 0.35,
-          filter: "invert(1)",
-          mixBlendMode: "screen",
-          willChange: "transform, opacity",
-        }}
-      >
-        <img
-          src="/signature.png"
-          alt=""
-          aria-hidden="true"
-          style={{ width: "100%", display: "block" }}
-        />
-      </div>
-
-      <div ref={heroInnerRef} className="hero-inner" style={{ position: "relative", zIndex: 1, willChange: "opacity" }}>
-        <div className="hero-content-wrapper">
-          <div className="hero-eyebrow">
-            <ScrambleText text="Filip Hirt — Webový Designer & Vývojář" trigger="mount" duration={50} delay={1500} />
+        <div className="cover-grid">
+          {/* Big frame */}
+          <div className="cover-main">
+            <img className="cover-main-photo" src="/hero-bg.JPG" alt="Filip Hirt" />
+            <div className="cover-main-overlay" />
+            <h1 className="cover-title">FILIP<br />HIRT</h1>
+            <span className="cover-subtitle">web&nbsp;designer</span>
+            <p className="cover-blurb">
+              Weby stavěné jako řemeslo — teplé,<br />
+              pomalé a dělané s citem pro detail.
+            </p>
+            <span className="cover-corner cover-corner-tl" />
+            <span className="cover-corner cover-corner-br" />
           </div>
 
-        <h1
-          ref={headingRef}
-          className="hero-heading"
-          style={{ willChange: "transform, filter", filter: "url(#hero-distort)" }}
-        >
-          {words.map((word, i) => (
-            <span className="hero-word-wrap" key={i}>
-              <span
-                className="hero-word"
-                ref={(el) => { if (el) wordsRef.current[i] = el; }}
-              >
-                {word}&nbsp;
-              </span>
-            </span>
-          ))}
-          <span className="hero-word-wrap">
-            <span
-              className="hero-word hero-word-image"
-              ref={(el) => { if (el) wordsRef.current[words.length] = el; }}
-            >
-              více zákazníků
-            </span>
-          </span>
-        </h1>
-
-        <div className="hero-bottom">
-          <p className="hero-desc">
-            Moderní design + chytré funkce = úspěšný byznys online.
-            Specializuji se na webová řešení s pokročilými technologiemi pro restaurace, e-shopy a firmy.
-          </p>
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "flex-end", gap: "20px" }}>
-            <div className="availability-badge">
-              <span className="availability-dot" />
-              Dostupný pro projekty
-            </div>
-            <div className="hero-cta-group">
-              <a
-                href="#contact"
-                className="btn-primary"
-                onMouseMove={handleMagnet}
-                onMouseLeave={handleMagnetLeave}
-              >
-                Začněme Projekt
-              </a>
-              <a
-                href="#portfolio"
-                className="btn-secondary"
-                onMouseMove={handleMagnet}
-                onMouseLeave={handleMagnetLeave}
-              >
-                Prozkoumat Práci
-              </a>
-            </div>
+          {/* Two nav frames */}
+          <div className="cover-side">
+            <a className="cover-tile cover-tile-a" href="#about" onClick={scrollToAbout}>
+              <span className="cover-tile-num">01</span>
+              <span className="cover-tile-label">About<br />Me</span>
+              <span className="cover-tile-go">Poznej mě <span aria-hidden="true">↗</span></span>
+            </a>
+            <a className="cover-tile cover-tile-b" href="#social" onClick={scrollToSocial}>
+              <span className="cover-tile-num">02</span>
+              <span className="cover-tile-label">Social<br />Sites</span>
+              <span className="cover-tile-go">Najdi mě <span aria-hidden="true">↗</span></span>
+            </a>
           </div>
         </div>
       </div>
-      </div>
-
     </section>
   );
 }

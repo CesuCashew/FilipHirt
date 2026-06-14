@@ -6,13 +6,12 @@ export default function Footer() {
       <div className="container">
         <div className="footer-inner">
           <div>
-            <a href="#home" style={{ display: "inline-block", marginBottom: "20px", textDecoration: "none" }}>
-              <span style={{ fontFamily: "'Clash Display', sans-serif", fontWeight: 700, fontSize: "22px", letterSpacing: "-0.02em", color: "var(--col-text)", opacity: 0.8 }}>
-                Filip Hirt
-              </span>
+            <a href="#home" style={{ display: "inline-block", textDecoration: "none" }}>
+              <span className="footer-brand-name">Filip Hirt<span style={{ color: "var(--terracotta)" }}>.</span></span>
             </a>
             <p className="footer-tagline">
-              Webový designer & vývojář specializující se na moderní webová řešení s pokročilými funkcemi.
+              Webdesignér a vývojář z Chebu. Stavím weby jako řemeslo — s teplem,
+              precizností a citem pro detail.
             </p>
           </div>
 
@@ -21,9 +20,10 @@ export default function Footer() {
             <ul className="footer-links-list">
               {[
                 ["Domů", "#home"],
+                ["O mně", "#about"],
                 ["Služby", "#services"],
-                ["Portfolio", "#portfolio"],
-                ["AI Asistent", "#chatbot"],
+                ["Práce", "#portfolio"],
+                ["Žurnál", "#journal"],
                 ["Kontakt", "#contact"],
               ].map(([label, href]) => (
                 <li key={href}>
@@ -37,10 +37,10 @@ export default function Footer() {
             <div className="footer-col-title">Služby</div>
             <ul className="footer-links-list">
               {[
-                "Chytré Webové Stránky",
-                "Online Obchody",
-                "Weby pro Restaurace",
-                "Firemní Prezentace",
+                "Chytré weby s AI",
+                "Online obchody",
+                "Weby pro restaurace",
+                "Firemní prezentace",
               ].map((s) => (
                 <li key={s}>
                   <a href="#services">{s}</a>
@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="footer-col-title">Sociální Sítě</div>
+            <div className="footer-col-title">Sociální sítě</div>
             <div className="footer-socials">
               <a
                 href="https://github.com/cesucashew"
@@ -91,13 +91,14 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Giant name signature */}
+        <div className="footer-giant" aria-hidden="true">
+          <span className="giant-name">Filip Hirt</span>
+        </div>
+
         <div className="footer-bottom">
-          <span className="footer-copy">
-            © {year} Filip Hirt. Všechna práva vyhrazena.
-          </span>
-          <span className="footer-copy">
-            Webový Designer & Vývojář — Praha, Česká republika
-          </span>
+          <span className="footer-copy">© {year} Filip Hirt. Všechna práva vyhrazena.</span>
+          <span className="footer-copy">Webdesignér &amp; vývojář — Cheb, Česká republika</span>
         </div>
       </div>
     </footer>

@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 
 const WORDS = [
-  { text: "REACT", color: "#61DAFB" },        // React cyan
-  { text: "AI", color: "#E8A238" },             // Warm amber (brand)
-  { text: "SEO", color: "#F97583" },            // Soft pink/red (keyword)
-  { text: "UX/UI", color: "#B392F0" },          // Purple (type)
-  { text: "RESTAURACE", color: "#FFAB70" },     // Warm orange (string)
-  { text: "E-COMMERCE", color: "#79B8FF" },     // Light blue (variable)
+  { text: "DESIGN", color: "#F6ECDC" },      // warm cream
+  { text: "VÝVOJ", color: "#E9A24E" },       // burnt gold
+  { text: "AI", color: "#F0C690" },          // soft amber
+  { text: "E-SHOPY", color: "#E2A06A" },     // clay
+  { text: "SEO", color: "#F6ECDC" },         // warm cream
+  { text: "REDESIGN", color: "#E9A24E" },    // burnt gold
 ];
 
 const CHARS = "!</>-_\\/[]{}—=+*^?#§$%&@";

@@ -1,97 +1,90 @@
 import { useEffect, useRef, useState } from "react";
-import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
-import AboutMe from "../components/AboutMe";
-import Stats from "../components/Stats";
-import Services from "../components/Services";
-import Portfolio from "../components/Portfolio";
-import WhyWorkWithMe from "../components/WhyWorkWithMe";
+import AboutPanel from "../components/AboutPanel";
+import ServicesPanel from "../components/ServicesPanel";
+import PortfolioPanel from "../components/PortfolioPanel";
+import JournalPanel from "../components/JournalPanel";
+import OutroPanel from "../components/OutroPanel";
 import Process from "../components/Process";
-import Testimonials from "../components/Testimonials";
 import Contact from "../components/Contact";
-import Footer from "../components/Footer";
-import GlitchMarquee from "../components/GlitchMarquee";
+import HorizontalGallery from "../components/HorizontalGallery";
 
 export default function Home() {
   const [loaderDone, setLoaderDone] = useState(false);
   const [counter, setCounter] = useState(0);
   const [wipeOut, setWipeOut] = useState(false);
   const [pageVisible, setPageVisible] = useState(false);
+  const progressRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     document.body.classList.add("loading");
-
     let start: number | null = null;
     const duration = 1200;
-
-    const animateCounter = (timestamp: number) => {
-      if (!start) start = timestamp;
-      const progress = Math.min((timestamp - start) / duration, 1);
-      const eased = progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+    const animateCounter = (t: number) => {
+      if (!start) start = t;
+      const p = Math.min((t - start) / duration, 1);
+      const eased = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
       setCounter(Math.round(eased * 100));
-      if (progress < 1) {
-        requestAnimationFrame(animateCounter);
-      } else {
+      if (p < 1) requestAnimationFrame(animateCounter);
+      else
         setTimeout(() => {
           setWipeOut(true);
           setPageVisible(true);
           document.body.classList.remove("loading");
           setTimeout(() => setLoaderDone(true), 900);
         }, 200);
-      }
     };
-
     requestAnimationFrame(animateCounter);
   }, []);
 
+  // scroll-reveal for elements that opt in
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const els = Array.from(document.querySelectorAll<Element>(".reveal, .clip-reveal"));
+    const obs = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("revealed");
-            const fills = entry.target.querySelectorAll<HTMLElement>(".skill-bar-fill");
-            fills.forEach((fill) => fill.classList.add("animate"));
-            const nums = entry.target.querySelectorAll<HTMLElement>(".section-number");
-            nums.forEach((n) => n.classList.add("visible"));
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.remove("will-reveal");
+            e.target.classList.add("revealed");
           }
         });
       },
-      { threshold: 0.12 }
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
     );
-
-    document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    els.forEach((el) => obs.observe(el));
+    requestAnimationFrame(() => {
+      els.forEach((el) => {
+        if (!el.classList.contains("revealed")) el.classList.add("will-reveal");
+      });
+    });
+    return () => obs.disconnect();
   }, [loaderDone]);
 
+  // overall page progress bar
   useEffect(() => {
-    const handleNavActive = () => {
-      const sections = document.querySelectorAll("section[id]");
-      const links = document.querySelectorAll<HTMLElement>(".nav-links a");
-      let current = "";
-      sections.forEach((section) => {
-        const el = section as HTMLElement;
-        if (window.scrollY >= el.offsetTop - 120) {
-          current = el.id;
-        }
-      });
-      links.forEach((link) => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === `#${current}`) {
-          link.classList.add("active");
-        }
-      });
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const p = max > 0 ? window.scrollY / max : 0;
+      if (progressRef.current) progressRef.current.style.transform = `scaleX(${p})`;
     };
-    window.addEventListener("scroll", handleNavActive);
-    return () => window.removeEventListener("scroll", handleNavActive);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <>
       {!loaderDone && (
-        <div className="page-loader" style={{ opacity: wipeOut ? 0 : 1, transition: "opacity 0.3s ease 0.7s", pointerEvents: wipeOut ? "none" : "all" }}>
+        <div
+          className="page-loader"
+          style={{
+            opacity: wipeOut ? 0 : 1,
+            transition: "opacity 0.3s ease 0.7s",
+            pointerEvents: wipeOut ? "none" : "all",
+          }}
+        >
           <div className="loader-counter">{String(counter).padStart(2, "0")}</div>
-          <div className="loader-label">Loading Portfolio</div>
+          <div className="loader-label">Filip Hirt — Portfolio</div>
         </div>
       )}
       {!loaderDone && (
@@ -102,20 +95,20 @@ export default function Home() {
       )}
 
       <div style={{ opacity: pageVisible ? 1 : 0, transition: "opacity 0.4s ease 0.2s" }}>
-        <Navbar />
+        <div className="page-progress"><div ref={progressRef} className="page-progress-fill" /></div>
+
         <main>
           <Hero />
-          <AboutMe />
-          <Stats />
-          <GlitchMarquee />
-          <Services />
-          <Portfolio />
-          <WhyWorkWithMe />
-          <Process />
-          <Testimonials />
-          <Contact />
+          <HorizontalGallery>
+            <AboutPanel />
+            <ServicesPanel />
+            <PortfolioPanel />
+            <JournalPanel />
+            <section className="panel panel--chat" id="chatbot"><Process /></section>
+            <section className="panel panel--contact" id="contact"><Contact /></section>
+            <OutroPanel />
+          </HorizontalGallery>
         </main>
-        <Footer />
       </div>
     </>
   );
