@@ -10,13 +10,18 @@ import Contact from "../components/Contact";
 import HorizontalGallery from "../components/HorizontalGallery";
 
 export default function Home() {
-  const [loaderDone, setLoaderDone] = useState(false);
+  const instant = typeof window !== "undefined" && window.location.hash === "#now";
+  const [loaderDone, setLoaderDone] = useState(instant);
   const [counter, setCounter] = useState(0);
   const [wipeOut, setWipeOut] = useState(false);
-  const [pageVisible, setPageVisible] = useState(false);
+  const [pageVisible, setPageVisible] = useState(instant);
   const progressRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (window.location.hash === "#now") {
+      setCounter(100); setWipeOut(true); setPageVisible(true); setLoaderDone(true);
+      return;
+    }
     document.body.classList.add("loading");
     let start: number | null = null;
     const duration = 1200;
@@ -94,7 +99,7 @@ export default function Home() {
         </>
       )}
 
-      <div style={{ opacity: pageVisible ? 1 : 0, transition: "opacity 0.4s ease 0.2s" }}>
+      <div style={{ opacity: pageVisible ? 1 : 0, transition: instant ? "none" : "opacity 0.4s ease 0.2s" }}>
         <div className="page-progress"><div ref={progressRef} className="page-progress-fill" /></div>
 
         <main>

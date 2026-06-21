@@ -1,20 +1,21 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Framed-collage cover — a warm "mixtape zine" front page.
- * Big frame: hero photo + FILIP HIRT + web designer.
- * Two side frames act as navigation tiles: About Me / Social Sites.
+ * SPIN ROOM-style poster cover — 1:1 homage.
+ * Deep-brown frame, giant marigold wordmark "FILIP HIRT" overlapping the
+ * hero photo, "WEB DESIGNER" lockup at the right, a small quote block, and
+ * two album-tile navigations: About Me (3D model) / Social Sites (photo).
  */
 export default function Hero() {
   const rootRef = useRef<HTMLElement>(null);
 
-  // gentle pointer parallax on the cover background
+  // gentle pointer parallax on the poster photo
   useEffect(() => {
     const root = rootRef.current;
     if (!root) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const bg = root.querySelector<HTMLElement>(".cover-bg-img");
-    if (!bg) return;
+    const photo = root.querySelector<HTMLElement>(".poster-photo-img");
+    if (!photo) return;
     let raf = 0;
     const target = { x: 0, y: 0 };
     const cur = { x: 0, y: 0 };
@@ -25,7 +26,7 @@ export default function Hero() {
     const tick = () => {
       cur.x += (target.x - cur.x) * 0.06;
       cur.y += (target.y - cur.y) * 0.06;
-      bg.style.transform = `scale(1.08) translate(${cur.x * -14}px, ${cur.y * -14}px)`;
+      photo.style.transform = `scale(1.06) translate(${cur.x * -10}px, ${cur.y * -10}px)`;
       raf = requestAnimationFrame(tick);
     };
     window.addEventListener("mousemove", onMove);
@@ -37,8 +38,7 @@ export default function Hero() {
     e.preventDefault();
     document.getElementById("about")?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
-  // The socials live at the very end of the horizontal journey (outro panel).
-  // Panels share a vertical offset, so jump to the bottom of the page instead.
+  // Socials live at the very end of the horizontal journey (outro panel).
   const scrollToSocial = (e: React.MouseEvent) => {
     e.preventDefault();
     window.scrollTo({ top: document.documentElement.scrollHeight, behavior: "smooth" });
@@ -46,44 +46,50 @@ export default function Hero() {
 
   return (
     <section id="home" className="cover" ref={rootRef}>
-      <div className="cover-bg" aria-hidden="true">
-        <div className="cover-bg-img" style={{ backgroundImage: "url('/hero-art.jpg')" }} />
-        <div className="cover-bg-wash" />
-      </div>
+      <div className="poster">
 
-      <div className="cover-inner">
-        <header className="cover-masthead">
-          <span className="cover-kicker"><span className="cover-dot" /> Portfolio — vol. 01 / ’25</span>
-          <span className="cover-meta">Cheb · Česko</span>
-          <span className="cover-scroll">(Scroll)<span className="cover-scroll-arrow">↓</span></span>
-        </header>
+        {/* giant wordmark — one gold line across the top */}
+        <h1 className="poster-name">
+          <span>FILIP</span>
+          <span>HIRT</span>
+        </h1>
 
-        <div className="cover-grid">
-          {/* Big frame */}
-          <div className="cover-main">
-            <img className="cover-main-photo" src="/hero-bg.JPG" alt="Filip Hirt" />
-            <div className="cover-main-overlay" />
-            <h1 className="cover-title">FILIP<br />HIRT</h1>
-            <span className="cover-subtitle">web&nbsp;designer</span>
-            <p className="cover-blurb">
-              Weby stavěné jako řemeslo — teplé,<br />
-              pomalé a dělané s citem pro detail.
-            </p>
-            <span className="cover-corner cover-corner-tl" />
-            <span className="cover-corner cover-corner-br" />
+        {/* everything below the title — fills the remaining height */}
+        <div className="poster-body">
+
+          {/* hero photo — bottom-left */}
+          <div className="poster-photo">
+            <img className="poster-photo-img" src="/hero-bg.JPG" alt="Filip Hirt" />
           </div>
 
-          {/* Two nav frames */}
-          <div className="cover-side">
-            <a className="cover-tile cover-tile-a" href="#about" onClick={scrollToAbout}>
-              <span className="cover-tile-num">01</span>
-              <span className="cover-tile-label">About<br />Me</span>
-              <span className="cover-tile-go">Poznej mě <span aria-hidden="true">↗</span></span>
+          {/* right-side lockup */}
+          <span className="poster-wordmark">WEB DESIGNER</span>
+
+          {/* credits block */}
+          <div className="poster-quote">
+            <p className="poster-quote-lead">DOBRÝ WEB SE NEVNUCUJE.</p>
+            <p className="poster-quote-sub">
+              Weby, kterým lidé rozumí hned — jen čistá práce, odshora dolů.
+            </p>
+          </div>
+
+          {/* two album-tile navigations */}
+          <div className="poster-tiles">
+            <a className="poster-tile" href="#about" onClick={scrollToAbout}>
+              <video
+                className="poster-tile-media"
+                src="/about-me-animation.webm"
+                autoPlay loop muted playsInline
+              />
+              <span className="poster-tile-scrim" />
+              <span className="poster-tile-label">ABOUT<br />ME</span>
+              <span className="poster-tile-go">Poznej mě <span aria-hidden="true">↗</span></span>
             </a>
-            <a className="cover-tile cover-tile-b" href="#social" onClick={scrollToSocial}>
-              <span className="cover-tile-num">02</span>
-              <span className="cover-tile-label">Social<br />Sites</span>
-              <span className="cover-tile-go">Najdi mě <span aria-hidden="true">↗</span></span>
+            <a className="poster-tile" href="#social" onClick={scrollToSocial}>
+              <img className="poster-tile-media" src="/socialsites.png" alt="" />
+              <span className="poster-tile-scrim" />
+              <span className="poster-tile-label">SOCIAL<br />SITES</span>
+              <span className="poster-tile-go">Najdi mě <span aria-hidden="true">↗</span></span>
             </a>
           </div>
         </div>
