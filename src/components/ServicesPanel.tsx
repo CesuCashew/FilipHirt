@@ -19,7 +19,7 @@ export default function ServicesPanel() {
 
       {/* thermo centerpiece — lags behind the type for depth (à la the tiger) */}
       <div className="svc-thermo" data-parallax="0.34" aria-hidden="true">
-        <img src="/termo.png" alt="" />
+        <img src="/termos.png" alt="" />
       </div>
 
       <div className="panel-inner svc-inner">
