@@ -1,0 +1,78 @@
+- generic [ref=e1]:
+  - generic:
+    - banner [ref=e2]:
+      - generic [ref=e3]:
+        - text: 
+        - link "Go to the mainpage" [ref=e4] [cursor=pointer]:
+          - /url: /
+          - img [ref=e5]
+        - generic [ref=e20]:
+          - generic [ref=e21]:
+            - generic [ref=e22] [cursor=pointer]: 
+            - textbox "Search" [active] [ref=e23]:
+              - /placeholder: Search 3D models
+              - text: retro computer
+            - link "Clear search" [ref=e24] [cursor=pointer]:
+              - /url: "#"
+              - text: 
+          - link "Cancel" [ref=e25] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e26]: Cancel
+    - main:
+      - heading "Sketchfab Search" [level=1] [ref=e28]
+      - complementary "Search Overlay" [ref=e29]:
+        - generic:
+          - generic [ref=e30]:
+            - list [ref=e32]:
+              - listitem [ref=e33] [cursor=pointer]: models
+              - listitem [ref=e34] [cursor=pointer]: users
+              - listitem [ref=e35] [cursor=pointer]: collections
+              - listitem [ref=e36] [cursor=pointer]:
+                - link "Store" [ref=e37]:
+                  - /url: https://www.fab.com/category/3d-model?q=retro+computer
+            - generic [ref=e38] [cursor=pointer]:
+              - generic [ref=e39]: 
+              - generic [ref=e40]: Filters & Sort
+          - generic [ref=e41]:
+            - text: ▼ ▼ ▼
+            - generic [ref=e43]:
+              - generic [ref=e44]:
+                - generic [ref=e47] [cursor=pointer]:
+                  - generic [ref=e48]: category
+                  - generic [ref=e49]:
+                    - generic [ref=e50]: All categories
+                    - text: ▼
+                - generic [ref=e53] [cursor=pointer]:
+                  - generic [ref=e54]: date
+                  - generic [ref=e55]:
+                    - generic [ref=e56]: All time
+                    - text: ▼
+                - generic [ref=e59] [cursor=pointer]:
+                  - generic [ref=e60]: licenses
+                  - generic [ref=e61]:
+                    - generic [ref=e63]: CC BY, CC BY-SA
+                    - text: ▼
+                - generic [ref=e66] [cursor=pointer]:
+                  - generic [ref=e67]: Type
+                  - generic [ref=e68]:
+                    - generic [ref=e69]: Any
+                    - text: ▼
+                - generic [ref=e71]:
+                  - generic [ref=e72]: others
+                  - generic [ref=e73]:
+                    - generic [ref=e74] [cursor=pointer]:
+                      - generic [ref=e75]: 
+                      - generic [ref=e76]: Downloadable
+                    - generic [ref=e79] [cursor=pointer]: Animated
+                    - generic [ref=e82] [cursor=pointer]: Staff picks
+                    - generic "Please confirm your email to see restricted." [ref=e83] [cursor=pointer]:
+                      - generic [ref=e85]: Show Restricted
+                    - button "Reset" [ref=e87] [cursor=pointer]:
+                      - generic [ref=e88]: Reset
+              - generic [ref=e92] [cursor=pointer]:
+                - generic [ref=e93]: sort by
+                - generic [ref=e94]:
+                  - generic [ref=e95]: Relevance
+                  - text: ▼
+        - paragraph [ref=e103]: No results
+    - text: ▼       ▼

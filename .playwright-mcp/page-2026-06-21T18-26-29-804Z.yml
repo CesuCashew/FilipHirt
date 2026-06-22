@@ -1,0 +1,185 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link [ref=e3] [cursor=pointer]:
+      - /url: /
+      - img
+    - navigation [ref=e4]:
+      - link "一" [ref=e5] [cursor=pointer]:
+        - /url: /about
+        - generic: 一
+      - link "二" [ref=e6] [cursor=pointer]:
+        - /url: /works
+        - generic: 二
+      - link "三" [ref=e7] [cursor=pointer]:
+        - /url: /discography
+        - generic: 三
+    - link "問" [ref=e8] [cursor=pointer]:
+      - /url: /contact
+      - generic: 問
+  - generic [ref=e9]:
+    - button "音" [ref=e10] [cursor=pointer]:
+      - generic [ref=e11]: 音
+    - button "有 / 無" [ref=e12] [cursor=pointer]:
+      - generic [ref=e13]: 有
+      - generic [ref=e14]: /
+      - generic [ref=e15]: 無
+  - main [ref=e16]:
+    - generic [ref=e17]:
+      - generic [ref=e19]:
+        - 'link "Current : 二人の天照 / 冨田ラボ" [ref=e20] [cursor=pointer]':
+          - /url: https://jvcmusic.lnk.to/FutarinoAmaterasu
+          - paragraph:
+            - generic: "Current : 二人の天照 / 冨田ラボ"
+        - 'link "Current : ending routine feat. 原口沙輔 / 崎山蒼志" [ref=e21] [cursor=pointer]':
+          - /url: https://lnk.to/endingroutine
+          - paragraph:
+            - generic: "Current : ending routine feat. 原口沙輔 / 崎山蒼志"
+        - 'link "Current : 人生ゲーム album remix (prod.原口沙輔) / 崎山蒼志" [ref=e22] [cursor=pointer]':
+          - /url: https://www.sonymusic.co.jp/artist/soshisakiyama/discography/SRCL-13619
+          - paragraph:
+            - generic: "Current : 人生ゲーム album remix (prod.原口沙輔) / 崎山蒼志"
+        - 'link "Current : 罪と罰 / パープル・ロリポップ" [ref=e23] [cursor=pointer]':
+          - /url: https://anxmusic.lnk.to/CRqgnc
+          - paragraph:
+            - generic: "Current : 罪と罰 / パープル・ロリポップ"
+        - 'link "Current : 薔薇の咲く手首 / 獄薔薇美血華" [ref=e24] [cursor=pointer]':
+          - /url: https://anxmusic.lnk.to/4J8NL8
+          - paragraph:
+            - generic: "Current : 薔薇の咲く手首 / 獄薔薇美血華"
+        - 'link "Current : Sound・有機・Traxx / テクノポップ・有機・シンセサイザーちゃん" [ref=e25] [cursor=pointer]':
+          - /url: https://lnk.to/tusc_syt
+          - paragraph:
+            - generic: "Current : Sound・有機・Traxx / テクノポップ・有機・シンセサイザーちゃん"
+        - 'link "Current : 共依存モルヒネ/ 禰󠄀智禍さま" [ref=e26] [cursor=pointer]':
+          - /url: https://anxmusic.lnk.to/C2XfIq
+          - paragraph:
+            - generic: "Current : 共依存モルヒネ/ 禰󠄀智禍さま"
+        - 'link "Current : 仮装狂騒曲 - 原口沙輔 Remix" [ref=e27] [cursor=pointer]':
+          - /url: https://nex-tone.link/c36kmBPyx
+          - paragraph:
+            - generic: "Current : 仮装狂騒曲 - 原口沙輔 Remix"
+        - 'link "Current : きゅびずむ" [ref=e28] [cursor=pointer]':
+          - /url: https://open.spotify.com/album/4K9Px51ZVAF8LggOWvhX8I
+          - paragraph:
+            - generic: "Current : きゅびずむ"
+        - 'link "Current : トロイの花 / 原口沙輔, 天ノ譜ステラ, VACON" [ref=e29] [cursor=pointer]':
+          - /url: https://open.spotify.com/album/33Nw3ItbfUi0jNEhJHCpOo
+          - paragraph:
+            - generic: "Current : トロイの花 / 原口沙輔, 天ノ譜ステラ, VACON"
+        - 'link "Current : PAC-MANIAC 45" [ref=e30] [cursor=pointer]':
+          - /url: https://open.spotify.com/album/6il1XP2VUfZNSTAWW66G78
+          - paragraph:
+            - generic: "Current : PAC-MANIAC 45"
+        - 'link "Current : ノラ・ヒーローズ (feat. 初音ミク, Cassie Wei, 山田らむね, ミツキヨ & 半田翼)" [ref=e31] [cursor=pointer]':
+          - /url: https://open.spotify.com/album/2xFmXxlROU1Bu55hqcmq1x
+          - paragraph:
+            - generic: "Current : ノラ・ヒーローズ (feat. 初音ミク, Cassie Wei, 山田らむね, ミツキヨ & 半田翼)"
+      - generic:
+        - generic:
+          - paragraph [ref=e32]: "Prev : 二人の天照 / 冨田ラボ"
+          - paragraph [ref=e33]: "Prev : ending routine feat. 原口沙輔 / 崎山蒼志"
+          - paragraph [ref=e34]: "Prev : 人生ゲーム album remix (prod.原口沙輔) / 崎山蒼志"
+          - paragraph [ref=e35]: "Prev : 罪と罰 / パープル・ロリポップ"
+          - paragraph [ref=e36]: "Prev : 薔薇の咲く手首 / 獄薔薇美血華"
+          - paragraph [ref=e37]: "Prev : Sound・有機・Traxx / テクノポップ・有機・シンセサイザーちゃん"
+          - paragraph [ref=e38]: "Prev : 共依存モルヒネ/ 禰󠄀智禍さま"
+          - paragraph [ref=e39]: "Prev : 仮装狂騒曲 - 原口沙輔 Remix"
+          - paragraph [ref=e40]: "Prev : きゅびずむ"
+          - paragraph [ref=e41]: "Prev : トロイの花 / 原口沙輔, 天ノ譜ステラ, VACON"
+          - paragraph [ref=e42]: "Prev : PAC-MANIAC 45"
+          - paragraph [ref=e43]: "Prev : ノラ・ヒーローズ (feat. 初音ミク, Cassie Wei, 山田らむね, ミツキヨ & 半田翼)"
+        - generic:
+          - paragraph [ref=e44]: "Next : 二人の天照 / 冨田ラボ"
+          - paragraph [ref=e45]: "Next : ending routine feat. 原口沙輔 / 崎山蒼志"
+          - paragraph [ref=e46]: "Next : 人生ゲーム album remix (prod.原口沙輔) / 崎山蒼志"
+          - paragraph [ref=e47]: "Next : 罪と罰 / パープル・ロリポップ"
+          - paragraph [ref=e48]: "Next : 薔薇の咲く手首 / 獄薔薇美血華"
+          - paragraph [ref=e49]: "Next : Sound・有機・Traxx / テクノポップ・有機・シンセサイザーちゃん"
+          - paragraph [ref=e50]: "Next : 共依存モルヒネ/ 禰󠄀智禍さま"
+          - paragraph [ref=e51]: "Next : 仮装狂騒曲 - 原口沙輔 Remix"
+          - paragraph [ref=e52]: "Next : きゅびずむ"
+          - paragraph [ref=e53]: "Next : トロイの花 / 原口沙輔, 天ノ譜ステラ, VACON"
+          - paragraph [ref=e54]: "Next : PAC-MANIAC 45"
+          - paragraph [ref=e55]: "Next : ノラ・ヒーローズ (feat. 初音ミク, Cassie Wei, 山田らむね, ミツキヨ & 半田翼)"
+      - generic:
+        - generic [ref=e56]:
+          - generic [ref=e57]:
+            - paragraph [ref=e58]: 収録曲
+            - paragraph [ref=e59]: 二人の天照 / 冨田ラボ
+          - generic [ref=e60]:
+            - paragraph [ref=e61]: 概要
+            - paragraph [ref=e62]: 作詞
+        - generic [ref=e63]:
+          - generic [ref=e64]:
+            - paragraph [ref=e65]: 収録曲
+            - paragraph [ref=e66]: ending routine feat. 原口沙輔 / 崎山蒼志
+          - generic [ref=e67]:
+            - paragraph [ref=e68]: 概要
+            - paragraph [ref=e69]: 作詞, 作曲, 編曲, Mix (w 崎山蒼志)
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - paragraph [ref=e72]: 収録曲
+            - paragraph [ref=e73]: 人生ゲーム album remix (prod.原口沙輔) / 崎山蒼志
+          - generic [ref=e74]:
+            - paragraph [ref=e75]: 概要
+            - paragraph [ref=e76]: Remix, Rework
+        - generic [ref=e77]:
+          - generic [ref=e78]:
+            - paragraph [ref=e79]: 収録曲
+            - paragraph [ref=e80]: 罪と罰
+          - generic [ref=e81]:
+            - paragraph [ref=e82]: 概要
+            - paragraph [ref=e83]: 作曲, 編曲, Mix
+        - generic [ref=e84]:
+          - generic [ref=e85]:
+            - paragraph [ref=e86]: 収録曲
+            - paragraph [ref=e87]: 薔薇の咲く手首
+          - generic [ref=e88]:
+            - paragraph [ref=e89]: 概要
+            - paragraph [ref=e90]: 作曲, 編曲, Mix (w Talich Helfen(Core Creative))
+        - generic [ref=e91]:
+          - generic [ref=e92]:
+            - paragraph [ref=e93]: 収録曲
+            - paragraph [ref=e94]: Sound・有機・Traxx -Intro- エレクトリック・ミラージュ・感情 me・愛・ラ・sun・虫 再放送、再ロウド。 土日除 snow child U+30FB モノも、ステさって。 Explorer -Intro- Explorer
+          - generic [ref=e95]:
+            - paragraph [ref=e96]: 概要
+            - paragraph [ref=e97]: album producer Sound・有機・Traxx -Intro- / 作曲, 編曲, Mix Explorer -Intro- / 作曲, 編曲, Mix
+        - generic [ref=e98]:
+          - generic [ref=e99]:
+            - paragraph [ref=e100]: 収録曲
+            - paragraph [ref=e101]: 共依存モルヒネ/ 禰󠄀智禍さま
+          - generic [ref=e102]:
+            - paragraph [ref=e103]: 概要
+            - paragraph [ref=e104]: 作曲, 編曲, Mix (w Talich Helfen(Core Creative))
+        - generic [ref=e105]:
+          - generic [ref=e106]:
+            - paragraph [ref=e107]: 収録曲
+            - paragraph [ref=e108]: 仮装狂騒曲 - 原口沙輔 Remix
+          - generic [ref=e109]:
+            - paragraph [ref=e110]: 概要
+            - paragraph [ref=e111]: Remix
+        - generic [ref=e112]:
+          - generic [ref=e113]:
+            - paragraph [ref=e114]: 収録曲
+            - paragraph [ref=e115]: きゅびびびびずむ きゅびずむ
+          - generic [ref=e116]:
+            - paragraph [ref=e117]: 概要
+            - paragraph [ref=e118]: 作曲, 編曲, Mix
+        - generic [ref=e119]:
+          - generic [ref=e120]:
+            - paragraph [ref=e121]: 収録曲
+            - paragraph [ref=e122]: トロイの花 / 原口沙輔, 天ノ譜ステラ, VACON
+          - generic [ref=e123]:
+            - paragraph [ref=e124]: 概要
+            - paragraph [ref=e125]: 作詞(w 天ノ譜ステラ, VACON), 作曲, 編曲, Mix
+        - generic [ref=e126]:
+          - generic [ref=e127]:
+            - paragraph [ref=e128]: 収録曲
+            - paragraph [ref=e129]: PAC-MANIAC 45
+          - generic [ref=e130]:
+            - paragraph [ref=e131]: 概要
+            - paragraph [ref=e132]: Remix
+        - generic [ref=e134]:
+          - paragraph [ref=e135]: 収録曲
+          - paragraph [ref=e136]: ノラ・ヒーローズ (feat. 初音ミク, Cassie Wei, 山田らむね, ミツキヨ & 半田翼)
+      - paragraph [ref=e140]: 次項

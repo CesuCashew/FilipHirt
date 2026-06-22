@@ -1,0 +1,42 @@
+[     929ms] TagError: adsbygoogle.push() error: No slot size for availableWidth=0
+    at Ko (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4279852833813635:161:314)
+    at Jo (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4279852833813635:160:134)
+    at Ro (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4279852833813635:164:172)
+    at Zo (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4279852833813635:181:15)
+    at ap (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4279852833813635:182:321)
+    at lr (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4279852833813635:230:98)
+    at g.client (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4279852833813635:220:45)
+    at Qj.g (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4279852833813635:79:545)
+    at Xj (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4279852833813635:80:706)
+    at gr (https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4279852833813635:220:33)
+[    2786ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[  230831ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:14336
+[  751229ms] [ERROR] GLB load error ReferenceError: BASE_TILT_X is not defined
+    at loader.load.window.__glbDbg.ok (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114322125:79:24)
+    at http://localhost:5173/node_modules/.vite/deps/three_examples_jsm_loaders_GLTFLoader__js.js?v=f62adda1:134:6
+    at http://localhost:5173/node_modules/.vite/deps/three_examples_jsm_loaders_GLTFLoader__js.js?v=f62adda1:1312:5 @ http://localhost:5173/@vite/client:509
+[  762550ms] [ERROR] HeroModel3D: GLB load failed ReferenceError: BASE_TILT_X is not defined
+    at http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114333493:79:24
+    at http://localhost:5173/node_modules/.vite/deps/three_examples_jsm_loaders_GLTFLoader__js.js?v=f62adda1:134:6
+    at http://localhost:5173/node_modules/.vite/deps/three_examples_jsm_loaders_GLTFLoader__js.js?v=f62adda1:1312:5 @ http://localhost:5173/@vite/client:509
+[ 1919440ms] ReferenceError: useState is not defined
+    at HeroModel3D (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782115490380:24:32)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:12867:12)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:4212:19)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:5568:16)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:6139:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:850:66)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:8428:92)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:8324:37)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:8308:6)
+    at performWorkOnRoot (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:7993:27)
+[ 1919434ms] [WARNING] %s
+
+%s
+ An error occurred in the <HeroModel3D> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/@vite/client:509
+[ 6259140ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/components/HeroObject3D.tsx?t=1782119830364:0
+[ 6259140ms] [ERROR] [vite] Failed to reload /src/components/HeroObject3D.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:509
+[ 6259307ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/components/HeroEditorial3D.tsx?t=1782119830365:0
+[ 6259318ms] [ERROR] [vite] Failed to reload /src/components/HeroEditorial3D.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:509
+[ 6453047ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:14336

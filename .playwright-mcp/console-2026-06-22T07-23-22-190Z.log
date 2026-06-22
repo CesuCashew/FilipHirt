@@ -1,0 +1,578 @@
+[    4491ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:14336
+[ 1320581ms] [ERROR] GLB load error ReferenceError: BASE_TILT_X is not defined
+    at loader.load.window.__glbDbg.ok (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114322125:79:24)
+    at http://localhost:5173/node_modules/.vite/deps/three_examples_jsm_loaders_GLTFLoader__js.js?v=f62adda1:134:6
+    at http://localhost:5173/node_modules/.vite/deps/three_examples_jsm_loaders_GLTFLoader__js.js?v=f62adda1:1312:5 @ http://localhost:5173/@vite/client:509
+[ 1331663ms] [ERROR] HeroModel3D: GLB load failed ReferenceError: BASE_TILT_X is not defined
+    at http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114333493:79:24
+    at http://localhost:5173/node_modules/.vite/deps/three_examples_jsm_loaders_GLTFLoader__js.js?v=f62adda1:134:6
+    at http://localhost:5173/node_modules/.vite/deps/three_examples_jsm_loaders_GLTFLoader__js.js?v=f62adda1:1312:5 @ http://localhost:5173/@vite/client:509
+[ 1366989ms] ReferenceError: BASE_TILT_X is not defined
+    at renderOnce (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:116:24)
+    at ResizeObserver.onResize (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:111:5)
+[ 1367008ms] [ERROR] HeroModel3D: GLB load failed ReferenceError: BASE_TILT_X is not defined
+    at http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:79:24
+    at http://localhost:5173/node_modules/.vite/deps/three_examples_jsm_loaders_GLTFLoader__js.js?v=f62adda1:134:6
+    at http://localhost:5173/node_modules/.vite/deps/three_examples_jsm_loaders_GLTFLoader__js.js?v=f62adda1:1312:5 @ http://localhost:5173/@vite/client:509
+[ 1367055ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367080ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367117ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367144ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367171ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367199ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367227ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367255ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367282ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367311ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367338ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367366ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367393ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367421ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367449ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367476ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367504ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367533ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367570ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1367605ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1368611ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1368636ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1368664ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1368692ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1368720ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1368747ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1368775ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1368803ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1368831ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1368859ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1368887ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1368915ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1368943ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1368971ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1368998ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369029ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369053ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369091ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369119ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369145ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369171ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369223ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369234ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369262ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369293ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369325ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369346ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369388ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369417ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369444ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369480ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369508ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369536ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369575ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369619ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369654ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369682ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369715ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369847ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369847ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369862ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369891ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369924ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369942ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369970ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1369998ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370025ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370053ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370081ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370109ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370137ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370165ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370193ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370221ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370249ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370278ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370306ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370332ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370359ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370391ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370415ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370443ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370471ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370498ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370526ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370562ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370598ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370619ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370647ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370728ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370771ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370804ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370838ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370861ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370872ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370918ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370967ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1370995ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371018ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371071ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371111ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371137ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371165ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371193ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371221ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371250ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371278ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371306ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371333ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371360ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371387ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371416ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371442ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371470ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371498ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371526ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371554ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371581ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371611ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371639ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371666ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371693ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371722ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371750ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371777ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371806ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371841ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371867ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371902ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371930ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371958ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1371987ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372013ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372047ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372074ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372106ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372205ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372226ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372255ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372283ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372310ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372338ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372366ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372394ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372422ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372449ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372477ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372504ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372531ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372560ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372587ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372616ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372643ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372671ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372717ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372747ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372775ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372806ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372831ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372859ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372888ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372918ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372945ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1372978ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373008ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373040ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373077ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373110ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373140ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373175ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373209ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373242ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373307ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373347ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373374ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373399ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373444ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373478ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373507ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373534ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373563ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373588ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373615ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373643ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373670ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373698ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373726ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373754ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373782ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373810ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373837ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373865ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373893ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373921ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373948ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1373976ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374004ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374032ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374060ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374088ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374115ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374143ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374171ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374198ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374227ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374254ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374376ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374415ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374439ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374466ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374491ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374519ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374546ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374574ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374602ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374630ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374658ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374685ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374713ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374741ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374768ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374796ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374824ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374852ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374880ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374907ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374935ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374963ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1374991ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375018ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375111ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375141ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375158ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375185ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375214ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375241ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375268ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375296ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375324ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375351ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375379ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375407ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375434ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375462ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375490ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375519ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375546ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375574ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375604ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375630ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375657ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375685ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375712ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375741ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375770ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375797ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375824ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375852ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375879ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375907ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375935ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375963ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1375993ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1376022ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1376056ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1376084ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1376132ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1376186ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1376221ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1376252ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 1376325ms] ReferenceError: BASE_TILT_X is not defined
+    at frame (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782114368727:132:24)
+[ 2488448ms] ReferenceError: useState is not defined
+    at HeroModel3D (http://localhost:5173/src/components/HeroModel3D.tsx?t=1782115490380:24:32)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:12867:12)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:4212:19)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:5568:16)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:6139:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:850:66)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:8428:92)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:8324:37)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:8308:6)
+    at performWorkOnRoot (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=1cc30322:7993:27)
+[ 2488448ms] [WARNING] %s
+
+%s
+ An error occurred in the <HeroModel3D> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/@vite/client:509
+[ 6828341ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/components/HeroObject3D.tsx?t=1782119830364:0
+[ 6828343ms] [ERROR] [vite] Failed to reload /src/components/HeroObject3D.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:509
+[ 6828417ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/src/components/HeroEditorial3D.tsx?t=1782119830365:0
+[ 6828418ms] [ERROR] [vite] Failed to reload /src/components/HeroEditorial3D.tsx. This could be due to syntax errors or importing non-existent modules. (see errors above) @ http://localhost:5173/@vite/client:509

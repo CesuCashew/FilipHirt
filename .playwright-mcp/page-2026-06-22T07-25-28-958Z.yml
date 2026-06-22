@@ -1,0 +1,683 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e6]:
+    - banner [ref=e7]:
+      - generic [ref=e8]:
+        - link [ref=e9] [cursor=pointer]:
+          - /url: /
+          - img [ref=e10]
+        - link "poly.pizza" [ref=e13] [cursor=pointer]:
+          - /url: /
+          - heading "poly.pizza" [level=6] [ref=e14]
+        - generic [ref=e15]:
+          - generic:
+            - img
+          - textbox "search" [ref=e17]:
+            - /placeholder: Search
+            - text: computer
+        - generic [ref=e19]:
+          - button "support" [ref=e20] [cursor=pointer]:
+            - img [ref=e22]:
+              - img [ref=e23]
+          - button "upload" [ref=e25] [cursor=pointer]:
+            - img [ref=e27]
+          - button "Login" [ref=e29] [cursor=pointer]:
+            - generic [ref=e30]: Login
+          - button "Sign up" [ref=e31] [cursor=pointer]:
+            - generic [ref=e32]: Sign up
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - heading "96 results for low poly Computer" [level=1] [ref=e35]
+        - button "Filters" [ref=e36] [cursor=pointer]:
+          - generic [ref=e37]:
+            - img [ref=e39]
+            - text: Filters
+      - generic [ref=e41]:
+        - generic [ref=e43]:
+          - link "POLY computer constructor" [ref=e44] [cursor=pointer]:
+            - /url: https://assetstore.unity.com/packages/slug/204016?aid=1100liZev
+            - generic "POLY computer constructor" [ref=e45]:
+              - img "POLY computer constructor" [ref=e47]
+          - generic [ref=e48]:
+            - generic "dp" [ref=e50]:
+              - img [ref=e51]
+            - generic [ref=e52]:
+              - link "POLY computer constructor" [ref=e55] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/packages/slug/204016?aid=1100liZev
+              - link "A.R.S|T." [ref=e57] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/publishers/42196?aid=1100liZev
+            - generic [ref=e61]: $20
+        - generic [ref=e63]:
+          - link "School assets" [ref=e64] [cursor=pointer]:
+            - /url: https://assetstore.unity.com/packages/slug/146253?aid=1100liZev
+            - generic "School assets" [ref=e65]:
+              - img "School assets" [ref=e67]
+          - generic [ref=e68]:
+            - generic "dp" [ref=e70]:
+              - img [ref=e71]
+            - generic [ref=e72]:
+              - link "School assets" [ref=e75] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/packages/slug/146253?aid=1100liZev
+              - link "Jarst" [ref=e77] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/publishers/42196?aid=1100liZev
+            - generic [ref=e81]: Free!
+        - generic [ref=e83]:
+          - link "CB Low Poly Sci-Fi Pack" [ref=e84] [cursor=pointer]:
+            - /url: https://assetstore.unity.com/packages/slug/94028?aid=1100liZev
+            - generic "CB Low Poly Sci-Fi Pack" [ref=e85]:
+              - img "CB Low Poly Sci-Fi Pack" [ref=e87]
+          - generic [ref=e88]:
+            - generic "dp" [ref=e90]:
+              - img [ref=e91]
+            - generic [ref=e92]:
+              - link "CB Low Poly Sci-Fi Pack" [ref=e95] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/packages/slug/94028?aid=1100liZev
+              - link "Cuboom" [ref=e97] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/publishers/27472?aid=1100liZev
+            - generic [ref=e101]: $14
+        - generic [ref=e103]:
+          - link "Low Poly Japanese Housing Complex" [ref=e104] [cursor=pointer]:
+            - /url: https://assetstore.unity.com/packages/slug/162993?aid=1100liZev
+            - generic "Low Poly Japanese Housing Complex" [ref=e105]:
+              - img "Low Poly Japanese Housing Complex" [ref=e107]
+          - generic [ref=e108]:
+            - generic "dp" [ref=e110]:
+              - img [ref=e111]
+            - generic [ref=e112]:
+              - link "Low Poly Japanese Housing Complex" [ref=e115] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/packages/slug/162993?aid=1100liZev
+              - link "SbbUtutuya" [ref=e117] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/publishers/5437?aid=1100liZev
+            - generic [ref=e121]: $34
+      - generic [ref=e122]:
+        - paragraph [ref=e123]:
+          - text: Paid picks
+          - button [ref=e124] [cursor=pointer]:
+            - img [ref=e126]
+        - generic [ref=e128] [cursor=pointer]: 20 On Sale
+      - separator [ref=e129]
+      - generic [ref=e130]:
+        - generic [ref=e132]:
+          - link "Computer" [ref=e133] [cursor=pointer]:
+            - /url: /m/2EHvZLax4Y3
+            - generic "Computer" [ref=e134]:
+              - img "Computer" [ref=e136]
+          - generic [ref=e137]:
+            - generic "dp" [ref=e139]:
+              - img [ref=e140]
+            - generic [ref=e141]:
+              - link "Computer" [ref=e143] [cursor=pointer]:
+                - /url: /m/2EHvZLax4Y3
+              - link "Poly by Google" [ref=e145] [cursor=pointer]:
+                - /url: /u/Poly by Google
+        - generic [ref=e147]:
+          - link "Simple computer" [ref=e148] [cursor=pointer]:
+            - /url: /m/doMMnviJrGi
+            - generic "Simple computer" [ref=e149]:
+              - img "Simple computer" [ref=e151]
+          - generic [ref=e152]:
+            - generic "dp" [ref=e154]: R
+            - generic [ref=e155]:
+              - link "Simple computer" [ref=e157] [cursor=pointer]:
+                - /url: /m/doMMnviJrGi
+              - link "Robert Schlyter" [ref=e159] [cursor=pointer]:
+                - /url: /u/Robert Schlyter
+        - generic [ref=e161]:
+          - link "Gaming Computer" [ref=e162] [cursor=pointer]:
+            - /url: /m/5cN7W4ufoII
+            - generic "Gaming Computer" [ref=e163]:
+              - img "Gaming Computer" [ref=e165]
+          - generic [ref=e166]:
+            - generic "dp" [ref=e168]:
+              - img [ref=e169]
+            - generic [ref=e170]:
+              - link "Gaming Computer" [ref=e172] [cursor=pointer]:
+                - /url: /m/5cN7W4ufoII
+              - link "Alex Safayan" [ref=e174] [cursor=pointer]:
+                - /url: /u/Alex Safayan
+        - generic [ref=e176]:
+          - link "Laptop" [ref=e177] [cursor=pointer]:
+            - /url: /m/fEYeMIiRNHM
+            - generic "Laptop" [ref=e178]:
+              - img "Laptop" [ref=e180]
+          - generic [ref=e181]:
+            - generic "dp" [ref=e183]:
+              - img [ref=e184]
+            - generic [ref=e185]:
+              - link "Laptop" [ref=e187] [cursor=pointer]:
+                - /url: /m/fEYeMIiRNHM
+              - link "Poly by Google" [ref=e189] [cursor=pointer]:
+                - /url: /u/Poly by Google
+        - generic [ref=e191]:
+          - link "Desktop computer" [ref=e192] [cursor=pointer]:
+            - /url: /m/4Q4sEDTCk9X
+            - generic "Desktop computer" [ref=e193]:
+              - img "Desktop computer" [ref=e195]
+          - generic [ref=e196]:
+            - generic "dp" [ref=e198]:
+              - img [ref=e199]
+            - generic [ref=e200]:
+              - link "Desktop computer" [ref=e202] [cursor=pointer]:
+                - /url: /m/4Q4sEDTCk9X
+              - link "Poly by Google" [ref=e204] [cursor=pointer]:
+                - /url: /u/Poly by Google
+        - generic [ref=e206]:
+          - link "Monitor" [ref=e207] [cursor=pointer]:
+            - /url: /m/5qZ5IaClHHw
+            - generic "Monitor" [ref=e208]:
+              - img "Monitor" [ref=e210]
+          - generic [ref=e211]:
+            - generic "dp" [ref=e213]:
+              - img [ref=e214]
+            - generic [ref=e215]:
+              - link "Monitor" [ref=e217] [cursor=pointer]:
+                - /url: /m/5qZ5IaClHHw
+              - link "Poly by Google" [ref=e219] [cursor=pointer]:
+                - /url: /u/Poly by Google
+        - generic [ref=e221]:
+          - link "Computer" [ref=e222] [cursor=pointer]:
+            - /url: /m/eCQBPXzmq1C
+            - generic "Computer" [ref=e223]:
+              - img "Computer" [ref=e225]
+          - generic [ref=e226]:
+            - generic "dp" [ref=e228]:
+              - img [ref=e229]
+            - generic [ref=e230]:
+              - link "Computer" [ref=e232] [cursor=pointer]:
+                - /url: /m/eCQBPXzmq1C
+              - link "Poly by Google" [ref=e234] [cursor=pointer]:
+                - /url: /u/Poly by Google
+        - generic [ref=e236]:
+          - link "Monitor" [ref=e237] [cursor=pointer]:
+            - /url: /m/e8cELDeDuTr
+            - generic "Monitor" [ref=e238]:
+              - img "Monitor" [ref=e240]
+          - generic [ref=e241]:
+            - generic "dp" [ref=e243]:
+              - img [ref=e244]
+            - generic [ref=e245]:
+              - link "Monitor" [ref=e247] [cursor=pointer]:
+                - /url: /m/e8cELDeDuTr
+              - link "Poly by Google" [ref=e249] [cursor=pointer]:
+                - /url: /u/Poly by Google
+        - generic [ref=e251]:
+          - link "super computer" [ref=e252] [cursor=pointer]:
+            - /url: /m/0ExJJkkS7jc
+            - generic "super computer" [ref=e253]:
+              - img "super computer" [ref=e255]
+          - generic [ref=e256]:
+            - generic "dp" [ref=e258]: J
+            - generic [ref=e259]:
+              - link "super computer" [ref=e261] [cursor=pointer]:
+                - /url: /m/0ExJJkkS7jc
+              - link "Jeremy Eyring" [ref=e263] [cursor=pointer]:
+                - /url: /u/Jeremy Eyring
+        - generic [ref=e265]:
+          - link "Computer Room" [ref=e266] [cursor=pointer]:
+            - /url: /m/cA_lcvRC4NA
+            - generic "Computer Room" [ref=e267]:
+              - img "Computer Room" [ref=e269]
+          - generic [ref=e270]:
+            - generic "dp" [ref=e272]: B
+            - generic [ref=e273]:
+              - link "Computer Room" [ref=e275] [cursor=pointer]:
+                - /url: /m/cA_lcvRC4NA
+              - link "Bruno Oliveira" [ref=e277] [cursor=pointer]:
+                - /url: /u/Bruno Oliveira
+        - generic [ref=e279]:
+          - link "Computer Screen" [ref=e280] [cursor=pointer]:
+            - /url: /m/V5Qo141OcB
+            - generic "Computer Screen" [ref=e281]:
+              - img "Computer Screen" [ref=e283]
+          - generic [ref=e284]:
+            - generic "dp" [ref=e286]:
+              - img [ref=e287]
+            - generic [ref=e288]:
+              - link "Computer Screen" [ref=e290] [cursor=pointer]:
+                - /url: /m/V5Qo141OcB
+              - link "Kenney" [ref=e292] [cursor=pointer]:
+                - /url: /u/Kenney
+        - generic [ref=e294]:
+          - link "Computer 90s" [ref=e295] [cursor=pointer]:
+            - /url: /m/Bw55oYsbp8
+            - generic "Computer 90s" [ref=e296]:
+              - img "Computer 90s" [ref=e298]
+          - generic [ref=e299]:
+            - generic "dp" [ref=e301]:
+              - img [ref=e302]
+            - generic [ref=e303]:
+              - link "Computer 90s" [ref=e305] [cursor=pointer]:
+                - /url: /m/Bw55oYsbp8
+              - link "Charlie" [ref=e307] [cursor=pointer]:
+                - /url: /u/Charlie
+        - generic [ref=e309]:
+          - link "Laptop" [ref=e310] [cursor=pointer]:
+            - /url: /m/bxB1L0m8LzZ
+            - generic "Laptop" [ref=e311]:
+              - img "Laptop" [ref=e313]
+          - generic [ref=e314]:
+            - generic "dp" [ref=e316]:
+              - img [ref=e317]
+            - generic [ref=e318]:
+              - link "Laptop" [ref=e320] [cursor=pointer]:
+                - /url: /m/bxB1L0m8LzZ
+              - link "Poly by Google" [ref=e322] [cursor=pointer]:
+                - /url: /u/Poly by Google
+        - generic [ref=e324]:
+          - link "Desk" [ref=e325] [cursor=pointer]:
+            - /url: /m/c406LNgto0n
+            - generic "Desk" [ref=e326]:
+              - img "Desk" [ref=e328]
+          - generic [ref=e329]:
+            - generic "dp" [ref=e331]: "N"
+            - generic [ref=e332]:
+              - link "Desk" [ref=e334] [cursor=pointer]:
+                - /url: /m/c406LNgto0n
+              - link "Niko Hokkanen" [ref=e336] [cursor=pointer]:
+                - /url: /u/Niko Hokkanen
+        - generic [ref=e338]:
+          - link "Computer" [ref=e339] [cursor=pointer]:
+            - /url: /m/7KNoiQlSxi
+            - generic "Computer" [ref=e340]:
+              - img "Computer" [ref=e342]
+          - generic [ref=e343]:
+            - generic "dp" [ref=e345]: C
+            - generic [ref=e346]:
+              - link "Computer" [ref=e348] [cursor=pointer]:
+                - /url: /m/7KNoiQlSxi
+              - link "CreativeTrio" [ref=e350] [cursor=pointer]:
+                - /url: /u/CreativeTrio
+        - generic [ref=e352]:
+          - link "Monitor" [ref=e353] [cursor=pointer]:
+            - /url: /m/2D221SHzAER
+            - generic "Monitor" [ref=e354]:
+              - img "Monitor" [ref=e356]
+          - generic [ref=e357]:
+            - generic "dp" [ref=e359]:
+              - img [ref=e360]
+            - generic [ref=e361]:
+              - link "Monitor" [ref=e363] [cursor=pointer]:
+                - /url: /m/2D221SHzAER
+              - link "Poly by Google" [ref=e365] [cursor=pointer]:
+                - /url: /u/Poly by Google
+        - generic [ref=e367]:
+          - link "CRT Monitor" [ref=e368] [cursor=pointer]:
+            - /url: /m/8jVB0zIXKCv
+            - generic "CRT Monitor" [ref=e369]:
+              - img "CRT Monitor" [ref=e371]
+          - generic [ref=e372]:
+            - generic "dp" [ref=e374]: J
+            - generic [ref=e375]:
+              - link "CRT Monitor" [ref=e377] [cursor=pointer]:
+                - /url: /m/8jVB0zIXKCv
+              - link "Jarlan Perez" [ref=e379] [cursor=pointer]:
+                - /url: /u/Jarlan Perez
+        - generic [ref=e381]:
+          - link "Computer mouse" [ref=e382] [cursor=pointer]:
+            - /url: /m/6ikB7PIRVyd
+            - generic "Computer mouse" [ref=e383]:
+              - img "Computer mouse" [ref=e385]
+          - generic [ref=e386]:
+            - generic "dp" [ref=e388]:
+              - img [ref=e389]
+            - generic [ref=e390]:
+              - link "Computer mouse" [ref=e392] [cursor=pointer]:
+                - /url: /m/6ikB7PIRVyd
+              - link "Poly by Google" [ref=e394] [cursor=pointer]:
+                - /url: /u/Poly by Google
+        - generic [ref=e396]:
+          - link "Desk" [ref=e397] [cursor=pointer]:
+            - /url: /m/58zA8yry4qr
+            - generic "Desk" [ref=e398]:
+              - img "Desk" [ref=e400]
+          - generic [ref=e401]:
+            - generic "dp" [ref=e403]: R
+            - generic [ref=e404]:
+              - link "Desk" [ref=e406] [cursor=pointer]:
+                - /url: /m/58zA8yry4qr
+              - link "Robbobin" [ref=e408] [cursor=pointer]:
+                - /url: /u/Robbobin
+        - generic [ref=e410]:
+          - link "Desk" [ref=e411] [cursor=pointer]:
+            - /url: /m/ISpMh81QGq
+            - generic "Desk" [ref=e412]:
+              - img "Desk" [ref=e414]
+          - generic [ref=e415]:
+            - generic "dp" [ref=e417]:
+              - img [ref=e418]
+            - generic [ref=e419]:
+              - link "Desk" [ref=e421] [cursor=pointer]:
+                - /url: /m/ISpMh81QGq
+              - link "dook" [ref=e423] [cursor=pointer]:
+                - /url: /u/dook
+      - separator [ref=e424]
+      - generic [ref=e425]:
+        - generic [ref=e427]:
+          - link "Low Poly Office" [ref=e428] [cursor=pointer]:
+            - /url: https://assetstore.unity.com/packages/slug/141836?aid=1100liZev
+            - generic "Low Poly Office" [ref=e429]:
+              - img "Low Poly Office" [ref=e431]
+          - generic [ref=e432]:
+            - generic "dp" [ref=e434]:
+              - img [ref=e435]
+            - generic [ref=e436]:
+              - link "Low Poly Office" [ref=e439] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/packages/slug/141836?aid=1100liZev
+              - link "A3D" [ref=e441] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/publishers/19762?aid=1100liZev
+            - generic [ref=e445]: $30
+        - generic [ref=e447]:
+          - link "Simple Apocalypse Interiors" [ref=e448] [cursor=pointer]:
+            - /url: https://assetstore.unity.com/packages/slug/38419?aid=1100liZev
+            - generic "Simple Apocalypse Interiors" [ref=e449]:
+              - img "Simple Apocalypse Interiors" [ref=e451]
+          - generic [ref=e452]:
+            - generic "dp" [ref=e454]:
+              - img [ref=e455]
+            - generic [ref=e456]:
+              - link "Simple Apocalypse Interiors" [ref=e459] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/packages/slug/38419?aid=1100liZev
+              - link "Synty Studios" [ref=e461] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/publishers/5217?aid=1100liZev
+            - generic [ref=e465]: $29
+        - generic [ref=e467]:
+          - link "Low Poly Guns Asset" [ref=e468] [cursor=pointer]:
+            - /url: https://assetstore.unity.com/packages/slug/105979?aid=1100liZev
+            - generic "Low Poly Guns Asset" [ref=e469]:
+              - img "Low Poly Guns Asset" [ref=e471]
+          - generic [ref=e472]:
+            - generic "dp" [ref=e474]:
+              - img [ref=e475]
+            - generic [ref=e476]:
+              - link "Low Poly Guns Asset" [ref=e479] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/packages/slug/105979?aid=1100liZev
+              - link "Hanusiak" [ref=e481] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/publishers/29325?aid=1100liZev
+            - generic [ref=e485]: $4
+        - generic [ref=e487]:
+          - link "CUBE" [ref=e488] [cursor=pointer]:
+            - /url: https://assetstore.unity.com/packages/slug/134181?aid=1100liZev
+            - generic "CUBE" [ref=e489]:
+              - img "CUBE" [ref=e491]
+          - generic [ref=e492]:
+            - generic "dp" [ref=e494]:
+              - img [ref=e495]
+            - generic [ref=e496]:
+              - link "CUBE" [ref=e499] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/packages/slug/134181?aid=1100liZev
+              - link "Meshtint Studio" [ref=e501] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/publishers/3867?aid=1100liZev
+            - generic [ref=e505]: $14
+      - paragraph [ref=e506]: Paid picks
+      - separator [ref=e507]
+      - generic [ref=e508]:
+        - generic [ref=e510]:
+          - link "Keyboard" [ref=e511] [cursor=pointer]:
+            - /url: /m/fOy2zvPJAj-
+            - generic "Keyboard" [ref=e512]:
+              - img "Keyboard" [ref=e514]
+          - generic [ref=e515]:
+            - generic "dp" [ref=e517]:
+              - img [ref=e518]
+            - generic [ref=e519]:
+              - link "Keyboard" [ref=e521] [cursor=pointer]:
+                - /url: /m/fOy2zvPJAj-
+              - link "Alex Safayan" [ref=e523] [cursor=pointer]:
+                - /url: /u/Alex Safayan
+        - generic [ref=e525]:
+          - link "Old computer" [ref=e526] [cursor=pointer]:
+            - /url: /m/9Qc5EtYmJry
+            - generic "Old computer" [ref=e527]:
+              - img "Old computer" [ref=e529]
+          - generic [ref=e530]:
+            - generic "dp" [ref=e532]:
+              - img [ref=e533]
+            - generic [ref=e534]:
+              - link "Old computer" [ref=e536] [cursor=pointer]:
+                - /url: /m/9Qc5EtYmJry
+              - link "Poly by Google" [ref=e538] [cursor=pointer]:
+                - /url: /u/Poly by Google
+        - generic [ref=e540]:
+          - link "Laptop" [ref=e541] [cursor=pointer]:
+            - /url: /m/4UuDHXFJ7I0
+            - generic "Laptop" [ref=e542]:
+              - img "Laptop" [ref=e544]
+          - generic [ref=e545]:
+            - generic "dp" [ref=e547]:
+              - img [ref=e548]
+            - generic [ref=e549]:
+              - link "Laptop" [ref=e551] [cursor=pointer]:
+                - /url: /m/4UuDHXFJ7I0
+              - link "jeremy" [ref=e553] [cursor=pointer]:
+                - /url: /u/jeremy
+        - generic [ref=e555]:
+          - link "Keyboard" [ref=e556] [cursor=pointer]:
+            - /url: /m/3oFfQCSsUmQ
+            - generic "Keyboard" [ref=e557]:
+              - img "Keyboard" [ref=e559]
+          - generic [ref=e560]:
+            - generic "dp" [ref=e562]:
+              - img [ref=e563]
+            - generic [ref=e564]:
+              - link "Keyboard" [ref=e566] [cursor=pointer]:
+                - /url: /m/3oFfQCSsUmQ
+              - link "Poly by Google" [ref=e568] [cursor=pointer]:
+                - /url: /u/Poly by Google
+        - generic [ref=e570]:
+          - link "Profesional PC" [ref=e571] [cursor=pointer]:
+            - /url: /m/0Mdfph-Cf8e
+            - generic "Profesional PC" [ref=e572]:
+              - img "Profesional PC" [ref=e574]
+          - generic [ref=e575]:
+            - generic "dp" [ref=e577]: L
+            - generic [ref=e578]:
+              - link "Profesional PC" [ref=e580] [cursor=pointer]:
+                - /url: /m/0Mdfph-Cf8e
+              - link "Lokey" [ref=e582] [cursor=pointer]:
+                - /url: /u/Lokey
+        - generic [ref=e584]:
+          - link "Laptop" [ref=e585] [cursor=pointer]:
+            - /url: /m/6eBS-C3E33W
+            - generic "Laptop" [ref=e586]:
+              - img "Laptop" [ref=e588]
+          - generic [ref=e589]:
+            - generic "dp" [ref=e591]:
+              - img [ref=e592]
+            - generic [ref=e593]:
+              - link "Laptop" [ref=e595] [cursor=pointer]:
+                - /url: /m/6eBS-C3E33W
+              - link "Poly by Google" [ref=e597] [cursor=pointer]:
+                - /url: /u/Poly by Google
+        - generic [ref=e599]:
+          - link "Computer Large" [ref=e600] [cursor=pointer]:
+            - /url: /m/or4LLmesjq
+            - generic "Computer Large" [ref=e601]:
+              - img "Computer Large" [ref=e603]
+          - generic [ref=e604]:
+            - generic "dp" [ref=e606]:
+              - img [ref=e607]
+            - generic [ref=e608]:
+              - link "Computer Large" [ref=e610] [cursor=pointer]:
+                - /url: /m/or4LLmesjq
+              - link "Quaternius" [ref=e612] [cursor=pointer]:
+                - /url: /u/Quaternius
+        - generic [ref=e614]:
+          - link "Office Chair" [ref=e615] [cursor=pointer]:
+            - /url: /m/dCEsSsJJ1Md
+            - generic "Office Chair" [ref=e616]:
+              - img "Office Chair" [ref=e618]
+          - generic [ref=e619]:
+            - generic "dp" [ref=e621]: C
+            - generic [ref=e622]:
+              - link "Office Chair" [ref=e624] [cursor=pointer]:
+                - /url: /m/dCEsSsJJ1Md
+              - link "CMHT Oculus" [ref=e626] [cursor=pointer]:
+                - /url: /u/CMHT Oculus
+        - generic [ref=e628]:
+          - link "Desktop computer" [ref=e629] [cursor=pointer]:
+            - /url: /m/dY79tyRnkaM
+            - generic "Desktop computer" [ref=e630]:
+              - img "Desktop computer" [ref=e632]
+          - generic [ref=e633]:
+            - generic "dp" [ref=e635]: L
+            - generic [ref=e636]:
+              - link "Desktop computer" [ref=e638] [cursor=pointer]:
+                - /url: /m/dY79tyRnkaM
+              - link "Luca Regazzi (okon3)" [ref=e640] [cursor=pointer]:
+                - /url: /u/Luca Regazzi (okon3)
+        - generic [ref=e642]:
+          - link "Computer" [ref=e643] [cursor=pointer]:
+            - /url: /m/0JxgahNBrkL
+            - generic "Computer" [ref=e644]:
+              - img "Computer" [ref=e646]
+          - generic [ref=e647]:
+            - generic "dp" [ref=e649]:
+              - img [ref=e650]
+            - generic [ref=e651]:
+              - link "Computer" [ref=e653] [cursor=pointer]:
+                - /url: /m/0JxgahNBrkL
+              - link "Poly by Google" [ref=e655] [cursor=pointer]:
+                - /url: /u/Poly by Google
+        - generic [ref=e657]:
+          - link "Laptop" [ref=e658] [cursor=pointer]:
+            - /url: /m/GnbwSUiVty
+            - generic "Laptop" [ref=e659]:
+              - img "Laptop" [ref=e661]
+          - generic [ref=e662]:
+            - generic "dp" [ref=e664]:
+              - img [ref=e665]
+            - generic [ref=e666]:
+              - link "Laptop" [ref=e668] [cursor=pointer]:
+                - /url: /m/GnbwSUiVty
+              - link "Kenney" [ref=e670] [cursor=pointer]:
+                - /url: /u/Kenney
+        - generic [ref=e672]:
+          - link "Laptop & Monitor" [ref=e673] [cursor=pointer]:
+            - /url: /m/2JEfWc1Ci-a
+            - generic "Laptop & Monitor" [ref=e674]:
+              - img "Laptop & Monitor" [ref=e676]
+          - generic [ref=e677]:
+            - generic "dp" [ref=e679]: G
+            - generic [ref=e680]:
+              - link "Laptop & Monitor" [ref=e682] [cursor=pointer]:
+                - /url: /m/2JEfWc1Ci-a
+              - link "Greenpixel" [ref=e684] [cursor=pointer]:
+                - /url: /u/Greenpixel
+      - separator [ref=e685]
+      - generic [ref=e686]:
+        - generic [ref=e688]:
+          - 'link "STYLIZED: Complete Drift Cars" [ref=e689] [cursor=pointer]':
+            - /url: https://assetstore.unity.com/packages/slug/193256?aid=1100liZev
+            - 'generic "STYLIZED: Complete Drift Cars" [ref=e690]':
+              - 'img "STYLIZED: Complete Drift Cars" [ref=e692]'
+          - generic [ref=e693]:
+            - generic "dp" [ref=e695]:
+              - img [ref=e696]
+            - generic [ref=e697]:
+              - 'link "STYLIZED: Complete Drift Cars" [ref=e700] [cursor=pointer]':
+                - /url: https://assetstore.unity.com/packages/slug/193256?aid=1100liZev
+              - link "Bear Interactive" [ref=e702] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/publishers/52310?aid=1100liZev
+            - generic [ref=e706]: $30
+        - generic [ref=e708]:
+          - link "Simple Icons" [ref=e709] [cursor=pointer]:
+            - /url: https://assetstore.unity.com/packages/slug/59925?aid=1100liZev
+            - generic "Simple Icons" [ref=e710]:
+              - img "Simple Icons" [ref=e712]
+          - generic [ref=e713]:
+            - generic "dp" [ref=e715]:
+              - img [ref=e716]
+            - generic [ref=e717]:
+              - link "Simple Icons" [ref=e720] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/packages/slug/59925?aid=1100liZev
+              - link "Synty Studios" [ref=e722] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/publishers/5217?aid=1100liZev
+            - generic [ref=e726]: $9
+        - generic [ref=e728]:
+          - link "Chromatic Chaos VHS Asset Pack" [ref=e729] [cursor=pointer]:
+            - /url: https://assetstore.unity.com/packages/slug/248899?aid=1100liZev
+            - generic "Chromatic Chaos VHS Asset Pack" [ref=e730]:
+              - img "Chromatic Chaos VHS Asset Pack" [ref=e732]
+          - generic [ref=e733]:
+            - generic "dp" [ref=e735]:
+              - img [ref=e736]
+            - generic [ref=e737]:
+              - link "Chromatic Chaos VHS Asset Pack" [ref=e740] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/packages/slug/248899?aid=1100liZev
+              - link "Polygonal Mind" [ref=e742] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/publishers/36722?aid=1100liZev
+            - generic [ref=e746]: Free!
+        - generic [ref=e748]:
+          - link "Restaurant Cartoon Assets" [ref=e749] [cursor=pointer]:
+            - /url: https://assetstore.unity.com/packages/slug/147535?aid=1100liZev
+            - generic "Restaurant Cartoon Assets" [ref=e750]:
+              - img "Restaurant Cartoon Assets" [ref=e752]
+          - generic [ref=e753]:
+            - generic "dp" [ref=e755]:
+              - img [ref=e756]
+            - generic [ref=e757]:
+              - link "Restaurant Cartoon Assets" [ref=e760] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/packages/slug/147535?aid=1100liZev
+              - link "Jarst" [ref=e762] [cursor=pointer]:
+                - /url: https://assetstore.unity.com/publishers/42196?aid=1100liZev
+            - generic [ref=e766]: $7
+      - paragraph [ref=e767]: Paid picks
+      - progressbar [ref=e769]:
+        - img [ref=e770]
+  - insertion [ref=e775]:
+    - iframe [ref=e777]:
+      - generic [active] [ref=f60e1]:
+        - generic [ref=f60e6]:
+          - link [ref=f60e7] [cursor=pointer]:
+            - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=C0ECbZ-M4avngMZGZxdwP26WX0Q6-utqThQGwptjb4BWqitaUhxcQASDLw8qEAWDMgfCB5C6gAfG1nbNAyAEJqQK_dff6AGxpPqgDAcgDywSqBNwBT9AKKgjqv3v1xEPpg4vN72Blw1xQob4W31GbY2LTHWMNoCF2k1dSsD-mxvAbmKXgXuYpe6cF3nJQrwpo6dmG2N_BxZ7DIbOLr8WSPk-PniU5Nmf1NyggbWIRgOm9-2rwu7VY2_MRz31ron26H0KLztnqb-tvcdNZs6pdFLkQb0exj0RbkOOWIgqs62ekasyu7AlndSZeM9L7fiLm76th5LTjHaGfvFjzolJ2SqcyX48A4wWuyovILTF50cUT1CCpBlQC1vTmM1uo_szWt4KSLhWknHiV9_eZQk4AfcAEh-OcrMsFiAW5m7DWV6AGLoAH8e3tkhuoB6fMsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQLYBwDSCDYIgOGAEBABGJ8DMgiqgoCAgICACDoQgMADgICEgICUruADqIeAEEi9_cE6WNuGut-ompUDYAGxCb__wv8hdp9VgAoBmAsByAsBgAwBqg0CQ1rIDQHqDRMIpLa736ialQMVkUyRBR3b0iXq8A0CiA4J2BMNiBQB0BUByhYCCgD4FgGAFwGyFwQYAVAGuhcCOAGyGAUYLiIBANAYAcIZAggB&ae=1&gclid=EAIaIQobChMIubC736ialQMVkUyRBR3b0iXqEAEYASAAEgKRP_D_BwE&num=1&cid=CAQSfAARCiqBWrQU-FLZ8V0Gaf6jecDCfIZpFvKEK7UnpvfVopNUjJS2_N_jXveu4YcqHSOdb0ajDzZk6cZ1M9PK1xXsA6aTPvPjUOOZIjH9TwBLMU-uvZE80yPCD1TQbnbcgC3RKjrKct4MPGfR_wVA1JhMcE220dSLtP0i4AMYAQ&sig=AOD64_0CujUW9gY7EwMBi761QaGGPq4yYA&client=ca-pub-4279852833813635&rf=1&nb=9&adurl=https://snadnevraceni.cz/%3F_campaign%3Dgoogle.com%3Bdisplay%3Bcold%26gad_source%3D5%26gad_campaignid%3D23535029689%26gclid%3DEAIaIQobChMIubC736ialQMVkUyRBR3b0iXqEAEYASAAEgKRP_D_BwE
+            - img [ref=f60e8]
+          - generic [ref=f60e10]:
+            - generic [ref=f60e13]:
+              - link "Bez nutnosti tisknout štítek" [ref=f60e17] [cursor=pointer]:
+                - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=C0ECbZ-M4avngMZGZxdwP26WX0Q6-utqThQGwptjb4BWqitaUhxcQASDLw8qEAWDMgfCB5C6gAfG1nbNAyAEJqQK_dff6AGxpPqgDAcgDywSqBNwBT9AKKgjqv3v1xEPpg4vN72Blw1xQob4W31GbY2LTHWMNoCF2k1dSsD-mxvAbmKXgXuYpe6cF3nJQrwpo6dmG2N_BxZ7DIbOLr8WSPk-PniU5Nmf1NyggbWIRgOm9-2rwu7VY2_MRz31ron26H0KLztnqb-tvcdNZs6pdFLkQb0exj0RbkOOWIgqs62ekasyu7AlndSZeM9L7fiLm76th5LTjHaGfvFjzolJ2SqcyX48A4wWuyovILTF50cUT1CCpBlQC1vTmM1uo_szWt4KSLhWknHiV9_eZQk4AfcAEh-OcrMsFiAW5m7DWV6AGLoAH8e3tkhuoB6fMsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQLYBwDSCDYIgOGAEBABGJ8DMgiqgoCAgICACDoQgMADgICEgICUruADqIeAEEi9_cE6WNuGut-ompUDYAGxCb__wv8hdp9VgAoBmAsByAsBgAwBqg0CQ1rIDQHqDRMIpLa736ialQMVkUyRBR3b0iXq8A0CiA4J2BMNiBQB0BUByhYCCgD4FgGAFwGyFwQYAVAGuhcCOAGyGAUYLiIBANAYAcIZAggB&ae=1&gclid=EAIaIQobChMIubC736ialQMVkUyRBR3b0iXqEAEYASAAEgKRP_D_BwE&num=1&cid=CAQSfAARCiqBWrQU-FLZ8V0Gaf6jecDCfIZpFvKEK7UnpvfVopNUjJS2_N_jXveu4YcqHSOdb0ajDzZk6cZ1M9PK1xXsA6aTPvPjUOOZIjH9TwBLMU-uvZE80yPCD1TQbnbcgC3RKjrKct4MPGfR_wVA1JhMcE220dSLtP0i4AMYAQ&sig=AOD64_0CujUW9gY7EwMBi761QaGGPq4yYA&client=ca-pub-4279852833813635&rf=1&nb=0&adurl=https://snadnevraceni.cz/%3F_campaign%3Dgoogle.com%3Bdisplay%3Bcold%26gad_source%3D5%26gad_campaignid%3D23535029689%26gclid%3DEAIaIQobChMIubC736ialQMVkUyRBR3b0iXqEAEYASAAEgKRP_D_BwE
+              - link "Vyberte obchod ze seznamu a odešlete zásilku bez vyplňování adresy. Pojďme na to!" [ref=f60e21] [cursor=pointer]:
+                - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=C0ECbZ-M4avngMZGZxdwP26WX0Q6-utqThQGwptjb4BWqitaUhxcQASDLw8qEAWDMgfCB5C6gAfG1nbNAyAEJqQK_dff6AGxpPqgDAcgDywSqBNwBT9AKKgjqv3v1xEPpg4vN72Blw1xQob4W31GbY2LTHWMNoCF2k1dSsD-mxvAbmKXgXuYpe6cF3nJQrwpo6dmG2N_BxZ7DIbOLr8WSPk-PniU5Nmf1NyggbWIRgOm9-2rwu7VY2_MRz31ron26H0KLztnqb-tvcdNZs6pdFLkQb0exj0RbkOOWIgqs62ekasyu7AlndSZeM9L7fiLm76th5LTjHaGfvFjzolJ2SqcyX48A4wWuyovILTF50cUT1CCpBlQC1vTmM1uo_szWt4KSLhWknHiV9_eZQk4AfcAEh-OcrMsFiAW5m7DWV6AGLoAH8e3tkhuoB6fMsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQLYBwDSCDYIgOGAEBABGJ8DMgiqgoCAgICACDoQgMADgICEgICUruADqIeAEEi9_cE6WNuGut-ompUDYAGxCb__wv8hdp9VgAoBmAsByAsBgAwBqg0CQ1rIDQHqDRMIpLa736ialQMVkUyRBR3b0iXq8A0CiA4J2BMNiBQB0BUByhYCCgD4FgGAFwGyFwQYAVAGuhcCOAGyGAUYLiIBANAYAcIZAggB&ae=1&gclid=EAIaIQobChMIubC736ialQMVkUyRBR3b0iXqEAEYASAAEgKRP_D_BwE&num=1&cid=CAQSfAARCiqBWrQU-FLZ8V0Gaf6jecDCfIZpFvKEK7UnpvfVopNUjJS2_N_jXveu4YcqHSOdb0ajDzZk6cZ1M9PK1xXsA6aTPvPjUOOZIjH9TwBLMU-uvZE80yPCD1TQbnbcgC3RKjrKct4MPGfR_wVA1JhMcE220dSLtP0i4AMYAQ&sig=AOD64_0CujUW9gY7EwMBi761QaGGPq4yYA&client=ca-pub-4279852833813635&rf=1&nb=7&adurl=https://snadnevraceni.cz/%3F_campaign%3Dgoogle.com%3Bdisplay%3Bcold%26gad_source%3D5%26gad_campaignid%3D23535029689%26gclid%3DEAIaIQobChMIubC736ialQMVkUyRBR3b0iXqEAEYASAAEgKRP_D_BwE
+                - text: Vyberte obchod ze seznamu a odešlete zásilku bez vyplňování adresy.
+                - text: Pojďme na to!
+            - generic [ref=f60e24]:
+              - link:
+                - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=C0ECbZ-M4avngMZGZxdwP26WX0Q6-utqThQGwptjb4BWqitaUhxcQASDLw8qEAWDMgfCB5C6gAfG1nbNAyAEJqQK_dff6AGxpPqgDAcgDywSqBNwBT9AKKgjqv3v1xEPpg4vN72Blw1xQob4W31GbY2LTHWMNoCF2k1dSsD-mxvAbmKXgXuYpe6cF3nJQrwpo6dmG2N_BxZ7DIbOLr8WSPk-PniU5Nmf1NyggbWIRgOm9-2rwu7VY2_MRz31ron26H0KLztnqb-tvcdNZs6pdFLkQb0exj0RbkOOWIgqs62ekasyu7AlndSZeM9L7fiLm76th5LTjHaGfvFjzolJ2SqcyX48A4wWuyovILTF50cUT1CCpBlQC1vTmM1uo_szWt4KSLhWknHiV9_eZQk4AfcAEh-OcrMsFiAW5m7DWV6AGLoAH8e3tkhuoB6fMsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQLYBwDSCDYIgOGAEBABGJ8DMgiqgoCAgICACDoQgMADgICEgICUruADqIeAEEi9_cE6WNuGut-ompUDYAGxCb__wv8hdp9VgAoBmAsByAsBgAwBqg0CQ1rIDQHqDRMIpLa736ialQMVkUyRBR3b0iXq8A0CiA4J2BMNiBQB0BUByhYCCgD4FgGAFwGyFwQYAVAGuhcCOAGyGAUYLiIBANAYAcIZAggB&ae=1&gclid=EAIaIQobChMIubC736ialQMVkUyRBR3b0iXqEAEYASAAEgKRP_D_BwE&num=1&cid=CAQSfAARCiqBWrQU-FLZ8V0Gaf6jecDCfIZpFvKEK7UnpvfVopNUjJS2_N_jXveu4YcqHSOdb0ajDzZk6cZ1M9PK1xXsA6aTPvPjUOOZIjH9TwBLMU-uvZE80yPCD1TQbnbcgC3RKjrKct4MPGfR_wVA1JhMcE220dSLtP0i4AMYAQ&sig=AOD64_0CujUW9gY7EwMBi761QaGGPq4yYA&client=ca-pub-4279852833813635&rf=1&nb=8&adurl=https://snadnevraceni.cz/%3F_campaign%3Dgoogle.com%3Bdisplay%3Bcold%26gad_source%3D5%26gad_campaignid%3D23535029689%26gclid%3DEAIaIQobChMIubC736ialQMVkUyRBR3b0iXqEAEYASAAEgKRP_D_BwE
+              - link "Snadné Vrácení" [ref=f60e26] [cursor=pointer]:
+                - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=C0ECbZ-M4avngMZGZxdwP26WX0Q6-utqThQGwptjb4BWqitaUhxcQASDLw8qEAWDMgfCB5C6gAfG1nbNAyAEJqQK_dff6AGxpPqgDAcgDywSqBNwBT9AKKgjqv3v1xEPpg4vN72Blw1xQob4W31GbY2LTHWMNoCF2k1dSsD-mxvAbmKXgXuYpe6cF3nJQrwpo6dmG2N_BxZ7DIbOLr8WSPk-PniU5Nmf1NyggbWIRgOm9-2rwu7VY2_MRz31ron26H0KLztnqb-tvcdNZs6pdFLkQb0exj0RbkOOWIgqs62ekasyu7AlndSZeM9L7fiLm76th5LTjHaGfvFjzolJ2SqcyX48A4wWuyovILTF50cUT1CCpBlQC1vTmM1uo_szWt4KSLhWknHiV9_eZQk4AfcAEh-OcrMsFiAW5m7DWV6AGLoAH8e3tkhuoB6fMsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQLYBwDSCDYIgOGAEBABGJ8DMgiqgoCAgICACDoQgMADgICEgICUruADqIeAEEi9_cE6WNuGut-ompUDYAGxCb__wv8hdp9VgAoBmAsByAsBgAwBqg0CQ1rIDQHqDRMIpLa736ialQMVkUyRBR3b0iXq8A0CiA4J2BMNiBQB0BUByhYCCgD4FgGAFwGyFwQYAVAGuhcCOAGyGAUYLiIBANAYAcIZAggB&ae=1&gclid=EAIaIQobChMIubC736ialQMVkUyRBR3b0iXqEAEYASAAEgKRP_D_BwE&num=1&cid=CAQSfAARCiqBWrQU-FLZ8V0Gaf6jecDCfIZpFvKEK7UnpvfVopNUjJS2_N_jXveu4YcqHSOdb0ajDzZk6cZ1M9PK1xXsA6aTPvPjUOOZIjH9TwBLMU-uvZE80yPCD1TQbnbcgC3RKjrKct4MPGfR_wVA1JhMcE220dSLtP0i4AMYAQ&sig=AOD64_0CujUW9gY7EwMBi761QaGGPq4yYA&client=ca-pub-4279852833813635&rf=1&nb=1&adurl=https://snadnevraceni.cz/%3F_campaign%3Dgoogle.com%3Bdisplay%3Bcold%26gad_source%3D5%26gad_campaignid%3D23535029689%26gclid%3DEAIaIQobChMIubC736ialQMVkUyRBR3b0iXqEAEYASAAEgKRP_D_BwE
+              - link "Přejít na web" [ref=f60e28] [cursor=pointer]:
+                - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=C0ECbZ-M4avngMZGZxdwP26WX0Q6-utqThQGwptjb4BWqitaUhxcQASDLw8qEAWDMgfCB5C6gAfG1nbNAyAEJqQK_dff6AGxpPqgDAcgDywSqBNwBT9AKKgjqv3v1xEPpg4vN72Blw1xQob4W31GbY2LTHWMNoCF2k1dSsD-mxvAbmKXgXuYpe6cF3nJQrwpo6dmG2N_BxZ7DIbOLr8WSPk-PniU5Nmf1NyggbWIRgOm9-2rwu7VY2_MRz31ron26H0KLztnqb-tvcdNZs6pdFLkQb0exj0RbkOOWIgqs62ekasyu7AlndSZeM9L7fiLm76th5LTjHaGfvFjzolJ2SqcyX48A4wWuyovILTF50cUT1CCpBlQC1vTmM1uo_szWt4KSLhWknHiV9_eZQk4AfcAEh-OcrMsFiAW5m7DWV6AGLoAH8e3tkhuoB6fMsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQLYBwDSCDYIgOGAEBABGJ8DMgiqgoCAgICACDoQgMADgICEgICUruADqIeAEEi9_cE6WNuGut-ompUDYAGxCb__wv8hdp9VgAoBmAsByAsBgAwBqg0CQ1rIDQHqDRMIpLa736ialQMVkUyRBR3b0iXq8A0CiA4J2BMNiBQB0BUByhYCCgD4FgGAFwGyFwQYAVAGuhcCOAGyGAUYLiIBANAYAcIZAggB&ae=1&gclid=EAIaIQobChMIubC736ialQMVkUyRBR3b0iXqEAEYASAAEgKRP_D_BwE&num=1&cid=CAQSfAARCiqBWrQU-FLZ8V0Gaf6jecDCfIZpFvKEK7UnpvfVopNUjJS2_N_jXveu4YcqHSOdb0ajDzZk6cZ1M9PK1xXsA6aTPvPjUOOZIjH9TwBLMU-uvZE80yPCD1TQbnbcgC3RKjrKct4MPGfR_wVA1JhMcE220dSLtP0i4AMYAQ&sig=AOD64_0CujUW9gY7EwMBi761QaGGPq4yYA&client=ca-pub-4279852833813635&rf=1&nb=8&adurl=https://snadnevraceni.cz/%3F_campaign%3Dgoogle.com%3Bdisplay%3Bcold%26gad_source%3D5%26gad_campaignid%3D23535029689%26gclid%3DEAIaIQobChMIubC736ialQMVkUyRBR3b0iXqEAEYASAAEgKRP_D_BwE
+              - link [ref=f60e29] [cursor=pointer]:
+                - /url: https://www.googleadservices.com/pagead/aclk?sa=L&ai=C0ECbZ-M4avngMZGZxdwP26WX0Q6-utqThQGwptjb4BWqitaUhxcQASDLw8qEAWDMgfCB5C6gAfG1nbNAyAEJqQK_dff6AGxpPqgDAcgDywSqBNwBT9AKKgjqv3v1xEPpg4vN72Blw1xQob4W31GbY2LTHWMNoCF2k1dSsD-mxvAbmKXgXuYpe6cF3nJQrwpo6dmG2N_BxZ7DIbOLr8WSPk-PniU5Nmf1NyggbWIRgOm9-2rwu7VY2_MRz31ron26H0KLztnqb-tvcdNZs6pdFLkQb0exj0RbkOOWIgqs62ekasyu7AlndSZeM9L7fiLm76th5LTjHaGfvFjzolJ2SqcyX48A4wWuyovILTF50cUT1CCpBlQC1vTmM1uo_szWt4KSLhWknHiV9_eZQk4AfcAEh-OcrMsFiAW5m7DWV6AGLoAH8e3tkhuoB6fMsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQLYBwDSCDYIgOGAEBABGJ8DMgiqgoCAgICACDoQgMADgICEgICUruADqIeAEEi9_cE6WNuGut-ompUDYAGxCb__wv8hdp9VgAoBmAsByAsBgAwBqg0CQ1rIDQHqDRMIpLa736ialQMVkUyRBR3b0iXq8A0CiA4J2BMNiBQB0BUByhYCCgD4FgGAFwGyFwQYAVAGuhcCOAGyGAUYLiIBANAYAcIZAggB&ae=1&gclid=EAIaIQobChMIubC736ialQMVkUyRBR3b0iXqEAEYASAAEgKRP_D_BwE&num=1&cid=CAQSfAARCiqBWrQU-FLZ8V0Gaf6jecDCfIZpFvKEK7UnpvfVopNUjJS2_N_jXveu4YcqHSOdb0ajDzZk6cZ1M9PK1xXsA6aTPvPjUOOZIjH9TwBLMU-uvZE80yPCD1TQbnbcgC3RKjrKct4MPGfR_wVA1JhMcE220dSLtP0i4AMYAQ&sig=AOD64_0CujUW9gY7EwMBi761QaGGPq4yYA&client=ca-pub-4279852833813635&rf=1&nb=8&adurl=https://snadnevraceni.cz/%3F_campaign%3Dgoogle.com%3Bdisplay%3Bcold%26gad_source%3D5%26gad_campaignid%3D23535029689%26gclid%3DEAIaIQobChMIubC736ialQMVkUyRBR3b0iXqEAEYASAAEgKRP_D_BwE
+                - generic [ref=f60e31]:
+                  - img [ref=f60e32]
+                  - img [ref=f60e34]
+        - img [ref=f60e42] [cursor=pointer]
+        - button [ref=f60e46] [cursor=pointer]:
+          - img [ref=f60e47]
+        - iframe
+  - insertion [ref=e778]:
+    - iframe [ref=e781]:
+      - iframe [ref=f61e1]:
+        - generic [active]:
+          - generic [ref=f62e1]:
+            - generic [ref=f62e2]:
+              - generic:
+                - img [ref=f62e6] [cursor=pointer]
+                - button [ref=f62e10] [cursor=pointer]:
+                  - img [ref=f62e11]
+            - link "Click Here" [ref=f62e19] [cursor=pointer]:
+              - /url: https://googleads.g.doubleclick.net/dbm/clk?sa=L&ai=CIiQYZuM4aoP4OJDUxdwPverGkALKt6jEgAG75p70sxXjq_T9CBABIMvDyoQBYMyB8IHkLqABnseazz7IAQmoAwHIA5sEqgThAU_Q8DxfGyi8-zpHv7HG2wudoHcDzZrbeqouFaPg2jsuRYyJyoDNED1xaQmK3JRwSEKvmXXpLCsO7J-sUFXNjkC20Q8-hFO0boOE7pFs-GEJOv41QJg5HtkxVVmX5WWDLHBpH5hQMSyhKWoGZxDL5R7Gc2xsxjrM7yawLLNPXn5f34giyJkrqmDNBwx8_wbPt6Efrj6LpO9bRwXI41LwHaWCNYZJiNMU01VOxUoNxrsyNl4pXXMegYoEB9ch2nhlL9uqw4VtWnE4XshqWvOi7WLrjdbZAl4vV7lmLfJ7zieEt8AEpKnd3qwF4AQDiAWQou_6UpAGAaAGTYAHnv_qrhmoB6fMsQKoB6a-G6gHzM6xAqgH89EbqAeW2BuoB6qbsQKoB47OG6gHk9gbqAfw4BuoB-6WsQKoB_6esQKoB6--sQKoB9XJG6gH2baxAqgHmgaoB_-esQKoB9-fsQKoB_jCsQKoB_vCsQKoB-fXsQLYBwDSCDYIgOGAEBABGJ8DMgiqgoCAgICACDoQgMADgICEgICUruADqIeAEEi9_cE6WIqZhN-ompUDYAGACgGYCwHICwGADAGqDQJDWuoNEwj6yIXfqJqVAxUQapEFHT21ESLwDQGIDgmwE4D15yLQEwDYEw3YFAHQFQHKFgIKAPgWAYAXAbIXBBgCUAayGAkSAp1jGE0iAQDQGQHYGQE&ae=1&num=1&cid=CAQSfAARCiqB55F_JRp2-qHsSC0pM8H3Y2hcJnbNZf6Y_xbRcU7aogaS8g0gytns8lYS2M8gJRnknfellHpuhGZDcM02iVBiiMcGZI96NMjAP76lSGlhIaD-PP1kZ5jL__iQ7JssjucRm6BYOpycvwevqQspEhoDcZNA_YV0s5sYAQ&sig=AOD64_0DpuyM5YvMvWIJRhmOSz0eaB1qIQ&client=ca-pub-4279852833813635&dbm_c=AKAmf-Aw3A0ICXjmRSuv_rjCXkuGJZMF2coT9Nqk0lJkUtnw7NRe4pirH9jYKONNlGghxMcflbAR896qnTWEkoLpNyijOHAiadkUPTKEz2RgNNzeOLQcx2eqxMcFOYGIIcCNbb3jrtAZF-MZAK1SIUa_aUU5p08U1l3EDe68Ktdc5TcllbJRDVJ8ZnfWsT-YCxnhhHpWVmnTm050ImiDxnZdlFnDRSUX9zZSdoXMfU3ajctwJ0b7bbD7QrdYg6RJmSImmkctkJawG-RNzTJ67Bz0Xi4G4vbd6A&cry=1&dbm_d=AKAmf-ALBkiXjLnqmznVnpRRm4rqrTrDPTv28Z1otwAkZqncEvduzOzeqG9wSj-F3FD41sSdPN_hKjXiTLGIrnJ5Yi05krslzw-zU57ZKMDaA5et9DKk98Vr6zTwpN1s2VBXje618illBEWjutGf-_XNgYzqUEV3qqA0s70jVuitn4UgDkOqBiivMqEmpafTY8Y5mPKu0OBPEEoXAixzhbhXd9MfXiQr71_CkAYFbsJ6_7d3sbUlfreyqjCm9AgYQd8jAIU85rf68m0XNXf7BiQFaboX3lZ4qE0wmK-AqjrV4eHezrSutvVQBOIT_0-Onz5e009dA-HGOZ74mC2r37n5ktlvpQRCFW1yDkbEHNafHfqhzjtWkARjNje2_FJaYGucMb6k69rWUfh5cPIONG56jMwqTzgRCjSfvoCriF2c79HJZBP_qd-PUk3TowuWdhvd846Sx0UoRbEPaDxDLSC1nM2E1qW3sKCsl6rErp8Ci4CJHIXqHAQvGX_bUvSgff6JMhN4csjMOGH-NlOP0SjkaWFz6S93RNLdoYTKL0o4OwLpoJSz42ZWTc6p_3TtR2opnJ0Bd9UN0NUeUuTDvKsqa_bHn8OfKGWgZNHAY_Io5Di4MHEnMcM1R8EWuabKxpuc1VCwu6SZA8akfONWUX7LjGBYPoSzw_qc95GqrGvi0-UVoIE0qdcvZs2ObLSUKHZOBBrsBnLe&adurl=https://servedby.flashtalking.com/click/1/271670;9346985;5393839;210;0/?us_privacy=!!US_PRIVACY!&gdpr_consent=CQmNM4AQmNM4AEsACBCSCjFoAP_gAEPgAACgMGoB_C7EbCFCiDJ3IKMEMAhHABBAYsAwAAYAAgAADBIQIAQCgkEYBASAFCACCAAAKASBAAAgCAAAAUAAIAAFAABAAAwAIBAIIAAAgAAAAEAAAAAACIAAEQCAAAAEAEAAkAgAAAIAWEAAAAAAAACBAAAAAAAAAAAAAAAABAEAAQAAQAAAAAAAiAAAAAAAABAIAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAABAAAAAAAQgAAAAAAAAAAAAAAAAAAEAAAAAAIMGoB_C7EbCFCiDBXIKMEMAhXABAAYsAwAAYAAgAADBIQIAQCkkESBACAECAACAAAIAQBAAAoAAgAAEAAAAAVAABAAAwAIBAIAEAAgAAAQEAAAAAACIAAEQCAAAAEAEAAgAgAAAIAWEAAAAAAAACBAAAAAAAAAAAAAAAAAAEAACAAwAAAAAAAiAAAAAAAABAIEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAEAAAAAAAAAAAAAAAEAAAAAAIAA.IMGoB_C7EbCFCiDJ3IKMEMAhXABBAYsAwAAYAAgAADBIQIAQCkkEaBASAFCACCAAAKASBAAAoCAgAAUAAIAAVAABAAAwAIBAIIEAAgAAAQEAAAAAACIAAEQCAAAAEAEAAkAgAAAIAWEAAAAAAAACBAAAAAAAAAAAAAAAABAEAASAAwAAAAAAAiAAAAAAAABAIEAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAABAAAAAAAQgAAEAAAAAAAAAAAAAAAEAAAAAAIA&gdpr=1&ft_partnerimpid=ABAjH0iLZwmNhVVLzdGI_fZEoAC6&ft_impID=1D5F1AF0-9F29-B946-3E93-FBF9BF5DA408&g=6747D3F4FC9AEC&random=469050.95567283325&ft_width=728&ft_height=90&url=https://www.adobe.com/cz/products/illustrator.html?sdid=HCS3XFW4&mv=display&mv2=display
+              - img "Click Here" [ref=f62e20]
+          - iframe
+          - iframe [ref=f62e21]:
+            
+          - iframe [ref=f62e22]:
+            
+          - iframe [ref=f62e23]:
+            
+          - iframe [ref=f62e24]:
+            
+          - iframe [ref=f62e25]:
+            
+  - generic [ref=e783]:
+    - button "Nastavení ochrany soukromí a souborů cookie" [ref=e784] [cursor=pointer]
+    - generic [ref=e785]: "Spravováno Googlem. Odpovídá požadavkům systému TCF organizace IAB. ID CMP: 300"

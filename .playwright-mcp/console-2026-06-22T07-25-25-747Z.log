@@ -1,0 +1,10 @@
+[    2304ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    2533ms] [DIR] SyntaxError @ https://js.ad-score.com/score.min.js?pid=1000941&tt=g:1
+[    2743ms] Uncaught TypeError: Cannot convert undefined or null to object
+    at ep (https://js.ad-score.com/score.min.js?pid=1000941&tt=g:1:294674)
+    at <anonymous> (https://js.ad-score.com/score.min.js?pid=1000941&tt=g:1:295637)
+    at <anonymous> (https://js.ad-score.com/score.min.js?pid=1000941&tt=g:1:295825)
+    at eH (https://js.ad-score.com/score.min.js?pid=1000941&tt=g:1:296622)
+[    2304ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    2856ms] [ERROR] Attestation check for Shared Storage on https://www.googleadservices.com failed. @ https://www.googleadservices.com/pagead/managed/js/activeview/current/reach_worklet.html:0
+[    3021ms] [WARNING] The powerPreference option is currently ignored when calling requestAdapter() on Windows. See https://crbug.com/369219127 @ https://js.ad-score.com/score.min.js?pid=1000941&tt=g:1

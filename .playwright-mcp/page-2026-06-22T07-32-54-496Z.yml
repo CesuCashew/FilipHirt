@@ -1,0 +1,231 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e7]:
+    - banner [ref=e8]:
+      - generic [ref=e9]:
+        - link [ref=e10] [cursor=pointer]:
+          - /url: /
+          - img [ref=e11]
+        - link "poly.pizza" [ref=e14] [cursor=pointer]:
+          - /url: /
+          - heading "poly.pizza" [level=6] [ref=e15]
+        - generic [ref=e16]:
+          - generic:
+            - img
+          - textbox "search" [ref=e18]:
+            - /placeholder: Search
+        - generic [ref=e20]:
+          - button "support" [ref=e21] [cursor=pointer]:
+            - img [ref=e23]:
+              - img [ref=e24]
+          - button "upload" [ref=e26] [cursor=pointer]:
+            - img [ref=e28]
+          - button "Login" [ref=e30] [cursor=pointer]:
+            - generic [ref=e31]: Login
+          - button "Sign up" [ref=e32] [cursor=pointer]:
+            - generic [ref=e33]: Sign up
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - generic [ref=e36]:
+          - generic:
+            - insertion
+          - generic [ref=e38]:
+            - generic [ref=e39]:
+              - button "Auto rotate" [ref=e40] [cursor=pointer]:
+                - img [ref=e42]
+              - button "FullScreen" [ref=e44] [cursor=pointer]:
+                - img [ref=e46]
+            - generic [ref=e48]:
+              - generic [ref=e49]:
+                - img "Commodore" [ref=e50]
+                - generic:
+                  - generic:
+                    - button
+                - generic:
+                  - generic:
+                    - generic:
+                      - img
+              - status: All 3D models in the page have loaded
+        - generic [ref=e54]:
+          - generic [ref=e55]:
+            - generic [ref=e56]:
+              - heading "Commodore" [level=1] [ref=e57]
+              - paragraph [ref=e58]:
+                - img [ref=e59]
+                - text: "664"
+              - paragraph [ref=e61]:
+                - img [ref=e62]
+                - text: "828"
+              - paragraph [ref=e64]:
+                - img [ref=e65]
+                - text: "0"
+              - paragraph [ref=e67]:
+                - img [ref=e68]
+                - text: "19"
+            - generic [ref=e70]:
+              - button "Like" [ref=e72] [cursor=pointer]:
+                - generic [ref=e73]:
+                  - img [ref=e75]
+                  - text: Like
+              - button "List" [ref=e78] [cursor=pointer]:
+                - generic [ref=e79]:
+                  - img [ref=e81]
+                  - text: List
+              - button "Download" [ref=e84] [cursor=pointer]:
+                - generic [ref=e85]:
+                  - img [ref=e87]
+                  - text: Download
+              - button "more" [ref=e90] [cursor=pointer]:
+                - img [ref=e92]
+          - separator [ref=e94]
+          - generic [ref=e95]:
+            - generic [ref=e96]:
+              - generic [ref=e97]:
+                - img "Avatar for jeremy" [ref=e99]
+                - heading "jeremy" [level=3] [ref=e100]:
+                  - link "jeremy" [ref=e101] [cursor=pointer]:
+                    - /url: /u/jeremy
+                - generic [ref=e102]:
+                  - link "Twitter" [ref=e103] [cursor=pointer]:
+                    - /url: https://twitter.com/astackofpaper
+                    - img [ref=e105]
+                  - link "Instagram" [ref=e107] [cursor=pointer]:
+                    - /url: https://instagram.com/jedelblut
+                    - img [ref=e109]
+                  - link "Website" [ref=e111] [cursor=pointer]:
+                    - /url: https://jeremy.toys
+                    - img [ref=e113]
+              - generic [ref=e115]:
+                - paragraph [ref=e117]: "#keyboard #keypad #command"
+                - generic [ref=e119]:
+                  - img [ref=e120]
+                  - button "Low Poly" [ref=e122] [cursor=pointer]:
+                    - generic [ref=e123]: Low Poly
+                  - button "Other" [ref=e124] [cursor=pointer]:
+                    - generic [ref=e125]: Other
+                  - button "#keypad" [ref=e126] [cursor=pointer]:
+                    - generic [ref=e127]: "#keypad"
+                  - button "#command" [ref=e128] [cursor=pointer]:
+                    - generic [ref=e129]: "#command"
+                  - button "#Computer" [ref=e130] [cursor=pointer]:
+                    - generic [ref=e131]: "#Computer"
+                  - button "#keyboard" [ref=e132] [cursor=pointer]:
+                    - generic [ref=e133]: "#keyboard"
+                - paragraph [ref=e135]:
+                  - text: Oct 23, 2017 • OBJ/GLTF format • Creative Commons Attribution
+                  - link [ref=e136] [cursor=pointer]:
+                    - /url: https://creativecommons.org/licenses/by/3.0/
+                    - img [ref=e137]
+            - generic [ref=e139]:
+              - heading "Included in:" [level=6] [ref=e140]
+              - generic [ref=e142]:
+                - img [ref=e143]
+                - paragraph [ref=e145]: 1 User lists
+          - separator [ref=e146]
+          - heading "0 Comments" [level=3] [ref=e149]
+          - generic [ref=e150]:
+            - progressbar [ref=e152]:
+              - img [ref=e153]
+            - generic [ref=e157]:
+              - img [ref=e159]
+              - generic [ref=e162]:
+                - textbox "Like this model? Let the creator know!" [ref=e163]
+                - group
+      - generic [ref=e164]:
+        - generic [ref=e165]:
+          - generic:
+            - insertion
+        - generic [ref=e167]:
+          - link "Computer Mouse" [ref=e168] [cursor=pointer]:
+            - /url: /m/V2Ebx3pvo4
+            - generic "Computer Mouse" [ref=e169]:
+              - img "Computer Mouse" [ref=e171]
+          - generic [ref=e172]:
+            - generic "dp" [ref=e174]: C
+            - generic [ref=e175]:
+              - link "Computer Mouse" [ref=e177] [cursor=pointer]:
+                - /url: /m/V2Ebx3pvo4
+              - link "CreativeTrio" [ref=e179] [cursor=pointer]:
+                - /url: /u/CreativeTrio
+        - generic [ref=e181]:
+          - link "Computer" [ref=e182] [cursor=pointer]:
+            - /url: /m/2EHvZLax4Y3
+            - generic "Computer" [ref=e183]:
+              - img "Computer" [ref=e185]
+          - generic [ref=e186]:
+            - generic "dp" [ref=e188]:
+              - img [ref=e189]
+            - generic [ref=e190]:
+              - link "Computer" [ref=e192] [cursor=pointer]:
+                - /url: /m/2EHvZLax4Y3
+              - link "Poly by Google" [ref=e194] [cursor=pointer]:
+                - /url: /u/Poly by Google
+        - generic [ref=e196]:
+          - link "Computer Screen" [ref=e197] [cursor=pointer]:
+            - /url: /m/V5Qo141OcB
+            - generic "Computer Screen" [ref=e198]:
+              - img "Computer Screen" [ref=e200]
+          - generic [ref=e201]:
+            - generic "dp" [ref=e203]:
+              - img [ref=e204]
+            - generic [ref=e205]:
+              - link "Computer Screen" [ref=e207] [cursor=pointer]:
+                - /url: /m/V5Qo141OcB
+              - link "Kenney" [ref=e209] [cursor=pointer]:
+                - /url: /u/Kenney
+    - contentinfo [ref=e210]:
+      - heading "Made with 🍕 by dook" [level=6] [ref=e211]
+      - generic [ref=e212]:
+        - link "Twitter" [ref=e213] [cursor=pointer]:
+          - /url: https://twitter.com/duckpizza_
+          - img [ref=e215]
+        - link "Youtube" [ref=e217] [cursor=pointer]:
+          - /url: https://www.youtube.com/c/dookdook
+          - img [ref=e219]
+        - link "Discord" [ref=e221] [cursor=pointer]:
+          - /url: https://discord.gg/mEwMwSU
+          - img [ref=e223]
+        - link "Email" [ref=e226] [cursor=pointer]:
+          - /url: mailto:hi@duck.pizza
+          - img [ref=e228]
+      - generic [ref=e230]:
+        - link "Terms" [ref=e231] [cursor=pointer]:
+          - /url: /docs/tos
+        - link "Privacy" [ref=e232] [cursor=pointer]:
+          - /url: /docs/privacy
+        - link "Security" [ref=e233] [cursor=pointer]:
+          - /url: /docs/security
+        - link "Press" [ref=e234] [cursor=pointer]:
+          - /url: /docs/press
+        - link "API" [ref=e235] [cursor=pointer]:
+          - /url: /docs/api/v1.1
+  - insertion [ref=e239]:
+    - generic [ref=e242]:
+      - heading "These are topics related to the article that might interest you" [level=2] [ref=e244]: Discover more
+      - link "Free 3D assets" [ref=e245] [cursor=pointer]:
+        - generic "Free 3D assets" [ref=e246]
+        - img [ref=e248]
+      - link "3D computer graphics software" [ref=e250] [cursor=pointer]:
+        - generic "3D computer graphics software" [ref=e251]
+        - img [ref=e253]
+      - link "Low poly asset packs" [ref=e255] [cursor=pointer]:
+        - generic "Low poly asset packs" [ref=e256]
+        - img [ref=e258]
+  - insertion [ref=e260]:
+    - iframe [ref=e263]:
+      - generic [ref=f106e3]:
+        - link [ref=f106e4] [cursor=pointer]:
+          - /url: //cdn.mediago.io/js/officialWebsite/policy.html
+          - img [ref=f106e5]
+        - link "Uniká ti moč? Skončí to za 2 h s tímto přípravkem Uroverde PL Otevřít" [ref=f106e7] [cursor=pointer]:
+          - /url: https://trace-eu.mediago.io/ju/ic?tn=41b6e88a2b85b0e731ef8e73e5558712&trackingid=08ad12bcc223dbbf832df2afef972bf9&acid=31513&data=xKXQrTDGM8wzun6VoiVIuX1tyq63FHmTtlssLfuRRfZJpoMM3hVWlvVvyDUdgo8G8kSZFH9tOcY66Ss5F9e3SMSL9TnMMg_D4x3YgIWMJ2LVCzQRk37Qa3NRApP80AdJ0uDGOC0ET6dXwx0CuJhKTxYGLSYR65XwvL-z8JF529DVscME3BN09hMDUytsCY2FCqa7YRwKgGqUqpCRq7cyKm0qS6DJGMHaCiKF6bFtQhEd8ofWhTSOHTQtZT4q73gkZC3WMqcQLB-9H3xj4Dvt9raNkSzHEYdhz0dWA1VbLBmATez68tuPHiIrRo8pLMJ15eOTcoY0mN6-0sGWi-qPOetabtOoVUh8PIxBTp02m1EbyRPZNJmuJ8KZE5BXSw95DbGlGvCOatvJb-vYx107JGr_by2AZTtUWwt9a0pDlA31-U-HaezE-e_ClqF2Tsc3TyvfOHa7rVlsBnCUWb32hEmaV2Id4L1S0_VQ9juHljW5xNm9K_bLwRJMrQ7p5q2gW_Ez1LnAtBNddpy1j_G9THJKLXdfkRf5YP6PUEPd_ffj_md3ZeBSwWe3jGO4Hria6ugb5QVw86v6mFSUO4a2fds5nAyyriAuZybTY8rz9myBRPOIAJVsNgvYD6dqlDzKP62JNTgKUefTy1HfxRh1JkfFjJq2MLwPRAeRXy053Ewa24lhYU6f9mu4RssTtFHXr0in1TqA7sM4S_Kf2GqwlUGvljtra53R2BiPmbpS1ReBho6aBxvAHQ2vJOgkFifawbjK3Lz_n-WLQZ-rr2d4K_S-zbKuS3P-xR4jKud1ehISKKDg1HM445jukK9D2ccJcKbyvc1jy8bFxe6VpLeNenn-OP42eXAduvMGZSGhYxCDPAZgE7QCOwxEvgKVkJmJl9aRUgzPMfoqUW7hTsaoIeya8WukIZrxX63YK1YokpJwOiQwXhvneHbbYFR0laV2pYAPLzboA4sJabWNQ13I7el3lw1zMlj1qD5R70Srpz46EiNNCfQoOLQw_kISWp_t4tW8vybD5P8V3bVYmgZucxHWKlXI3lC_cLuFPhdnGXFnLoI7P1fsW5unUnLOA69FIByFliyBvn4sVtwSB37K04byp1-3r-_HWUsTnGSuU4xRhlotFoZcWtywGycwuFPmOIigQ6a_-1U5sG56__ga0UsHsCX39Oo_7fR99UjFOllH3kHelXmhEAeN7Advr34rfwKHgW6Nc7xHl42s5uE7XNjE3xvwRTvy03KFT0f_BBQRZ6YYWlx0yD4Y9a4f_-VxDTqjVcfW4JKuhPfGHNsrBd11LRpZvYlXnqle95c8tS9WoE8zWdpvlzLzWNN1WZDs5J9-OcpPQabQTo-aQNOUA2iPA8G-EcNdggltdrVtvQF-GGri0oNnVrIpM7EvvbctZBdp1m9285bBRLmJ32Zw4TB8NfwmztahOTOexNMcU6XpCAYnnnik7pROIzjzdlfntyoAjE6b-9gazmOXbhuCUPpTwnraD-xeiRpKkz7IMdrNWOf2ZLhJolgKxn-9fAx6WrsaedcbB4STJ4eRFzZCor1h5POx2OLAi5B4Z6WtJeggtUBel-uRO-SqfAfsyfJJS3UhZen8DjSPHRyoh-ZekSE_HvnIY20mCiGEOAdcl-9Zy5fuPakTalJ7Foy0XCbwcA4_fKaVylKLE9Nzis1YWQTIzwFr0wMBqQ2dfmvHX3qBA0DmDyBTACxeFc7qj3tYEZo26W_dx1znMWzZ0aTylYSH0unJ8ZovK49AUofphDZhgVdkH9jghzvLkkpc6oFfu4Bjfzrq9Z5w-iQ7TxRRkzqU6uafWSLCZrbF_bwNVcSyLY1k3bgUiHlJ11VJqfvRJF27MXAP8pONDEy10cGHhB50DHXFKXgGu2RtetbwfQwn1_NjGUfJbGPlt44c0K_SoneNUH1_6U5K2A5wPUZiO1-w_eLWz7-gT1Qz2cMPHO5PIng3YQL941PHxjC4ayBnd1J64h7HJtTk5JyT2swN9RuMTEveVUN7wetpfwNV5ES8Rni3QanUSG531NSyGR1sgjgKli7ZYSM131NRniISSvy0I2pr4fnolZHB2_ZmpfLcuZ0LWtAoJaPTjQBU5wQSrtWlg-jFueDrf0QQB4ipV0OPlSZ5Pj3rVodhzJS8RNNEG7GN9wFFg7OlUogswIThc9XOJBLuu9qXs2o3rAqH6eXYp1-P78M17DuOjM81eewsWvXzgG0Z1SiUXQ0Czh_Z&uid=CAESEIhwE2PSUDbN1I8zuka0jdw&mguid=&ap=0.596842&tid=4&gprice=Eawbb5M5QyHtXyhuGpGfJFdokVZfRnvXNUX4277t16c&campaignid=4771509&c_sync=1&google_click_url=https://adclick.g.doubleclick.net/aclk%3Fsa%3DL%26ai%3DCcaaBJeU4avD5DqSO-cAPopvnkQf577npc8D4-ezNEMCNtwEQASDLw8qEAWDMgfCB5C7IAQmoAwHIAwKqBPUBT9AGxI0Hgh8ywSostElbv_eHH0coP4J0fKO4Navw9geLpa6usOB92gezX5IJQ74sxyLGmb475jV5HPN8DomgENVWhcP1FCGSJbeaLjOpru4VWad79trLVJoHe4yJRzE-jyzDGtQSQhuxuOj29mcdvJZLarK8Ms6qTj_2_Hdne3Va0ZnIeEegWH7lLThNffFBn2qHnUHCWmGwzqeWshn0QgpfraVHa5oaD8ADq-7fxG0Yt6t6gZfVMRobtGfkwDGmG_mIGdUbWtMusoCety0UBhZFnsfCqOFvf-h8ZmW_bwSoSc1HqyFEGmdrr29bHmOBr6N5O82ABpyt5KmGut6rmQGgBiGoB5PYsQKoB5TYsQKoB5XYsQKoB6a-G6gHltgbqAeqm7ECqAf_nrECqAffn7ECqAetvrECqAe_07EC2AcA0ggzCIDhgBAQATIIqoKAgICAgAg6EIDAA4CAhICAlK7gA6iHgBBIvf3BOlj69-yzqpqVA2AA-gsCCAGADAGqDQJDWuoNEwjgpu6zqpqVAxUkRx4CHaLNOXKIDgnQFQGAFwGyFwQYDFAB%26num%3D1%26sig%3DAOD64_0VvqPT-mcLlnr6a-eG41Fp1zCXLw%26client%3Dca-pub-4279852833813635%26adurl%3D
+          - img [ref=f106e9]
+          - generic [ref=f106e10]:
+            - generic [ref=f106e12]: Uniká ti moč? Skončí to za 2 h s tímto přípravkem
+            - generic [ref=f106e13]:
+              - generic [ref=f106e14]: Uroverde PL
+              - generic [ref=f106e15]:
+                - text: Otevřít
+                - img [ref=f106e16]
+  - generic [ref=e265]:
+    - button "Nastavení ochrany soukromí a souborů cookie" [ref=e266] [cursor=pointer]
+    - generic [ref=e267]: "Spravováno Googlem. Odpovídá požadavkům systému TCF organizace IAB. ID CMP: 300"
