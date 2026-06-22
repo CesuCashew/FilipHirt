@@ -1308,357 +1308,156 @@ section {
 }
 
 /* ============================================================
-   COVER — framed-collage zine front page
+   HERO — full-bleed night street, sharp viewfinder frame around
+   the figure, centred title, orbiting ASCII arm
    ============================================================ */
-.cover {
+.hero2 {
+  /* frame rectangle — clip-path window and brackets share these */
+  --fr-l: 7vw;
+  --fr-r: 61vw;
+  --fr-t: 13vh;
+  --fr-b: 9vh;
+  /* object-position that keeps the standing figure inside the frame */
+  --hero-obj: 20% 64%;
+
   position: relative;
   min-height: 100vh;
   min-height: 100svh;
-  display: flex;
-  /* inset the poster so the page wallpaper shows through:
-     35px top · 50px sides · 100px bottom (SPIN ROOM-style framed cover) */
-  padding: 35px 50px 100px;
-  background-color: var(--poster-bg);
-  background-image: url('/hero-art.jpg');
-  background-size: cover;
-  background-position: center;
-}
-
-/* the brown poster frame — fills the whole frame width; the giant title sits in
-   flow up top and `.poster-body` takes the remaining height, so the SPIN ROOM
-   composition reads correctly at any aspect. `cqw` sizing tracks the width. */
-.poster {
-  position: relative;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  container-type: inline-size;
   overflow: hidden;
-  background: var(--poster-brown);
+  background: var(--espresso);
+  isolation: isolate;
 }
 
-/* below-title content area — fills the height left under the wordmark */
-.poster-body {
-  position: relative;
-  flex: 1 1 auto;
-  min-height: 0;
-}
-
-.poster-corner {
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  border: 2px solid var(--poster-gold);
-  z-index: 6;
-}
-
-.poster-corner-tl {
-  top: 14px;
-  left: 14px;
-  border-right: 0;
-  border-bottom: 0;
-}
-
-.poster-corner-br {
-  bottom: 14px;
-  right: 14px;
-  border-left: 0;
-  border-top: 0;
-}
-
-/* hero photo — bottom-left, B&W, sits directly under the wordmark (SPIN ROOM 1:1) */
-.poster-photo {
-  position: absolute;
-  left: 2%;
-  top: 2%;
-  bottom: 5%;
-  width: 43.5%;
-  z-index: 1;
-  overflow: hidden;
-}
-
-.poster-photo-img {
-  position: absolute;
-  inset: -6%;
-  width: 112%;
-  height: 112%;
-  object-fit: cover;
-  object-position: 50% 30%;
-  /* desaturated like the reference turntable photo */
-  filter: grayscale(1) contrast(1.1) brightness(0.92);
-  will-change: transform;
-}
-
-.poster-photo-tab {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  z-index: 2;
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--poster-gold);
-  background: rgba(20, 8, 4, 0.7);
-  padding: 7px 13px;
-}
-
-/* giant wordmark FILIP HIRT — one continuous gold line across the top (SPIN ROOM 1:1) */
-.poster-name {
-  position: relative;
-  z-index: 5;
-  flex: 0 0 auto;
-  margin: 0;
-  padding: 1.6% 2% 0;
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  gap: 0.2em;
-  white-space: nowrap;
-  font-family: var(--font-poster);
-  font-weight: 400;
-  /* sized to sit comfortably (not full-bleed): text width ≈ 3.63 × font-size */
-  font-size: clamp(40px, 20.5cqw, 420px);
-  line-height: 0.92;
-  letter-spacing: 0.012em;
-  text-transform: uppercase;
-  color: var(--poster-gold);
-  /* subtle warm screen-print drop, like the printed poster */
-  text-shadow:
-    0 2px 0 var(--frame),
-    0 5px 18px rgba(20, 8, 4, 0.45);
-  pointer-events: none;
-}
-
-/* WEB DESIGNER — cream right-side lockup, level with the photo top */
-.poster-wordmark {
-  position: absolute;
-  right: 3%;
-  top: 1%;
-  z-index: 5;
-  font-family: var(--font-poster);
-  font-weight: 400;
-  font-size: clamp(16px, 4cqw, 64px);
-  line-height: 0.9;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--cream-ink);
-  text-align: right;
-}
-
-/* credits block — small print above the tiles (the reference's tracklist copy) */
-.poster-quote {
-  position: absolute;
-  left: 47%;
-  top: 2%;
-  width: 19%;
-  z-index: 4;
-  color: var(--cream-ink);
-}
-
-.poster-quote-lead {
-  margin: 0 0 5px;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: clamp(9px, 1.12cqw, 13px);
-  letter-spacing: 0.1em;
-  line-height: 1.25;
-  text-transform: uppercase;
-}
-
-.poster-quote-sub {
-  margin: 0;
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: clamp(9px, 1.12cqw, 13px);
-  line-height: 1.45;
-  color: rgba(247, 239, 221, 0.74);
-}
-
-/* two album-tile navigations — bottom-right, square-ish with a gap */
-.poster-tiles {
-  position: absolute;
-  left: 47%;
-  right: 3%;
-  top: 15%;
-  bottom: 5%;
-  z-index: 3;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.8%;
-}
-
-.poster-tile {
-  position: relative;
-  overflow: hidden;
-  text-decoration: none;
-  display: block;
-  background: #1a0c06;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.poster-tile-media {
+.hero2-bg,
+.hero2-sharp {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  object-position: var(--hero-obj);
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
-.poster-tile:hover .poster-tile-media {
-  transform: scale(1.07);
+/* blurred, dimmed surroundings */
+.hero2-bg {
+  z-index: 0;
+  filter: blur(15px) brightness(0.6) saturate(1.05);
+  transform: scale(1.1);
 }
 
-.poster-tile-scrim {
+/* grain + vignette over the blur, beneath the sharp window */
+.hero2-scrim {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(180deg, rgba(20, 8, 4, 0.15) 0%, rgba(20, 8, 4, 0.1) 45%, rgba(20, 8, 4, 0.82) 100%);
+  pointer-events: none;
+  background:
+    radial-gradient(72% 62% at 50% 48%, rgba(18, 10, 5, 0.5) 0%, transparent 60%),
+    radial-gradient(130% 100% at 50% 38%, transparent 40%, rgba(16, 9, 4, 0.66) 100%);
 }
 
-.poster-tile-label {
+.hero2-scrim::after {
+  content: "";
   position: absolute;
-  left: clamp(12px, 1vw, 20px);
-  bottom: clamp(34px, 3.4vw, 52px);
-  z-index: 2;
-  font-family: var(--font-poster);
-  font-weight: 400;
-  text-transform: uppercase;
-  font-size: clamp(16px, 4.2cqw, 56px);
-  line-height: 0.84;
-  letter-spacing: 0.01em;
-  color: var(--poster-gold);
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+  opacity: 0.16;
+  mix-blend-mode: overlay;
 }
 
-.poster-tile-go {
-  position: absolute;
-  left: clamp(12px, 1vw, 20px);
-  bottom: clamp(12px, 1.1vw, 18px);
+/* sharp window — same photo, clipped to the frame */
+.hero2-sharp {
   z-index: 2;
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--cream-ink);
-  display: inline-flex;
+  filter: contrast(1.06) saturate(1.08) brightness(1.03);
+  clip-path: inset(var(--fr-t) var(--fr-r) var(--fr-b) var(--fr-l));
+}
+
+/* viewfinder brackets on the same rectangle */
+.hero2-frame {
+  position: absolute;
+  top: var(--fr-t);
+  right: var(--fr-r);
+  bottom: var(--fr-b);
+  left: var(--fr-l);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero2-corner {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  border: 2px solid rgba(247, 239, 221, 0.92);
+}
+
+.hero2-corner--tl { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+.hero2-corner--tr { top: -1px; right: -1px; border-left: 0; border-bottom: 0; }
+.hero2-corner--bl { bottom: -1px; left: -1px; border-right: 0; border-top: 0; }
+.hero2-corner--br { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+
+/* centred title */
+.hero2-title {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 6px;
-  transition: gap 0.3s ease;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+  padding: 0 5vw;
 }
 
-.poster-tile:hover .poster-tile-go {
-  gap: 13px;
+.hero2-name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(52px, 11vw, 132px);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: var(--cream-ink);
+  text-shadow: 0 6px 34px rgba(18, 9, 4, 0.62);
 }
 
-.poster-scroll {
-  position: absolute;
-  right: 3.6%;
-  bottom: 3.4%;
-  z-index: 6;
+.hero2-role {
+  margin-top: clamp(12px, 1.8vh, 24px);
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 11px;
-  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(247, 239, 221, 0.6);
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
+  font-size: clamp(12px, 1.2vw, 17px);
+  letter-spacing: 0.42em;
+  text-indent: 0.42em;
+  color: rgba(247, 239, 221, 0.82);
 }
 
-.poster-scroll-arrow {
-  animation: cover-bob 1.6s ease-in-out infinite;
+/* dissolve into the paper body below */
+.hero2-seam {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 26vh;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(to top, var(--paper) 0%, rgba(242, 231, 206, 0.55) 34%, transparent 100%);
 }
 
-@keyframes cover-bob {
-
-  0%,
-  100% {
-    transform: translateY(0);
+@media (max-width: 760px) {
+  .hero2 {
+    --fr-l: 14vw;
+    --fr-r: 14vw;
+    --fr-t: 26vh;
+    --fr-b: 12vh;
+    --hero-obj: 26% 32%;
   }
 
-  50% {
-    transform: translateY(4px);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .poster-scroll-arrow {
-    animation: none;
-  }
-}
-
-@media (max-width: 900px) {
-  .cover {
-    padding: 10px;
-    display: block;
-  }
-
-  /* drop the container on mobile — content stacks naturally */
-  .poster {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-    max-width: none;
-    aspect-ratio: auto;
-    container-type: normal;
-  }
-
-  .poster-body {
-    display: block;
-    flex: none;
-  }
-
-  .poster-name {
-    position: static;
-    font-size: clamp(54px, 17vw, 120px);
-    padding: 18px 16px 0;
-  }
-
-  .poster-photo {
-    position: relative;
-    top: auto;
-    bottom: auto;
-    width: 100%;
-    height: 46vh;
-  }
-
-  .poster-wordmark {
-    position: static;
-    display: block;
-    text-align: left;
-    padding: 10px 16px 0;
-  }
-
-  .poster-quote {
-    position: static;
-    width: auto;
-    padding: 12px 16px;
-  }
-
-  .poster-tiles {
-    position: static;
-    height: 40vh;
-    margin: 8px 16px 16px;
-  }
-
-  .poster-scroll {
-    display: none;
-  }
-}
-
-@media (max-width: 560px) {
-  .poster-tiles {
-    grid-template-columns: 1fr;
-    height: auto;
-  }
-
-  .poster-tile {
-    aspect-ratio: 4 / 3;
+  .hero2-name {
+    font-size: clamp(44px, 15vw, 96px);
   }
 }
 
@@ -5556,4 +5355,190 @@ section {
   .svc-tab {
     display: none;
   }
+}
+/* ============================================================
+   HERO — kinetic editorial cover with the Commodore 64 centrepiece
+   ============================================================ */
+.heroB {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: radial-gradient(86% 66% at 26% 28%, #251609 0%, #160c06 58%, #1e120b 100%);
+}
+
+/* ---- marquees ---- */
+.heroB-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: clamp(6px, 1.1vh, 15px) 0;
+  border-block: 1px solid rgba(247, 239, 221, 0.14);
+  flex: 0 0 auto;
+}
+.heroB-track { display: inline-flex; will-change: transform; }
+.heroB-track span {
+  font-family: "Bodoni Moda", var(--font-display), serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(30px, 5.2vw, 80px);
+  line-height: 1;
+  color: var(--ember);
+  letter-spacing: 0.01em;
+  padding-right: 0.32em;
+}
+.heroB-star { color: var(--marigold); }
+.heroB-marquee--l .heroB-track { animation: heroB-ml 30s linear infinite; }
+.heroB-marquee--r .heroB-track { animation: heroB-mr 30s linear infinite; }
+@keyframes heroB-ml { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes heroB-mr { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+/* ---- body: statement (left) + 3D stage (right) ---- */
+.heroB-body {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: clamp(20px, 3vw, 56px);
+  align-items: center;
+  padding: clamp(16px, 3vh, 40px) clamp(24px, 5vw, 76px);
+}
+
+.heroB-statement { max-width: 620px; }
+.heroB-kicker {
+  font-family: var(--font-body);
+  font-size: clamp(11px, 1.1vw, 14px);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin: 0 0 16px;
+}
+.heroB-headline { margin: 0; display: flex; flex-direction: column; line-height: 0.88; }
+.heroB-h-serif {
+  font-family: "Bodoni Moda", var(--font-display), serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(40px, 5.6vw, 96px);
+  color: var(--cream-ink);
+}
+.heroB-h-it { font-style: italic; font-weight: 500; color: var(--ember); }
+.heroB-h-grotesk {
+  font-family: var(--font-body);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(36px, 5.2vw, 88px);
+  letter-spacing: -0.02em;
+  color: var(--cream-ink);
+}
+.heroB-lead {
+  max-width: 42ch;
+  margin: 18px 0 0;
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.05vw, 17px);
+  line-height: 1.6;
+  color: rgba(247, 239, 221, 0.74);
+}
+
+.heroB-meta { display: flex; align-items: center; gap: 18px; margin-top: 26px; flex-wrap: wrap; }
+.heroB-chip {
+  margin: 0;
+  width: 64px;
+  height: 80px;
+  flex: 0 0 auto;
+  overflow: hidden;
+  will-change: transform;
+  box-shadow: 0 0 0 1px rgba(247, 239, 221, 0.45), 0 12px 26px rgba(0, 0, 0, 0.5);
+}
+.heroB-chip img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.heroB-badges { display: flex; flex-wrap: wrap; gap: 10px; }
+.heroB-badge {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--cream-ink);
+  border: 1px solid rgba(247, 239, 221, 0.32);
+  border-radius: 100px;
+  padding: 8px 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.heroB-badge--live { color: var(--ember); border-color: rgba(224, 83, 31, 0.5); }
+.heroB-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--ember);
+  box-shadow: 0 0 8px var(--ember);
+  animation: heroB-blink 1.6s ease-in-out infinite;
+}
+@keyframes heroB-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
+
+/* ---- 3D stage: the Commodore on a lit plinth ---- */
+.heroB-stage {
+  position: relative;
+  justify-self: center;
+  width: 100%;
+  max-width: 640px;
+  height: clamp(340px, 46vh, 560px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: transform;
+}
+.heroB-stage-glow {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(42% 40% at 50% 46%, rgba(224, 83, 31, 0.5) 0%, rgba(224, 83, 31, 0.12) 45%, transparent 72%);
+  filter: blur(10px);
+}
+.heroB-stage-model { position: relative; z-index: 2; width: 100%; height: 100%; display: block; }
+.heroB-stage-shadow {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 13%;
+  transform: translateX(-50%);
+  width: 56%;
+  height: 42px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0, 0, 0, 0.55), transparent 70%);
+  filter: blur(7px);
+  pointer-events: none;
+}
+.heroB-stage-tag {
+  position: absolute;
+  z-index: 3;
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(247, 239, 221, 0.5);
+  white-space: nowrap;
+}
+
+/* ---- responsive ---- */
+@media (max-width: 900px) {
+  .heroB-body { grid-template-columns: 1fr; gap: 10px; align-content: center; }
+  .heroB-stage { display: none; }
+  .heroB-statement { max-width: none; }
+  .heroB-chip { width: 84px; height: 108px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heroB-marquee--l .heroB-track,
+  .heroB-marquee--r .heroB-track,
+  .heroB-dot { animation: none; }
 }
