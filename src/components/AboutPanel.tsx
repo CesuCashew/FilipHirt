@@ -39,11 +39,6 @@ export default function AboutPanel() {
             </div>
           </div>
         </div>
-
-        <div className="about-foot">
-          <span className="about-hint">Odsud to jede doprava</span>
-          <span className="about-arrow" aria-hidden="true">→</span>
-        </div>
       </div>
     </section>
   );

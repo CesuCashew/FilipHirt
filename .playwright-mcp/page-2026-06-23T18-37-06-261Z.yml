@@ -1,0 +1,250 @@
+- generic [ref=e2]:
+  - generic:
+    - img
+  - main [ref=e4]:
+    - generic [ref=e6]:
+      - generic [ref=e8]:
+        - generic [ref=e9]: FILIP HIRT ✳
+        - generic [ref=e10]: FILIP HIRT ✳
+        - generic [ref=e11]: FILIP HIRT ✳
+        - generic [ref=e12]: FILIP HIRT ✳
+      - generic [ref=e13]:
+        - generic [ref=e14]:
+          - paragraph [ref=e15]: Freelance web designer & developer
+          - heading "Weby stavěné jako řemeslo." [level=1] [ref=e16]:
+            - generic [ref=e17]: Weby
+            - generic [ref=e18]: stavěné
+            - generic [ref=e19]: jako
+            - generic [ref=e20]: řemeslo.
+          - paragraph [ref=e21]: Od nuly, bez šablon — moderní design, čistý kód a chytré funkce, které pracují za vás.
+          - generic [ref=e23]:
+            - generic [ref=e24]: Volný na 2026
+            - generic [ref=e26]: 30+ projektů
+            - generic [ref=e27]: Cheb → celá ČR
+        - img [ref=e30]
+      - generic [ref=e36]:
+        - generic [ref=e37]: WEB DESIGNER ✳
+        - generic [ref=e38]: WEB DESIGNER ✳
+        - generic [ref=e39]: WEB DESIGNER ✳
+        - generic [ref=e40]: WEB DESIGNER ✳
+    - generic [ref=e43]:
+      - generic [ref=e47]:
+        - generic [ref=e48]:
+          - generic [ref=e49]: O mně
+          - heading "ABOUT ME" [level=2] [ref=e50]:
+            - text: ABOUT
+            - text: ME
+        - generic [ref=e51]:
+          - generic [ref=e54]: Filip Hirt · Cheb
+          - generic [ref=e55]:
+            - paragraph [ref=e56]: Je mi 18 a weby nejsou jen moje práce — je to způsob, jak přemýšlím.
+            - paragraph [ref=e57]: Mám za sebou přes třicet dokončených projektů pro reálné klienty. Sídlím v Chebu, ale pracuji s firmami po celé republice. Každý web stavím od nuly — žádné šablony, žádné kompromisy.
+            - paragraph [ref=e58]: "Od rezervačních systémů po e-shopy, od firemních prezentací po weby s AI — vždycky s jediným cílem: aby web pracoval za vás, ne vy za něj."
+            - generic [ref=e59]:
+              - generic [ref=e60]: React
+              - generic [ref=e61]: Next.js
+              - generic [ref=e62]: AI integrace
+              - generic [ref=e63]: SEO
+              - generic [ref=e64]: UX/UI
+              - generic [ref=e65]: E-commerce
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - generic [ref=e72]: Co nabízím
+          - paragraph [ref=e73]: Šest způsobů, jak z webu udělat nástroj, který pracuje za vás.
+        - generic [ref=e74]:
+          - generic [ref=e75]: UX / UI
+          - generic [ref=e76]: DESIGN
+        - generic [ref=e77]:
+          - generic [ref=e78]: Vývoj na míru
+          - generic [ref=e79]: FRONT-END
+        - generic [ref=e80]:
+          - generic [ref=e81]: Chytré weby
+          - generic [ref=e82]: AI WEBY
+        - generic [ref=e83]:
+          - generic [ref=e84]: Online obchody
+          - generic [ref=e85]: E-SHOPY
+        - generic [ref=e86]:
+          - generic [ref=e87]: Výkon & SEO
+          - generic [ref=e88]: PERFORMANCE
+        - generic [ref=e89]:
+          - generic [ref=e90]: Redesign & audit
+          - generic [ref=e91]: REDESIGN
+        - generic [ref=e92]: Služby — Services
+      - generic [ref=e96]:
+        - generic [ref=e97]:
+          - generic [ref=e98]: Práce
+          - heading "VYBRANÉ PRÁCE" [level=2] [ref=e99]:
+            - text: VYBRANÉ
+            - text: PRÁCE
+          - paragraph [ref=e100]: Pár věcí, co už stojí a běží naživo.
+        - generic [ref=e101]:
+          - link "2025 F&B / Rezervace Restaurace La Cucina Otevřít web" [ref=e102]:
+            - /url: https://lacucina.cz
+            - generic [ref=e104]: "2025"
+            - generic [ref=e105]:
+              - text: F&B / Rezervace
+              - heading "Restaurace La Cucina" [level=3] [ref=e106]
+            - generic [ref=e107]:
+              - text: Otevřít web
+              - generic [ref=e108]: ↗
+          - link "2025 E-commerce TechShop CZ Otevřít web" [ref=e109]:
+            - /url: https://techshop.cz
+            - generic [ref=e111]: "2025"
+            - generic [ref=e112]:
+              - text: E-commerce
+              - heading "TechShop CZ" [level=3] [ref=e113]
+            - generic [ref=e114]:
+              - text: Otevřít web
+              - generic [ref=e115]: ↗
+          - link "2024 Firemní prezentace BuildCorp s.r.o. Otevřít web" [ref=e116]:
+            - /url: https://buildcorp.cz
+            - generic [ref=e118]: "2024"
+            - generic [ref=e119]:
+              - text: Firemní prezentace
+              - heading "BuildCorp s.r.o." [level=3] [ref=e120]
+            - generic [ref=e121]:
+              - text: Otevřít web
+              - generic [ref=e122]: ↗
+          - link "2024 Wellness Yoga Studio Lucie Otevřít web" [ref=e123]:
+            - /url: https://yogalucie.cz
+            - generic [ref=e125]: "2024"
+            - generic [ref=e126]:
+              - text: Wellness
+              - heading "Yoga Studio Lucie" [level=3] [ref=e127]
+            - generic [ref=e128]:
+              - text: Otevřít web
+              - generic [ref=e129]: ↗
+      - generic [ref=e133]:
+        - generic [ref=e134]:
+          - generic [ref=e135]: Žurnál
+          - heading "Z MÉHO ZÁPISNÍKU" [level=2] [ref=e136]:
+            - text: Z MÉHO
+            - text: ZÁPISNÍKU
+          - paragraph [ref=e137]: Pár poznámek o řemesle, rychlosti a klidu.
+        - generic [ref=e138]:
+          - article [ref=e139]:
+            - img "Pracovní stůl ve večerním teplém světle lampy" [ref=e141]
+            - generic [ref=e142]: Esej · 8 min
+            - heading "Proč dobrý web začíná u atmosféry, ne u funkcí" [level=3] [ref=e143]
+            - paragraph [ref=e144]: "Než otevřu editor, ptám se: jaký pocit má návštěvník mít? Funkce přijdou potom."
+            - generic [ref=e145]: Číst →
+          - article [ref=e146]:
+            - img "Notebook na dřevěném stole v útulné chatě" [ref=e148]
+            - generic [ref=e149]: Vývoj · 6 min
+            - heading "Rychlost je zdvořilost" [level=3] [ref=e150]
+            - paragraph [ref=e151]: Každá vteřina načítání je test trpělivosti. Jak držím weby svižné bez kompromisů.
+            - generic [ref=e152]: Číst →
+          - article [ref=e153]:
+            - img "Pracovní stůl s monitorem, knihami a rostlinou" [ref=e155]
+            - generic [ref=e156]: AI · 5 min
+            - heading "AI, která nepřekáží" [level=3] [ref=e157]
+            - paragraph [ref=e158]: Asistent má pomáhat, ne otravovat. Kdy se chatbot vyplatí a kdy je jen ozdoba.
+            - generic [ref=e159]: Číst →
+      - generic [ref=e163]:
+        - generic [ref=e164]:
+          - generic: "04"
+          - generic [ref=e165]: AI Konzultant
+          - heading "Digitální dvojče poháněné AI" [level=2] [ref=e166]:
+            - text: Digitální dvojče
+            - text: poháněné AI
+          - paragraph [ref=e167]: Napište mému virtuálnímu já. Je vycvičeno na mých reálných zkušenostech a odpoví vám okamžitě na jakékoli dotazy ohledně tvorby webů, technologií či nacenění.
+          - generic [ref=e168]:
+            - generic [ref=e171]: AI Asistent Aktivní
+            - generic [ref=e172]:
+              - generic [ref=e173]:
+                - generic [ref=e174]: "Model:"
+                - generic [ref=e175]: AI Agent
+              - generic [ref=e176]:
+                - generic [ref=e177]: "Rychlost:"
+                - generic [ref=e178]: ~150ms / token
+          - generic [ref=e179]:
+            - generic [ref=e180]: "Časté dotazy (klikněte pro odeslání):"
+            - generic [ref=e181]:
+              - button "Kolik ti je let a odkud jsi?" [ref=e182]:
+                - img [ref=e183]
+                - generic [ref=e186]: Kolik ti je let a odkud jsi?
+              - button "Jaké služby nabízíš?" [ref=e187]:
+                - img [ref=e188]
+                - generic [ref=e191]: Jaké služby nabízíš?
+              - button "V jakých technologiích vyvíjíš?" [ref=e192]:
+                - img [ref=e193]
+                - generic [ref=e196]: V jakých technologiích vyvíjíš?
+              - button "Kolik máš za sebou projektů?" [ref=e197]:
+                - img [ref=e198]
+                - generic [ref=e201]: Kolik máš za sebou projektů?
+              - button "Jak tě mohu kontaktovat?" [ref=e202]:
+                - img [ref=e203]
+                - generic [ref=e206]: Jak tě mohu kontaktovat?
+        - generic [ref=e208]:
+          - generic [ref=e209]:
+            - generic [ref=e214]:
+              - img [ref=e215]
+              - generic [ref=e218]: asistent — filip hirt
+            - generic [ref=e221]: ONLINE
+          - generic [ref=e223]:
+            - img [ref=e225]
+            - generic [ref=e229]: Ahoj! Jsem AI asistent pana Filipa Hirta. Rád ti odpovím na jakékoli otázky ohledně pana Hirta, jeho webdesignérské práce, zkušeností s programováním nebo služeb, které nabízí. Na co se chceš zeptat?
+          - generic [ref=e230]:
+            - textbox "Zeptejte se na mou práci, technologie, cenu..." [ref=e231]
+            - button "Odeslat zprávu" [disabled] [ref=e232]:
+              - img [ref=e233]
+      - generic [ref=e238]:
+        - generic:
+          - generic: "06"
+        - generic [ref=e239]:
+          - heading "Pojďme spolu něco postavit" [level=2] [ref=e240]:
+            - text: Pojďme spolu
+            - text: něco postavit
+          - paragraph [ref=e241]: Máte nápad, web k oživení, nebo jen chuť to probrat? Napište pár vět — ozvu se obvykle do dne.
+          - generic [ref=e242]:
+            - generic [ref=e243]:
+              - generic [ref=e244]: Jméno *
+              - textbox "Jméno *" [ref=e245]:
+                - /placeholder: Vaše jméno
+            - generic [ref=e246]:
+              - generic [ref=e247]: Email *
+              - textbox "Email *" [ref=e248]:
+                - /placeholder: vas@email.cz
+            - generic [ref=e249]:
+              - generic [ref=e250]: Telefon
+              - textbox "Telefon" [ref=e251]:
+                - /placeholder: +420 123 456 789
+            - generic [ref=e252]:
+              - generic [ref=e253]: Typ webu
+              - combobox "Typ webu" [ref=e254]:
+                - option "Vyberte službu..." [selected]
+                - option "Chytrý Web s AI"
+                - option "Online Obchod"
+                - option "Web pro Restauraci"
+                - option "Firemní Prezentace"
+                - option "Jiné"
+            - generic [ref=e255]:
+              - generic [ref=e256]: Zpráva *
+              - textbox "Zpráva *" [ref=e257]:
+                - /placeholder: Popište váš projekt...
+            - button "Odeslat Zprávu" [ref=e259]
+          - generic [ref=e260]:
+            - paragraph [ref=e261]: "Nebo mi napište rovnou:"
+            - button "Kopírovat emailovou adresu do schránky" [ref=e262]: f.hirt@seznam.cz
+            - generic [ref=e263]: Email zkopírován ✓
+      - generic [ref=e267]:
+        - heading "DÍKY ZA NÁVŠTĚVU" [level=2] [ref=e268]:
+          - text: DÍKY ZA
+          - text: NÁVŠTĚVU
+        - paragraph [ref=e269]: Pojďme spolu něco postavit.
+        - generic [ref=e270]:
+          - link "GitHub" [ref=e271]:
+            - /url: https://github.com/cesucashew
+            - text: GitHub ↗
+          - link "LinkedIn" [ref=e272]:
+            - /url: https://www.linkedin.com/in/filip-hirt-876671365/
+            - text: LinkedIn ↗
+          - link "Discord" [ref=e273]:
+            - /url: https://discord.com/users/396724038535479297
+            - text: Discord ↗
+          - link "f.hirt@seznam.cz" [ref=e274]:
+            - /url: mailto:f.hirt@seznam.cz
+        - button "Zpátky na začátek" [ref=e275]:
+          - generic [ref=e276]: ↑
+          - text: Zpátky na začátek
+        - generic [ref=e277]: FILIP HIRT
