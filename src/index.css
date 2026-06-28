@@ -5360,25 +5360,38 @@ section {
    HERO — kinetic editorial cover with the Commodore 64 centrepiece
    ============================================================ */
 .heroB {
+  --p: 0;
   position: relative;
-  min-height: 100vh;
-  min-height: 100svh;
-  overflow: hidden;
+  height: 320vh;
+  padding: 0; /* override the global section padding so the stage pins flush */
   isolation: isolate;
   z-index: 2;
+  background: #160c06;
+}
+
+/* the pinned 100vh stage — the part you actually see */
+.heroB-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: radial-gradient(86% 66% at 26% 28%, #251609 0%, #160c06 58%, #1e120b 100%);
 }
 
-/* ---- marquees ---- */
+/* ---- marquees (reveal early on the shared timeline, then hold) ---- */
 .heroB-marquee {
   overflow: hidden;
   white-space: nowrap;
   padding: clamp(6px, 1.1vh, 15px) 0;
   border-block: 1px solid rgba(247, 239, 221, 0.14);
   flex: 0 0 auto;
+  opacity: clamp(0, calc(var(--p) / 0.18), 1);
+  position: relative;
+  z-index: 1;
 }
 .heroB-track { display: inline-flex; will-change: transform; }
 .heroB-track span {
@@ -5391,7 +5404,7 @@ section {
   letter-spacing: 0.01em;
   padding-right: 0.32em;
 }
-.heroB-star { color: var(--marigold); }
+.heroB-star-glyph { color: var(--marigold); }
 .heroB-marquee--l .heroB-track { animation: heroB-ml 30s linear infinite; }
 .heroB-marquee--r .heroB-track { animation: heroB-mr 30s linear infinite; }
 @keyframes heroB-ml { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -5399,10 +5412,12 @@ section {
 
 /* ---- body: statement (left) + 3D stage (right) ---- */
 .heroB-body {
+  position: relative;
+  z-index: 1;
   flex: 1 1 auto;
   min-height: 0;
   display: grid;
-  grid-template-columns: 1.02fr 0.98fr;
+  grid-template-columns: 1fr 1.05fr;
   gap: clamp(20px, 3vw, 56px);
   align-items: center;
   padding: clamp(16px, 3vh, 40px) clamp(24px, 5vw, 76px);
@@ -5410,6 +5425,7 @@ section {
 
 .heroB-statement { max-width: 620px; }
 .heroB-kicker {
+  --l: clamp(0, calc(var(--p) / 0.3), 1);
   font-family: var(--font-body);
   font-size: clamp(11px, 1.1vw, 14px);
   font-weight: 600;
@@ -5417,8 +5433,18 @@ section {
   text-transform: uppercase;
   color: var(--ember);
   margin: 0 0 16px;
+  opacity: var(--l);
+  translate: 0 calc((1 - var(--l)) * 22px);
 }
-.heroB-headline { margin: 0; display: flex; flex-direction: column; line-height: 0.88; }
+.heroB-headline {
+  --l: clamp(0, calc((var(--p) - 0.04) / 0.42), 1);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.88;
+  opacity: var(--l);
+  translate: 0 calc((1 - var(--l)) * 40px);
+}
 .heroB-h-serif {
   font-family: "Bodoni Moda", var(--font-display), serif;
   font-weight: 700;
@@ -5436,15 +5462,56 @@ section {
   color: var(--cream-ink);
 }
 .heroB-lead {
+  --l: clamp(0, calc((var(--p) - 0.22) / 0.45), 1);
   max-width: 42ch;
   margin: 18px 0 0;
   font-family: var(--font-body);
   font-size: clamp(14px, 1.05vw, 17px);
   line-height: 1.6;
   color: rgba(247, 239, 221, 0.74);
+  opacity: var(--l);
+  translate: 0 calc((1 - var(--l)) * 30px);
 }
 
-.heroB-meta { display: flex; align-items: center; gap: 18px; margin-top: 26px; flex-wrap: wrap; }
+.heroB-meta {
+  --l: clamp(0, calc((var(--p) - 0.34) / 0.45), 1);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+  opacity: var(--l);
+  translate: 0 calc((1 - var(--l)) * 26px);
+}
+
+/* ---- background photo: at the top it's just the brown; as you scroll, the
+        night-street shot fades up (with a dark scrim so the text stays readable),
+        settling from a slight zoom ---- */
+.heroB-bg {
+  --l: clamp(0, calc(var(--p) / 0.5), 1);
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: var(--l);
+  /* lighter scrim so Filip reads: gentle left wash for the kicker, and
+     top/bottom darkening for the marquees + lead — his band stays open */
+  background-image:
+    linear-gradient(90deg, rgba(18, 10, 5, 0.58) 0%, rgba(18, 10, 5, 0.26) 36%, rgba(18, 10, 5, 0.1) 64%, rgba(18, 10, 5, 0.28) 100%),
+    linear-gradient(to bottom, rgba(18, 10, 5, 0.5) 0%, rgba(18, 10, 5, 0.12) 24%, rgba(18, 10, 5, 0.2) 58%, rgba(18, 10, 5, 0.76) 100%),
+    url("/hero-bg.JPG");
+  background-size: cover;
+  /* aim the frame at the figure (he stands lower-left in the shot) */
+  background-position: 44% 66%;
+  /* the night shot is dark — lift it just enough that Filip is visible */
+  filter: brightness(1.08) saturate(1.02);
+  scale: calc(1.06 - 0.06 * var(--l));
+  will-change: opacity;
+}
+@media (max-width: 900px) {
+  /* mobile crops horizontally — pull the frame left so Filip isn't cut off */
+  .heroB-bg { background-position: 28% 60%; }
+}
 .heroB-chip {
   margin: 0;
   width: 64px;
@@ -5481,63 +5548,93 @@ section {
 }
 @keyframes heroB-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
 
-/* ---- 3D stage: the Commodore on a lit plinth ---- */
+/* ---- star stage: the Macintosh restored on scroll, on a full-white star ---- */
 .heroB-stage {
   position: relative;
   justify-self: center;
-  width: 100%;
-  max-width: 640px;
-  height: clamp(340px, 46vh, 560px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: min(100%, 66vh);
+  aspect-ratio: 1 / 1;
   will-change: transform;
 }
-.heroB-stage-glow {
+/* one element fades + scales the whole star+screen group as it reveals */
+.heroB-stage-inner {
+  --l: clamp(0, calc((var(--p) - 0.02) / 0.5), 1);
   position: absolute;
   inset: 0;
+  opacity: calc(0.34 + 0.66 * var(--l));
+  scale: calc(0.9 + 0.1 * var(--l));
+}
+.heroB-star-glow {
+  position: absolute;
+  inset: -6%;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(42% 40% at 50% 46%, rgba(224, 83, 31, 0.5) 0%, rgba(224, 83, 31, 0.12) 45%, transparent 72%);
+  background: radial-gradient(closest-side, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.05) 56%, transparent 74%);
   filter: blur(10px);
 }
-.heroB-stage-model { position: relative; z-index: 2; width: 100%; height: 100%; display: block; }
-.heroB-stage-shadow {
+.heroB-star {
   position: absolute;
+  inset: 0;
   z-index: 1;
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 22px 60px rgba(0, 0, 0, 0.5));
+}
+/* the scrubbed frame sits inside the white star body; its background is encoded
+   to pure #fff so the rectangle dissolves into the star (no blend modes, which
+   would break against the reveal transforms) */
+.heroB-screen {
+  position: absolute;
+  z-index: 2;
   left: 50%;
-  bottom: 13%;
-  transform: translateX(-50%);
-  width: 56%;
-  height: 42px;
-  border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(0, 0, 0, 0.55), transparent 70%);
-  filter: blur(7px);
-  pointer-events: none;
+  top: 50%;
+  width: 44%;
+  aspect-ratio: 718 / 654;
+  translate: -50% -50%;
+  overflow: hidden; /* clip the encoder's 1–2px dark frame edge */
+}
+.heroB-screen video,
+.heroB-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  outline: none;
+  transform: scale(1.025); /* margins are pure white, so cropping the edge loses nothing */
 }
 .heroB-stage-tag {
   position: absolute;
-  z-index: 3;
-  bottom: 3%;
+  z-index: 4;
+  bottom: -3%;
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--font-body);
   font-size: 10px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(247, 239, 221, 0.5);
+  color: rgba(247, 239, 221, 0.55);
   white-space: nowrap;
+  opacity: clamp(0, calc((var(--p) - 0.55) / 0.35), 1);
 }
 
 /* ---- responsive ---- */
 @media (max-width: 900px) {
-  .heroB-body { grid-template-columns: 1fr; gap: 10px; align-content: center; }
-  .heroB-stage { display: none; }
+  .heroB-body {
+    grid-template-columns: 1fr;
+    gap: clamp(10px, 2.4vh, 22px);
+    align-content: center;
+    justify-items: start;
+  }
   .heroB-statement { max-width: none; }
-  .heroB-chip { width: 84px; height: 108px; }
+  .heroB-stage { width: min(78%, 40vh); justify-self: center; }
+}
+@media (max-width: 560px) {
+  .heroB-stage { width: min(88%, 34vh); }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* the scroll-scrub + reveal are user-driven (not autoplay), so they stay on
+     for everyone — only autonomous looping motion is paused */
   .heroB-marquee--l .heroB-track,
   .heroB-marquee--r .heroB-track,
   .heroB-dot { animation: none; }
