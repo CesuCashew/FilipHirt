@@ -10,7 +10,11 @@ import Contact from "../components/Contact";
 import HorizontalGallery from "../components/HorizontalGallery";
 
 export default function Home() {
-  const instant = typeof window !== "undefined" && window.location.hash === "#now";
+  // skip the intro loader on #now and on return visits within the session
+  // (e.g. coming back from a journal article)
+  const instant =
+    typeof window !== "undefined" &&
+    (window.location.hash === "#now" || sessionStorage.getItem("fh-intro-seen") === "1");
   const [loaderDone, setLoaderDone] = useState(instant);
   const [counter, setCounter] = useState(0);
   const [wipeOut, setWipeOut] = useState(false);
@@ -18,8 +22,9 @@ export default function Home() {
   const progressRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (window.location.hash === "#now") {
+    if (instant) {
       setCounter(100); setWipeOut(true); setPageVisible(true); setLoaderDone(true);
+      sessionStorage.setItem("fh-intro-seen", "1");
       return;
     }
     document.body.classList.add("loading");
@@ -36,6 +41,7 @@ export default function Home() {
           setWipeOut(true);
           setPageVisible(true);
           document.body.classList.remove("loading");
+          sessionStorage.setItem("fh-intro-seen", "1");
           setTimeout(() => setLoaderDone(true), 900);
         }, 200);
     };

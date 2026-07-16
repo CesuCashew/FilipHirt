@@ -10,7 +10,10 @@ export default function HorizontalGallery({ children }: { children: ReactNode })
   const wrapRef = useRef<HTMLDivElement>(null);
   const pinRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const [horizontal, setHorizontal] = useState(false);
+  const didHashJump = useRef(false);
+  const [horizontal, setHorizontal] = useState(
+    () => typeof window !== "undefined" && window.innerWidth > 980
+  );
 
   useEffect(() => {
     const decide = () => setHorizontal(window.innerWidth > 980);
@@ -24,6 +27,12 @@ export default function HorizontalGallery({ children }: { children: ReactNode })
       // clear any inline transforms when in vertical mode
       if (trackRef.current) trackRef.current.style.transform = "";
       if (wrapRef.current) wrapRef.current.style.height = "";
+      // deep-link (/#journal): plain anchor scroll in the vertical stack
+      if (!didHashJump.current) {
+        didHashJump.current = true;
+        const id = window.location.hash.slice(1);
+        if (id && id !== "now") document.getElementById(id)?.scrollIntoView();
+      }
       return;
     }
     const wrap = wrapRef.current;
@@ -59,6 +68,19 @@ export default function HorizontalGallery({ children }: { children: ReactNode })
 
     measure();
     update();
+    // deep-link (/#journal): vertical scroll maps 1:1 to horizontal travel,
+    // so landing on a panel means scrolling to wrap top + its track offset
+    if (!didHashJump.current) {
+      didHashJump.current = true;
+      const id = window.location.hash.slice(1);
+      if (id && id !== "now") {
+        const target = track.querySelector<HTMLElement>(`#${CSS.escape(id)}`);
+        if (target) {
+          window.scrollTo(0, wrap.offsetTop + Math.min(target.offsetLeft, distance));
+          update();
+        }
+      }
+    }
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onResize);
     // re-measure after fonts/images settle

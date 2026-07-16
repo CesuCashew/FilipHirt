@@ -3,12 +3,14 @@ import { Switch, Route, Router as WouterRouter } from "wouter";
 import Lenis from "lenis";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
+import Article from "@/pages/Article";
 import Cursor from "@/components/Cursor";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/zurnal/:slug" component={Article} />
       <Route component={NotFound} />
     </Switch>
   );
