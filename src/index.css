@@ -5382,34 +5382,6 @@ section {
   background: radial-gradient(86% 66% at 26% 28%, #251609 0%, #160c06 58%, #1e120b 100%);
 }
 
-/* ---- marquees (reveal early on the shared timeline, then hold) ---- */
-.heroB-marquee {
-  overflow: hidden;
-  white-space: nowrap;
-  padding: clamp(6px, 1.1vh, 15px) 0;
-  border-block: 1px solid rgba(247, 239, 221, 0.14);
-  flex: 0 0 auto;
-  opacity: clamp(0, calc(var(--p) / 0.18), 1);
-  position: relative;
-  z-index: 1;
-}
-.heroB-track { display: inline-flex; will-change: transform; }
-.heroB-track span {
-  font-family: "Bodoni Moda", var(--font-display), serif;
-  font-weight: 700;
-  text-transform: uppercase;
-  font-size: clamp(30px, 5.2vw, 80px);
-  line-height: 1;
-  color: var(--ember);
-  letter-spacing: 0.01em;
-  padding-right: 0.32em;
-}
-.heroB-star-glyph { color: var(--marigold); }
-.heroB-marquee--l .heroB-track { animation: heroB-ml 30s linear infinite; }
-.heroB-marquee--r .heroB-track { animation: heroB-mr 30s linear infinite; }
-@keyframes heroB-ml { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@keyframes heroB-mr { from { transform: translateX(-50%); } to { transform: translateX(0); } }
-
 /* ---- body: statement (left) + 3D stage (right) ---- */
 .heroB-body {
   position: relative;
@@ -5556,12 +5528,111 @@ section {
   aspect-ratio: 1 / 1;
   will-change: transform;
 }
+
+/* ---- museum spotlight: a soft beam from above the viewport onto the
+        machine, dust motes drifting through it. Strongest at rest, it hands
+        the scene to the night photo as --p rises. Both layers sit before
+        .heroB-stage-inner in the DOM, so they paint behind the star. ---- */
+.heroB-spot,
+.heroB-dust {
+  position: absolute;
+  left: 50%;
+  bottom: 6%;
+  width: 170%;
+  height: 96vh;
+  translate: -50% 0;
+  pointer-events: none;
+  opacity: calc(1 - clamp(0, calc(var(--p) / 0.45), 1));
+}
+.heroB-spot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  /* the cone, aimed straight down from a point above the viewport; soft
+     edges come from the gradient stops — no filter blur on a layer this big */
+  background: conic-gradient(
+    from 0deg at 50% -4%,
+    transparent 165deg,
+    rgba(247, 239, 221, 0.05) 172deg,
+    rgba(247, 239, 221, 0.11) 180deg,
+    rgba(247, 239, 221, 0.05) 188deg,
+    transparent 195deg
+  );
+  mask-image: linear-gradient(to bottom, #000 0%, #000 60%, transparent 96%);
+  animation: heroB-spot-breathe 7.5s ease-in-out infinite;
+}
+.heroB-spot::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 66%;
+  height: 22%;
+  translate: -50% 0;
+  /* the pool of light where the beam lands */
+  background: radial-gradient(50% 50% at 50% 50%, rgba(247, 239, 221, 0.1), transparent 72%);
+}
+@keyframes heroB-spot-breathe {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.76; }
+}
+.heroB-dust {
+  overflow: hidden;
+  /* motes only live inside the beam: same cone geometry as the spotlight,
+     a touch narrower */
+  mask-image: conic-gradient(
+    from 0deg at 50% -4%,
+    transparent 167deg,
+    #000 175deg,
+    #000 185deg,
+    transparent 193deg
+  );
+}
+.heroB-dust-in {
+  position: absolute;
+  inset: 0;
+  /* foot of the beam: let the motes dissolve before the box edge cuts them */
+  mask-image: linear-gradient(to bottom, #000 0%, #000 55%, transparent 92%);
+}
+.heroB-dust-in::before,
+.heroB-dust-in::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -360px;
+  height: calc(100% + 720px);
+  background-repeat: repeat;
+  will-change: transform;
+}
+.heroB-dust-in::before {
+  background-image:
+    radial-gradient(circle at 11% 17%, rgba(247, 239, 221, 0.5) 0, rgba(247, 239, 221, 0.5) 1.1px, transparent 2.2px),
+    radial-gradient(circle at 43% 62%, rgba(247, 239, 221, 0.36) 0, rgba(247, 239, 221, 0.36) 0.9px, transparent 1.9px),
+    radial-gradient(circle at 71% 33%, rgba(247, 239, 221, 0.46) 0, rgba(247, 239, 221, 0.46) 1.3px, transparent 2.4px),
+    radial-gradient(circle at 88% 79%, rgba(247, 239, 221, 0.32) 0, rgba(247, 239, 221, 0.32) 1px, transparent 2px);
+  background-size: 360px 360px;
+  animation: heroB-dust-rise 38s linear infinite;
+}
+.heroB-dust-in::after {
+  background-image:
+    radial-gradient(circle at 24% 44%, rgba(247, 239, 221, 0.28) 0, rgba(247, 239, 221, 0.28) 0.8px, transparent 1.7px),
+    radial-gradient(circle at 58% 12%, rgba(247, 239, 221, 0.24) 0, rgba(247, 239, 221, 0.24) 0.7px, transparent 1.5px),
+    radial-gradient(circle at 82% 58%, rgba(247, 239, 221, 0.3) 0, rgba(247, 239, 221, 0.3) 0.9px, transparent 1.8px);
+  background-size: 180px 180px;
+  /* opposite drift at a different speed reads as depth */
+  animation: heroB-dust-rise 56s linear infinite reverse;
+}
+/* 360px = one ::before tile, exactly two ::after tiles — both loop seamlessly */
+@keyframes heroB-dust-rise { to { transform: translateY(-360px); } }
+
 /* one element fades + scales the whole star+screen group as it reveals */
 .heroB-stage-inner {
   --l: clamp(0, calc((var(--p) - 0.02) / 0.5), 1);
   position: absolute;
   inset: 0;
-  opacity: calc(0.34 + 0.66 * var(--l));
+  /* dimmer at rest so the title card reads where it crosses the star */
+  opacity: calc(0.26 + 0.74 * var(--l));
   scale: calc(0.9 + 0.1 * var(--l));
 }
 .heroB-star-glow {
@@ -5617,6 +5688,93 @@ section {
   opacity: clamp(0, calc((var(--p) - 0.55) / 0.35), 1);
 }
 
+/* ---- title card: the resting state before any scroll. Letters rise once
+        body.loading drops (the Home loader removes it as its wipe starts),
+        then the whole card cross-fades out over the first ~12% of scroll,
+        handing off to the kicker (0→0.3) and headline (0.04→0.46). Scrolling
+        back to the top brings it back — it IS the resting state. ---- */
+.heroB-intro {
+  --l: clamp(0, calc(var(--p) / 0.12), 1);
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 2.6vh, 30px);
+  pointer-events: none;
+  opacity: calc(1 - var(--l));
+  translate: 0 calc(var(--l) * -30px);
+}
+.heroB-intro-name {
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: "Bodoni Moda", var(--font-display), serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: clamp(40px, 8.6vw, 128px);
+  line-height: 1.06;
+  letter-spacing: 0.01em;
+  color: var(--cream-ink);
+  /* keeps the cream legible where it crosses the dimmed white star */
+  text-shadow: 0 1px 6px rgba(22, 12, 6, 0.5), 0 2px 34px rgba(22, 12, 6, 0.6);
+}
+.heroB-intro-ch {
+  display: inline-block;
+  transform: translateY(115%);
+}
+body:not(.loading) .heroB-intro-ch {
+  animation: heroB-intro-rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: calc(0.55s + var(--i) * 0.05s);
+}
+@keyframes heroB-intro-rise { to { transform: translateY(0); } }
+.heroB-intro-role {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: clamp(11px, 1.15vw, 15px);
+  font-weight: 600;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--ember);
+  opacity: 0;
+}
+.heroB-intro-star { color: var(--marigold); letter-spacing: 0; }
+body:not(.loading) .heroB-intro-role {
+  animation: heroB-intro-fade 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 1.3s;
+}
+@keyframes heroB-intro-fade {
+  from { opacity: 0; translate: 0 16px; }
+  to { opacity: 1; translate: 0 0; }
+}
+.heroB-intro-hint {
+  margin-top: clamp(6px, 1.6vh, 18px);
+  height: 44px;
+  opacity: 0;
+}
+body:not(.loading) .heroB-intro-hint {
+  animation: heroB-intro-fade 1s ease-out both;
+  animation-delay: 1.9s;
+}
+.heroB-intro-hint-line {
+  display: block;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(247, 239, 221, 0.55), rgba(247, 239, 221, 0));
+  animation: heroB-hint-draw 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+@keyframes heroB-hint-draw {
+  0% { transform: scaleY(0); transform-origin: top; }
+  46% { transform: scaleY(1); transform-origin: top; }
+  54% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
 /* ---- responsive ---- */
 @media (max-width: 900px) {
   .heroB-body {
@@ -5635,9 +5793,329 @@ section {
 @media (prefers-reduced-motion: reduce) {
   /* the scroll-scrub + reveal are user-driven (not autoplay), so they stay on
      for everyone — only autonomous looping motion is paused */
-  .heroB-marquee--l .heroB-track,
-  .heroB-marquee--r .heroB-track,
-  .heroB-dot { animation: none; }
+  .heroB-dot,
+  .heroB-spot::before,
+  .heroB-dust-in::before,
+  .heroB-dust-in::after,
+  .heroB-intro-hint-line { animation: none; }
+  /* title card: no letter choreography — just visible, still scroll-faded */
+  .heroB-intro-ch { animation: none; transform: none; }
+  .heroB-intro-role,
+  .heroB-intro-hint { animation: none; opacity: 1; }
+}
+
+/* ============================================================
+   COLLAB FLOW — „Jak probíhá spolupráce": a pinned tablet scene.
+   Desktop (>980px): CollabFlow.tsx writes --p (0→1) and CSS clamps
+   run the choreography (tablet rise → 5 bubbles synced to the bar).
+   Mobile (≤980px): no pin — `is-in` classes + transitions.
+   ============================================================ */
+.collab {
+  --p: 0;
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.collab-head { text-align: center; flex: 0 0 auto; }
+.collab-label {
+  margin: 0 0 14px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--persimmon-d);
+}
+.collab-label-star { color: var(--marigold); }
+.collab-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(34px, 4.8vw, 74px);
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+.collab-title-it { font-style: italic; color: var(--persimmon); }
+.collab-sub {
+  margin: 18px auto 0;
+  max-width: 52ch;
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.15vw, 17px);
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.collab-stage {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+}
+
+/* ---- the tablet: layered SVG chassis, live DOM screen ---- */
+.collab-tablet-wrap { will-change: transform; }
+.collab-tablet {
+  position: relative;
+  width: min(64vw, 86vh, 960px);
+  filter: drop-shadow(0 34px 60px rgba(58, 20, 13, 0.32))
+    drop-shadow(0 8px 18px rgba(58, 20, 13, 0.2));
+}
+.collab-tablet-svg { display: block; width: 100%; height: auto; }
+
+/* overlays the SVG's screen window (x64 y64 w1272 h872 of 1400×1000) */
+.collab-screen {
+  position: absolute;
+  left: 4.571%;
+  top: 6.4%;
+  width: 90.857%;
+  height: 87.2%;
+  border-radius: clamp(6px, 1.1vw, 16px);
+  overflow: hidden;
+  background: radial-gradient(120% 90% at 30% 20%, #251609 0%, #170d07 60%, #1d110a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(16px, 4.6vh, 46px);
+  padding: 4% 5%;
+}
+/* glass sheen sits over the screen content */
+.collab-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(115deg, rgba(255, 255, 255, 0.065) 0%, rgba(255, 255, 255, 0.02) 26%, transparent 44%);
+}
+.collab-screen-title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(20px, 3.2vw, 52px);
+  line-height: 1.05;
+  color: var(--cream-ink);
+  text-align: center;
+  text-wrap: balance;
+}
+.collab-screen-it { font-style: italic; color: var(--persimmon); }
+.collab-screen-tag {
+  position: absolute;
+  bottom: 4.5%;
+  left: 50%;
+  translate: -50% 0;
+  font-family: var(--font-body);
+  font-size: clamp(9px, 0.85vw, 12px);
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(247, 239, 221, 0.38);
+}
+
+/* ---- the step bar on the screen ---- */
+.collab-bar {
+  --tile: clamp(38px, 4.2vw, 58px);
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: min(86%, 760px);
+}
+.collab-bar-line,
+.collab-bar-fill {
+  position: absolute;
+  left: calc(var(--tile) / 2);
+  right: calc(var(--tile) / 2);
+  top: calc(var(--tile) / 2 - 1px);
+  height: 2px;
+}
+.collab-bar-line { background: rgba(247, 239, 221, 0.16); }
+.collab-bar-fill {
+  background: var(--persimmon);
+  box-shadow: 0 0 12px rgba(224, 83, 31, 0.5);
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+.collab-node {
+  position: relative;
+  z-index: 1;
+  width: var(--tile);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.collab-node-tile {
+  width: var(--tile);
+  height: var(--tile);
+  display: grid;
+  place-items: center;
+  border-radius: 26%;
+  background: rgba(224, 83, 31, calc(var(--a, 0) * 0.16));
+  border: 1px solid color-mix(in oklab, rgba(247, 239, 221, 0.28), var(--persimmon) calc(var(--a, 0) * 100%));
+  color: color-mix(in oklab, rgba(247, 239, 221, 0.6), var(--persimmon) calc(var(--a, 0) * 100%));
+  box-shadow: 0 0 calc(var(--a, 0) * 18px) rgba(224, 83, 31, calc(var(--a, 0) * 0.35));
+}
+.collab-node-tile svg { display: block; }
+.collab-node-label {
+  font-family: var(--font-body);
+  font-size: clamp(10px, 1vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: color-mix(in oklab, rgba(247, 239, 221, 0.55), #f7efdd calc(var(--a, 0) * 100%));
+}
+
+/* ---- the bubbles ---- */
+.collab-bubble {
+  max-width: min(300px, 24vw);
+  padding: 18px 22px;
+  color: var(--cream-ink);
+  box-shadow: 0 18px 40px rgba(58, 20, 13, 0.28);
+}
+.collab-bubble-title {
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(17px, 1.5vw, 22px);
+}
+.collab-bubble-text {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: clamp(12.5px, 1.05vw, 15px);
+  line-height: 1.5;
+  opacity: 0.92;
+}
+/* zine-mix colours + speech-bubble tail corners (tail aims at the tablet);
+   the darker persimmon keeps the cream body text ≥4.5:1 */
+.collab-bubble--0 { background: var(--persimmon-d); border-radius: 22px 22px 6px 22px; }
+.collab-bubble--1 { background: var(--oxblood); border-radius: 22px 22px 22px 6px; }
+.collab-bubble--2 { background: var(--teal); border-radius: 22px 22px 6px 22px; }
+.collab-bubble--3 { background: var(--persimmon-d); border-radius: 22px 22px 22px 6px; }
+.collab-bubble--4 { background: var(--oxblood); border-radius: 6px 22px 22px 22px; }
+
+/* ---------- desktop: the pin + scroll choreography ---------- */
+@media (min-width: 981px) {
+  .collab { height: 360vh; }
+  .collab-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: clamp(18px, 3.4vh, 40px) clamp(24px, 5vw, 76px);
+  }
+
+  /* the headline holds the opening view (benefit-plus style), then lifts
+     away as the tablet takes the centre */
+  .collab-head {
+    position: absolute;
+    top: clamp(24px, 8vh, 84px);
+    left: 50%;
+    width: min(92%, 940px);
+    z-index: 3;
+    --in: clamp(0, calc(var(--p) / 0.06), 1);
+    --out: clamp(0, calc((var(--p) - 0.15) / 0.1), 1);
+    opacity: calc(var(--in) * (1 - var(--out)));
+    translate: -50% calc((1 - var(--in)) * 24px - var(--out) * 70px);
+  }
+
+  /* tablet climbs from below the fold into the centre while the headline
+     is still on (photo-1 composition), settling as it leaves */
+  .collab-tablet-wrap {
+    --in: clamp(0, calc(var(--p) / 0.32), 1);
+    opacity: clamp(0, calc(var(--p) / 0.07), 1);
+    translate: 0 calc((1 - var(--in)) * 58vh);
+    scale: calc(0.96 + 0.04 * var(--in));
+  }
+
+  /* bar fill reaches node i exactly when bubble i launches (both use
+     --start = 0.38 + i*0.11; fill maps --p 0.38→0.82 across the line) */
+  .collab-bar-fill {
+    transform: scaleX(clamp(0, calc((var(--p) - 0.38) / 0.44), 1));
+  }
+  .collab-node {
+    --a: clamp(0, calc((var(--p) - var(--start)) / 0.05), 1);
+  }
+
+  /* bubbles fly out from behind the tablet to their slots */
+  .collab-bubble {
+    --l: clamp(0, calc((var(--p) - var(--start)) / 0.1), 1);
+    position: absolute;
+    opacity: var(--l);
+    transform: translate(calc(var(--fx) * (1 - var(--l))), calc(var(--fy) * (1 - var(--l))))
+      rotate(calc(var(--r) - (1 - var(--l)) * 6deg))
+      scale(calc(0.55 + 0.45 * var(--l)));
+    will-change: transform, opacity;
+  }
+  .collab-bubble--0 { left: 4%;  top: 10%;   --fx: 20vw;  --fy: 16vh;  --r: -2.5deg; }
+  .collab-bubble--1 { right: 4%; top: 14%;   --fx: -20vw; --fy: 14vh;  --r: 2deg; }
+  .collab-bubble--2 { left: 2%;  top: 47%;   --fx: 18vw;  --fy: 2vh;   --r: 1.6deg; }
+  .collab-bubble--3 { right: 3%; top: 56%;   --fx: -18vw; --fy: -4vh;  --r: -1.8deg; }
+  .collab-bubble--4 { left: 11%; bottom: 5%; --fx: 14vw;  --fy: -14vh; --r: 2.4deg; }
+}
+
+/* ---------- mobile: stacked, IO-revealed ---------- */
+@media (max-width: 980px) {
+  .collab { padding: clamp(56px, 10vh, 90px) 20px; }
+  .collab-sticky { display: flex; flex-direction: column; gap: 30px; }
+  .collab-stage { display: flex; flex-direction: column; gap: 18px; align-items: center; }
+
+  .collab-tablet { width: 100%; max-width: 640px; }
+  .collab-tablet-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    translate: 0 40px;
+    transition: opacity 0.7s ease, translate 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .collab-tablet-wrap.is-in { opacity: 1; translate: 0 0; }
+
+  .collab-bubble {
+    max-width: 560px;
+    width: 100%;
+    opacity: 0;
+    translate: 0 36px;
+    transition: opacity 0.6s ease, translate 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .collab-bubble.is-in { opacity: 1; translate: 0 0; }
+
+  /* once the tablet is seen, the bar fills and nodes light up in sequence */
+  .collab-tablet-wrap.is-in .collab-bar-fill {
+    transform: scaleX(1);
+    transition: transform 1.7s cubic-bezier(0.22, 1, 0.36, 1) 0.55s;
+  }
+  .collab-tablet-wrap.is-in .collab-node { --a: 1; }
+  .collab-node-tile,
+  .collab-node-label {
+    transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
+    transition-delay: calc(0.55s + (var(--start) - 0.38) * 2.27s);
+  }
+  /* five labels can't fit a ~340px screen — icons + bubbles carry the names */
+  .collab-node-label { display: none; }
+  .collab-screen-title { font-size: clamp(17px, 4.6vw, 26px); }
+  .collab-title { font-size: clamp(27px, 7.2vw, 40px); }
+  .collab-sub { font-size: 14px; }
+  .collab-bar { --tile: clamp(30px, 7.4vw, 44px); }
+  .collab-bar-fill { transform: scaleX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* scroll-driven desktop choreography stays (user-driven, like the hero);
+     only the mobile entrance transitions collapse to instant */
+  .collab-tablet-wrap,
+  .collab-bubble,
+  .collab-node-tile,
+  .collab-node-label { transition: none; }
+  .collab-tablet-wrap.is-in .collab-bar-fill { transition: none; }
 }
 
 /* ============================================================

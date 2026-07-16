@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Hero from "../components/Hero";
+import CollabFlow from "../components/CollabFlow";
 import AboutPanel from "../components/AboutPanel";
 import ServicesPanel from "../components/ServicesPanel";
 import PortfolioPanel from "../components/PortfolioPanel";
@@ -110,6 +111,7 @@ export default function Home() {
 
         <main>
           <Hero />
+          <CollabFlow />
           <HorizontalGallery>
             <AboutPanel />
             <ServicesPanel />

@@ -1,14 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 
 /**
  * Hero — kinetic editorial cover, now driven by a single scroll timeline.
  *
- * One tall section (≈320vh) pins a 100vh stage. A common, lerp-smoothed scroll
- * progress (0 at the top edge → 1 at the bottom) drives TWO things at once, so
- * they read as one motion:
- *   • the typographic statement + marquees reveal (rise + fade in), and
+ * One tall section (≈320vh) pins a 100vh stage. At rest a title card
+ * ("Filip Hirt — web designer") sits over the dimmed machine, lit by a museum
+ * spotlight with dust drifting in the beam. A common, lerp-smoothed scroll
+ * progress (0 at the top edge → 1 at the bottom) then drives TWO things at
+ * once, so they read as one motion:
+ *   • the title card dissolves and the typographic statement reveals
+ *     (rise + fade in), and
  *   • a scroll-scrubbed video of a Macintosh Plus that restores itself from a
  *     filthy, cracked wreck into a clean, booted machine.
+ *
+ * The title card's letter entrance is keyed off `body.loading` (removed by the
+ * Home loader the moment its wipe starts), so it needs no JS coupling here.
  *
  * The video is muted/scrubbed (never auto-plays), lazily loaded only when the
  * section nears the viewport, and seeked via fastSeek on Safari. It sits on a
@@ -63,8 +69,8 @@ export default function HeroKinetic() {
   // ---- shared scroll timeline: reveal + video scrub, one lerped progress ----
   // This runs for everyone, including prefers-reduced-motion: the scrub and
   // reveal are driven by the user's own scroll (not autoplay), so they're safe
-  // to keep. Only autonomous motion (marquees, cursor parallax) is suppressed
-  // under reduced motion.
+  // to keep. Only autonomous motion (spotlight breathing, dust drift, cursor
+  // parallax) is suppressed under reduced motion.
   useEffect(() => {
     const root = rootRef.current;
     const video = videoRef.current;
@@ -187,24 +193,11 @@ export default function HeroKinetic() {
     };
   }, []);
 
-  const Marquee = ({ text, dir }: { text: string; dir: "l" | "r" }) => (
-    <div className={`heroB-marquee heroB-marquee--${dir}`} aria-hidden="true">
-      <div className="heroB-track">
-        {Array.from({ length: 4 }).map((_, i) => (
-          <span key={i}>
-            {text} <span className="heroB-star-glyph">✳</span>{" "}
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-
   return (
     <section id="home" className="heroB" ref={rootRef}>
       <div className="heroB-sticky" ref={stickyRef}>
         {/* night-street photo that fades up out of the brown as you scroll */}
         <div className="heroB-bg" aria-hidden="true" />
-        <Marquee text="FILIP HIRT" dir="l" />
 
         <div className="heroB-body">
           <div className="heroB-statement">
@@ -231,8 +224,15 @@ export default function HeroKinetic() {
             </div>
           </div>
 
-          {/* Centrepiece — the Macintosh restored on scroll, on a white star */}
+          {/* Centrepiece — the Macintosh restored on scroll, on a white star,
+              lit at rest by a museum spotlight with dust drifting in the beam */}
           <div className="heroB-stage" data-depth="-9">
+            <div className="heroB-spot" aria-hidden="true" />
+            <div className="heroB-dust" aria-hidden="true">
+              {/* inner box carries the vertical fade mask; the outer box the
+                  cone mask — nesting composes them without mask-composite */}
+              <div className="heroB-dust-in" />
+            </div>
             <div className="heroB-stage-inner">
               <div className="heroB-star-glow" aria-hidden="true" />
               <svg
@@ -266,7 +266,30 @@ export default function HeroKinetic() {
 
         </div>
 
-        <Marquee text="WEB DESIGNER" dir="r" />
+        {/* Title card — the resting state before any scroll. Decorative twin of
+            the real <h1>; letters rise once `body.loading` is removed, then the
+            whole card cross-fades out over the first ~12% of scroll. */}
+        <div className="heroB-intro" aria-hidden="true">
+          <p className="heroB-intro-name">
+            {/* the word gap maps to U+00A0 so the span keeps its width */}
+            {"Filip Hirt".split("").map((ch, i) => (
+              <span
+                key={i}
+                className="heroB-intro-ch"
+                style={{ "--i": i } as CSSProperties}
+              >
+                {ch === " " ? " " : ch}
+              </span>
+            ))}
+          </p>
+          <p className="heroB-intro-role">
+            <span className="heroB-intro-star">✳</span> Web designer &amp;
+            developer
+          </p>
+          <div className="heroB-intro-hint">
+            <span className="heroB-intro-hint-line" />
+          </div>
+        </div>
       </div>
     </section>
   );
