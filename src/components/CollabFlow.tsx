@@ -146,7 +146,8 @@ export default function CollabFlow() {
       if (!running) return;
       raf = requestAnimationFrame(frame);
       target = measure();
-      cur += (target - cur) * 0.09;
+      // floatier than the hero's 0.09 — the tablet glide reads smoother
+      cur += (target - cur) * 0.06;
       if (Math.abs(target - cur) < 0.0004) cur = target;
       if (cur !== lastP) {
         root.style.setProperty("--p", cur.toFixed(4));
@@ -242,7 +243,7 @@ export default function CollabFlow() {
                       <span
                         key={s.title}
                         className="collab-node"
-                        style={{ "--start": 0.38 + i * 0.11 } as CSSProperties}
+                        style={{ "--start": 0.42 + i * 0.095 } as CSSProperties}
                       >
                         <span className="collab-node-tile">
                           <Icon size={22} strokeWidth={1.8} aria-hidden="true" />
@@ -263,7 +264,7 @@ export default function CollabFlow() {
             <article
               key={s.title}
               className={`collab-bubble collab-bubble--${i}`}
-              style={{ "--start": 0.38 + i * 0.11 } as CSSProperties}
+              style={{ "--start": 0.42 } as CSSProperties}
             >
               <h3 className="collab-bubble-title">{s.title}</h3>
               <p className="collab-bubble-text">{s.text}</p>

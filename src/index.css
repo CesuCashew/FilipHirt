@@ -6001,7 +6001,7 @@ body:not(.loading) .heroB-intro-hint {
 
 /* ---------- desktop: the pin + scroll choreography ---------- */
 @media (min-width: 981px) {
-  .collab { height: 360vh; }
+  .collab { height: 320vh; }
   .collab-sticky {
     position: sticky;
     top: 0;
@@ -6028,31 +6028,35 @@ body:not(.loading) .heroB-intro-hint {
   }
 
   /* tablet climbs from below the fold into the centre while the headline
-     is still on (photo-1 composition), settling as it leaves */
+     is still on (photo-1 composition). --e = ease-out quad of the linear
+     window, so the glide decelerates into place instead of stopping dead */
   .collab-tablet-wrap {
-    --in: clamp(0, calc(var(--p) / 0.32), 1);
+    --in: clamp(0, calc(var(--p) / 0.36), 1);
+    --e: calc(var(--in) * (2 - var(--in)));
     opacity: clamp(0, calc(var(--p) / 0.07), 1);
-    translate: 0 calc((1 - var(--in)) * 58vh);
-    scale: calc(0.96 + 0.04 * var(--in));
+    translate: 0 calc((1 - var(--e)) * 58vh);
+    scale: calc(0.96 + 0.04 * var(--e));
   }
 
-  /* bar fill reaches node i exactly when bubble i launches (both use
-     --start = 0.38 + i*0.11; fill maps --p 0.38→0.82 across the line) */
+  /* the bar keeps its own pacing: fill sweeps --p 0.42→0.8 and each node
+     lights exactly as the line passes it (--start = 0.42 + i*0.095) */
   .collab-bar-fill {
-    transform: scaleX(clamp(0, calc((var(--p) - 0.38) / 0.44), 1));
+    transform: scaleX(clamp(0, calc((var(--p) - 0.42) / 0.38), 1));
   }
   .collab-node {
     --a: clamp(0, calc((var(--p) - var(--start)) / 0.05), 1);
   }
 
-  /* bubbles fly out from behind the tablet to their slots */
+  /* bubbles launch together (--start = 0.42 for all) and decelerate into
+     their slots on the same ease-out curve as the tablet */
   .collab-bubble {
-    --l: clamp(0, calc((var(--p) - var(--start)) / 0.1), 1);
+    --l: clamp(0, calc((var(--p) - var(--start)) / 0.14), 1);
+    --e: calc(var(--l) * (2 - var(--l)));
     position: absolute;
     opacity: var(--l);
-    transform: translate(calc(var(--fx) * (1 - var(--l))), calc(var(--fy) * (1 - var(--l))))
-      rotate(calc(var(--r) - (1 - var(--l)) * 6deg))
-      scale(calc(0.55 + 0.45 * var(--l)));
+    transform: translate(calc(var(--fx) * (1 - var(--e))), calc(var(--fy) * (1 - var(--e))))
+      rotate(calc(var(--r) - (1 - var(--e)) * 6deg))
+      scale(calc(0.55 + 0.45 * var(--e)));
     will-change: transform, opacity;
   }
   .collab-bubble--0 { left: 4%;  top: 10%;   --fx: 20vw;  --fy: 16vh;  --r: -2.5deg; }
@@ -6097,7 +6101,7 @@ body:not(.loading) .heroB-intro-hint {
   .collab-node-tile,
   .collab-node-label {
     transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
-    transition-delay: calc(0.55s + (var(--start) - 0.38) * 2.27s);
+    transition-delay: calc(0.55s + (var(--start) - 0.42) * 2.32s);
   }
   /* five labels can't fit a ~340px screen — icons + bubbles carry the names */
   .collab-node-label { display: none; }
