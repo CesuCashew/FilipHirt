@@ -6,7 +6,6 @@ const navItems = [
   { label: "Služby", href: "#services" },
   { label: "Práce", href: "#portfolio" },
   { label: "Žurnál", href: "#journal" },
-  { label: "AI", href: "#chatbot" },
 ];
 
 export default function Navbar() {

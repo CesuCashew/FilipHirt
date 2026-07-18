@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import Hero from "../components/Hero";
 import CollabFlow from "../components/CollabFlow";
+import WhyMe from "../components/WhyMe";
 import AboutPanel from "../components/AboutPanel";
 import ServicesPanel from "../components/ServicesPanel";
 import PortfolioPanel from "../components/PortfolioPanel";
 import JournalPanel from "../components/JournalPanel";
 import OutroPanel from "../components/OutroPanel";
-import Process from "../components/Process";
 import Contact from "../components/Contact";
 import HorizontalGallery from "../components/HorizontalGallery";
 
@@ -112,12 +112,12 @@ export default function Home() {
         <main>
           <Hero />
           <CollabFlow />
+          <WhyMe />
           <HorizontalGallery>
             <AboutPanel />
             <ServicesPanel />
             <PortfolioPanel />
             <JournalPanel />
-            <section className="panel panel--chat" id="chatbot"><Process /></section>
             <section className="panel panel--contact" id="contact"><Contact /></section>
             <OutroPanel />
           </HorizontalGallery>
