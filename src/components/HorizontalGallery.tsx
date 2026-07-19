@@ -36,8 +36,9 @@ export default function HorizontalGallery({ children }: { children: ReactNode })
       return;
     }
     const wrap = wrapRef.current;
+    const pin = pinRef.current;
     const track = trackRef.current;
-    if (!wrap || !track) return;
+    if (!wrap || !pin || !track) return;
 
     const parallaxEls = Array.from(track.querySelectorAll<HTMLElement>("[data-parallax]"));
     let raf = 0;
@@ -66,20 +67,59 @@ export default function HorizontalGallery({ children }: { children: ReactNode })
     const onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
     const onResize = () => { measure(); update(); };
 
+    // The browser's native anchor scroll (href="#contact", initial /#contact
+    // load) tries to bring the panel into view by setting scrollLeft on the
+    // overflow-hidden pin — an offset the transform math knows nothing about,
+    // so the layout stays skewed and "left" becomes unreachable. The pin must
+    // never scroll itself; undo it the moment anything moves it.
+    const onPinScroll = () => {
+      if (pin.scrollLeft !== 0 || pin.scrollTop !== 0) {
+        pin.scrollLeft = 0;
+        pin.scrollTop = 0;
+        update();
+      }
+    };
+    pin.addEventListener("scroll", onPinScroll, { passive: true });
+
+    // landing on a panel = vertical scroll to wrap top + its track offset
+    // (vertical scroll maps 1:1 to horizontal travel)
+    const jumpTo = (id: string) => {
+      const target = track.querySelector<HTMLElement>(`#${CSS.escape(id)}`);
+      if (!target) return false;
+      onPinScroll();
+      window.scrollTo(0, wrap.offsetTop + Math.min(target.offsetLeft, distance));
+      update();
+      return true;
+    };
+
+    // in-page anchors that point at a panel inside the track (hero CTA, book
+    // CTA): replace the native jump with the vertical-scroll equivalent
+    const onClick = (e: MouseEvent) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const a = (e.target as Element | null)?.closest?.('a[href^="#"]');
+      if (!a) return;
+      const id = (a.getAttribute("href") || "").slice(1);
+      if (id && jumpTo(id)) {
+        e.preventDefault();
+        history.pushState(null, "", `#${id}`);
+      }
+    };
+    document.addEventListener("click", onClick);
+
+    // back/forward between hashes (or hash set by other code)
+    const onHash = () => {
+      const id = window.location.hash.slice(1);
+      if (id && id !== "now") jumpTo(id);
+    };
+    window.addEventListener("hashchange", onHash);
+
     measure();
     update();
-    // deep-link (/#journal): vertical scroll maps 1:1 to horizontal travel,
-    // so landing on a panel means scrolling to wrap top + its track offset
+    // deep-link (/#journal): jump straight to the panel on first layout
     if (!didHashJump.current) {
       didHashJump.current = true;
       const id = window.location.hash.slice(1);
-      if (id && id !== "now") {
-        const target = track.querySelector<HTMLElement>(`#${CSS.escape(id)}`);
-        if (target) {
-          window.scrollTo(0, wrap.offsetTop + Math.min(target.offsetLeft, distance));
-          update();
-        }
-      }
+      if (id && id !== "now") jumpTo(id);
     }
     window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("resize", onResize);
@@ -88,6 +128,9 @@ export default function HorizontalGallery({ children }: { children: ReactNode })
     return () => {
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onResize);
+      window.removeEventListener("hashchange", onHash);
+      document.removeEventListener("click", onClick);
+      pin.removeEventListener("scroll", onPinScroll);
       cancelAnimationFrame(raf);
       clearTimeout(t);
     };

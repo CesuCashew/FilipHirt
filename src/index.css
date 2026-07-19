@@ -4958,6 +4958,26 @@ section {
   translate: 0 calc((1 - var(--l)) * 26px);
 }
 
+.heroB-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 24px;
+  border-radius: 100px;
+  background: var(--ember);
+  color: var(--cream-ink);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.heroB-cta:hover { background: var(--persimmon-d); transform: translateY(-2px); }
+.heroB-cta-arrow { transition: translate 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+.heroB-cta:hover .heroB-cta-arrow { translate: 3px 0; }
+
 /* ---- background photo: at the top it's just the brown; as you scroll, the
         night-street shot fades up (with a dark scrim so the text stays readable),
         settling from a slight zoom ---- */

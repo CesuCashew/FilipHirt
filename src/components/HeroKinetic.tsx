@@ -214,6 +214,9 @@ export default function HeroKinetic() {
             </p>
 
             <div className="heroB-meta">
+              <a href="#contact" className="heroB-cta">
+                Napište mi! <span className="heroB-cta-arrow" aria-hidden="true">→</span>
+              </a>
               <div className="heroB-badges">
                 <span className="heroB-badge heroB-badge--live">
                   <span className="heroB-dot" /> Volný na 2026
