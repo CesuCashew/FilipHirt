@@ -1,6 +1,6 @@
 # Portfolio — Filip Hirt
 
-Osobní portfolio webdesignéra a vývojáře. Jednostránková aplikace (SPA) s horizontálním scroll-storytellingem, vlastním kurzorem, smooth scrollingem a 3D prvky. Backend běží jako serverless funkce na Netlify (kontaktní formulář + AI chatbot), data se ukládají do Neon PostgreSQL a notifikace odesílá Resend.
+Osobní portfolio webdesignéra a vývojáře. Jednostránková aplikace (SPA) s horizontálním scroll-storytellingem, vlastním kurzorem, smooth scrollingem a 3D prvky. Backend běží jako serverless funkce na Netlify (kontaktní formulář + AI chatbot), data se ukládají do Neon PostgreSQL a notifikace odchází e-mailem přes Gmail SMTP (Nodemailer).
 
 ## 🧱 Tech stack
 
@@ -15,7 +15,7 @@ Osobní portfolio webdesignéra a vývojáře. Jednostránková aplikace (SPA) s
 | UI komponenty | Radix UI + lokální `components/ui` (shadcn-style) |
 | Serverless | Netlify Functions (Node.js) |
 | Databáze | Neon PostgreSQL (`@neondatabase/serverless`) |
-| E-maily | Resend |
+| E-maily | Gmail SMTP (Nodemailer) |
 | AI chatbot | Groq (produkce) / Ollama (lokálně) |
 
 ## 🚀 Lokální vývoj
@@ -47,8 +47,9 @@ Hodnoty drž v `.env` (je v `.gitignore`, **nikdy necommitovat**). Vzor je v [`.
 |----------|---------|---------|
 | `NETLIFY_DATABASE_URL` | Connection string k Neon — čte ji `submit-contact` za běhu. Netlify ji vyplní automaticky při napojení Neon integrace. | ano (runtime) |
 | `NEON_DATABASE_URL` | Connection string k Neon — používá ji lokální setup skript databáze. | ano (setup) |
-| `RESEND_API_KEY` | API klíč pro odesílání e-mailů přes Resend. | ano |
-| `RECIPIENT_EMAIL` | E-mail, kam chodí notifikace o nové poptávce. | ne (fallback je nastaven v kódu) |
+| `GMAIL_USER` | Gmail adresa, ze které se odesílají notifikace. | ano |
+| `GMAIL_APP_PASSWORD` | App password ke Gmailu (https://myaccount.google.com/apppasswords, vyžaduje 2FA). | ano |
+| `RECIPIENT_EMAIL` | E-mail, kam chodí notifikace o nové poptávce. | ne (fallback je `GMAIL_USER`) |
 | `GROQ_API_KEY` | Klíč pro Groq API — pokud je nastaven, chatbot běží přes Groq. | ne |
 | `OLLAMA_API_URL` | URL lokálního Ollama serveru pro chatbot (default `http://127.0.0.1:11434`). | ne |
 
@@ -134,7 +135,7 @@ Portfolio/
 - 🖥️ Horizontální scroll-storytelling se sekcemi About / Services / Portfolio / Journal / Chatbot / Contact
 - 🎯 Vlastní kurzor a smooth scrolling (Lenis), s respektem k `prefers-reduced-motion`
 - 🧊 3D prvky přes Three.js
-- 📨 Kontaktní formulář → uložení do Neon PostgreSQL + e-mailová notifikace přes Resend
+- 📨 Kontaktní formulář → uložení do Neon PostgreSQL + e-mailová notifikace přes Gmail SMTP
 - 🤖 AI chatbot (asistent pana Hirta) přes Groq nebo lokální Ollama
 - ♿ Reveal animace, progress bar, loader
 - 🌍 SEO meta tagy a Open Graph
@@ -146,7 +147,7 @@ Portfolio/
 - Ověř, že tabulka existuje (`node netlify/functions/setup-database.js`).
 
 **„Email not sent"**
-- Zkontroluj `RESEND_API_KEY`. Pro produkci doporučeno nastavit vlastní ověřenou doménu v Resend místo `onboarding@resend.dev`.
+- Zkontroluj `GMAIL_USER` a `GMAIL_APP_PASSWORD` (v Netlify env i lokálně v `.env`). App password se generuje na https://myaccount.google.com/apppasswords a vyžaduje zapnuté dvoufázové ověření; vkládá se bez mezer.
 
 **„Function not found"**
 - Ověř, že běžíš přes `netlify dev` (ne jen `npm run dev`) a že existuje složka `netlify/functions`.
