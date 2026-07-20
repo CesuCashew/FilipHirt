@@ -4436,16 +4436,6 @@ section {
   background: var(--cream-ink);
 }
 
-.outro-sign {
-  position: absolute;
-  right: clamp(28px, 4.5vw, 84px);
-  bottom: clamp(40px, 6vh, 64px);
-  font-family: var(--font-poster);
-  font-size: clamp(30px, 4vw, 68px);
-  color: rgba(231, 162, 28, 0.22);
-  z-index: 2;
-}
-
 /* ============================================================
    CONTACT panel — fit reused component into 100vh
    ============================================================ */
@@ -4831,6 +4821,7 @@ section {
   z-index: 1;
   white-space: nowrap;
   text-align: left;
+  pointer-events: none;
 }
 
 @media (max-width: 980px) {
