@@ -2,7 +2,19 @@
 const { neon } = require('@neondatabase/serverless');
 const nodemailer = require('nodemailer');
 
-// Email template inline (to avoid import issues)
+// Email template inline (to avoid import issues).
+// Design mirrors the site's "mixtape zine" palette (src/index.css :root).
+// Email clients can't load the site's webfonts, so each stack falls back
+// (Sprat→Georgia, Anton→Arial Narrow, Hanken Grotesk→Helvetica/Arial).
+function escapeHtml(value) {
+    return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
 function getContactEmailHTML(formData) {
     const getServiceName = (code) => {
         const services = {
@@ -15,55 +27,93 @@ function getContactEmailHTML(formData) {
         return services[code] || code;
     };
 
-    return `
-<!DOCTYPE html>
-<html>
+    const serif = "Georgia, 'Times New Roman', serif";
+    const sans = "'Hanken Grotesk', 'Helvetica Neue', Helvetica, Arial, sans-serif";
+
+    const name = escapeHtml(formData.name);
+    const email = escapeHtml(formData.email);
+    const phone = formData.phone ? escapeHtml(formData.phone) : '';
+    const message = escapeHtml(formData.message).replace(/\n/g, '<br>');
+    const preheader = escapeHtml(String(formData.message).slice(0, 110));
+
+    const sentAt = new Date().toLocaleString('cs-CZ', {
+        timeZone: 'Europe/Prague',
+        day: 'numeric', month: 'long', year: 'numeric',
+        hour: '2-digit', minute: '2-digit'
+    });
+
+    const fieldLabel = `margin:0 0 6px;font-family:${sans};font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#7C5A36;`;
+    const fieldValue = `margin:0;font-family:${sans};font-size:17px;line-height:1.5;color:#241710;`;
+    const fieldRow = `padding:16px 0;border-bottom:1px solid #C9AE7C;`;
+    const link = `color:#C03F12;font-weight:700;text-decoration:none;`;
+
+    return `<!DOCTYPE html>
+<html lang="cs">
 <head>
     <meta charset="utf-8">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0A0A0A; color: #FFFFFF; margin: 0; padding: 0; }
-        .container { max-width: 600px; margin: 40px auto; background: linear-gradient(135deg, rgba(176, 38, 255, 0.1) 0%, rgba(10, 10, 10, 0.95) 100%); border: 1px solid rgba(176, 38, 255, 0.3); border-radius: 12px; overflow: hidden; }
-        .header { background: linear-gradient(135deg, #B026FF 0%, #D946EF 100%); padding: 30px; text-align: center; }
-        .header h1 { margin: 0; font-size: 24px; font-weight: 700; color: #FFFFFF; }
-        .content { padding: 40px 30px; }
-        .field { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid rgba(176, 38, 255, 0.2); }
-        .field:last-child { border-bottom: none; }
-        .label { font-size: 12px; text-transform: uppercase; letter-spacing: 0.1em; color: #B026FF; margin-bottom: 8px; font-weight: 600; }
-        .value { font-size: 16px; color: #FFFFFF; line-height: 1.6; }
-        .message-box { background: rgba(176, 38, 255, 0.05); border: 1px solid rgba(176, 38, 255, 0.2); border-radius: 8px; padding: 20px; margin-top: 10px; }
-        .footer { background: rgba(26, 26, 26, 0.8); padding: 20px; text-align: center; font-size: 12px; color: #B0B0B0; }
-        .badge { display: inline-block; background: rgba(176, 38, 255, 0.2); color: #D946EF; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-top: 5px; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nová poptávka — ${name}</title>
 </head>
-<body>
-    <div class="container">
-        <div class="header"><h1>🎯 Nová poptávka z portfolia</h1></div>
-        <div class="content">
-            <div class="field">
-                <div class="label">Jméno</div>
-                <div class="value">${formData.name}</div>
-            </div>
-            <div class="field">
-                <div class="label">Email</div>
-                <div class="value"><a href="mailto:${formData.email}" style="color: #D946EF; text-decoration: none;">${formData.email}</a></div>
-            </div>
-            ${formData.phone ? `
-            <div class="field">
-                <div class="label">Telefon</div>
-                <div class="value"><a href="tel:${formData.phone}" style="color: #D946EF; text-decoration: none;">${formData.phone}</a></div>
-            </div>` : ''}
-            ${formData.service ? `
-            <div class="field">
-                <div class="label">Typ služby</div>
-                <div class="value"><span class="badge">${getServiceName(formData.service)}</span></div>
-            </div>` : ''}
-            <div class="field">
-                <div class="label">Zpráva</div>
-                <div class="message-box">${formData.message.replace(/\n/g, '<br>')}</div>
-            </div>
-        </div>
-        <div class="footer">Odesláno z portfolia FilipHirt.cz • ${new Date().toLocaleString('cs-CZ')}</div>
-    </div>
+<body style="margin:0;padding:0;background-color:#F2E7CE;">
+    <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">${preheader}&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;</div>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#F2E7CE;">
+        <tr><td align="center" style="padding:36px 14px;">
+
+            <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;border:2px solid #3A140D;background-color:#F2E7CE;">
+
+                <!-- Hlavička: oxblood band, serifový titulek jako v kontaktní sekci -->
+                <tr><td style="background-color:#5A1A12;padding:30px 34px 26px;">
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td style="font-family:${serif};font-size:34px;line-height:1.1;color:#F7EFDD;">
+                                Nová <em style="font-style:italic;color:#E7A21C;">poptávka</em>
+                            </td>
+                            <td align="right" valign="top" style="font-family:${sans};font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#E7A21C;padding-top:6px;white-space:nowrap;">Č.&nbsp;06&nbsp;·&nbsp;Kontakt</td>
+                        </tr>
+                    </table>
+                    <p style="margin:10px 0 0;font-family:${sans};font-size:14px;line-height:1.5;color:#EBD9C2;">Někdo ti píše přes formulář na webu.</p>
+                </td></tr>
+
+                <!-- Barevný pruh (persimmon drench) -->
+                <tr><td style="background-color:#E0531F;height:7px;line-height:7px;font-size:0;">&nbsp;</td></tr>
+
+                <!-- Obsah -->
+                <tr><td style="padding:14px 34px 34px;">
+
+                    <div style="${fieldRow}">
+                        <p style="${fieldLabel}">Jméno</p>
+                        <p style="${fieldValue}font-family:${serif};font-size:20px;">${name}</p>
+                    </div>
+                    <div style="${fieldRow}">
+                        <p style="${fieldLabel}">E-mail</p>
+                        <p style="${fieldValue}"><a href="mailto:${email}" style="${link}">${email}</a></p>
+                    </div>
+                    ${phone ? `<div style="${fieldRow}">
+                        <p style="${fieldLabel}">Telefon</p>
+                        <p style="${fieldValue}"><a href="tel:${phone}" style="${link}">${phone}</a></p>
+                    </div>` : ''}
+                    ${formData.service ? `<div style="${fieldRow}">
+                        <p style="${fieldLabel}">Typ webu</p>
+                        <p style="margin:0;"><span style="display:inline-block;background-color:#E7A21C;color:#241710;font-family:${sans};font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 14px;border-radius:100px;">${escapeHtml(getServiceName(formData.service))}</span></p>
+                    </div>` : ''}
+
+                    <div style="padding:18px 0 0;">
+                        <p style="${fieldLabel}">Zpráva</p>
+                        <div style="background-color:#ECDCBC;border:1px solid #C9AE7C;padding:18px 20px;font-family:${sans};font-size:16px;line-height:1.6;color:#241710;">${message}</div>
+                    </div>
+
+                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr><td align="center" style="padding-top:28px;">
+                        <a href="mailto:${email}?subject=${encodeURIComponent('Re: Poptávka z webu')}" style="display:inline-block;background-color:#5A1A12;color:#F7EFDD;font-family:${sans};font-size:15px;font-weight:700;letter-spacing:.02em;padding:14px 32px;border-radius:100px;text-decoration:none;">Odpovědět&nbsp;&rarr;</a>
+                    </td></tr></table>
+
+                </td></tr>
+            </table>
+
+            <!-- Patička mimo rám -->
+            <p style="margin:16px 0 0;font-family:${sans};font-size:12px;line-height:1.5;color:#7C5A36;">Odesláno z formuláře na filiphirt.netlify.app&nbsp;&middot;&nbsp;${sentAt}</p>
+
+        </td></tr>
+    </table>
 </body>
 </html>`;
 }
@@ -154,7 +204,7 @@ exports.handler = async (event) => {
                 from: `"Portfolio" <${process.env.GMAIL_USER}>`,
                 to: process.env.RECIPIENT_EMAIL || process.env.GMAIL_USER,
                 replyTo: `"${formData.name}" <${formData.email}>`,
-                subject: `🎯 Nová poptávka: ${formData.name}`,
+                subject: `📮 Nová poptávka — ${formData.name}`,
                 html: getContactEmailHTML(formData),
             });
 
