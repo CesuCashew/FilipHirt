@@ -3264,6 +3264,7 @@ section {
 }
 
 .email-copy-block {
+  position: relative;
   margin-top: 80px;
   padding-top: 60px;
   border-top: 1px solid var(--line);
@@ -3284,6 +3285,7 @@ section {
   font-size: clamp(26px, 4.4vw, 56px);
   font-weight: 700;
   font-style: italic;
+  line-height: 1.15;
   letter-spacing: -0.02em;
   color: var(--ink);
   text-decoration: none;
@@ -3300,19 +3302,23 @@ section {
 }
 
 .copy-toast {
+  position: absolute;
+  left: 50%;
+  bottom: -34px;
   display: inline-block;
   font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
+  white-space: nowrap;
   background: var(--terracotta);
   color: var(--hero-cream);
   padding: 6px 16px;
   border-radius: 100px;
-  margin-top: 14px;
   opacity: 0;
-  transform: translateY(8px);
+  transform: translateX(-50%) translateY(8px);
   transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
 }
 
 .copy-toast.show {
@@ -4448,9 +4454,10 @@ section {
 }
 
 /* fit within 100vh — NO inner scroll (it would trap the wheel and block the
-   horizontal scroll) */
+   horizontal scroll). Every size below is vh-relative so the whole block
+   scales down together on short monitors instead of clipping at the bottom. */
 .panel--contact .contact-section {
-  padding: clamp(36px, 5vh, 64px) clamp(28px, 4.5vw, 84px);
+  padding: clamp(10px, 2vh, 56px) clamp(28px, 4.5vw, 84px);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -4464,24 +4471,25 @@ section {
   max-width: 1240px;
 }
 
-/* contact compaction */
+/* contact compaction — headline scales with whichever of width/height is
+   tighter, so a wide-but-short monitor doesn't blow the vertical budget */
 .panel--contact .contact-headline {
-  font-size: clamp(30px, 4.4vw, 64px);
+  font-size: clamp(20px, min(4.4vw, 5vh), 64px);
   line-height: 0.98;
-  margin-bottom: 8px;
+  margin-bottom: clamp(3px, 0.7vh, 6px);
 }
 
 .panel--contact .contact-sub {
-  font-size: 15px;
-  margin-bottom: 22px;
+  font-size: clamp(10px, 1.5vh, 13px);
+  margin-bottom: clamp(4px, 1.2vh, 14px);
 }
 
 .panel--contact .contact-form {
-  gap: 10px;
+  gap: clamp(2px, 0.75vh, 8px);
 }
 
 .panel--contact .form-group {
-  gap: 5px;
+  gap: 2px;
 }
 
 .panel--contact .form-label {
@@ -4492,21 +4500,30 @@ section {
 .panel--contact .form-input,
 .panel--contact .form-select,
 .panel--contact .form-textarea {
-  padding: 9px 13px;
+  padding: clamp(2px, 0.7vh, 7px) 13px;
   font-size: 14px;
 }
 
 .panel--contact .form-textarea {
-  min-height: 60px;
+  min-height: clamp(18px, 3.8vh, 52px);
+}
+
+.panel--contact .contact-form .btn-primary {
+  padding: clamp(6px, 0.95vh, 12px) 30px;
+  margin-top: 2px;
 }
 
 .panel--contact .email-copy-block {
-  margin-top: 20px;
-  padding-top: 16px;
+  margin-top: clamp(5px, 0.85vh, 14px);
+  padding-top: clamp(3px, 0.7vh, 10px);
+}
+
+.panel--contact .email-copy-label {
+  margin-bottom: clamp(3px, 0.7vh, 10px);
 }
 
 .panel--contact .email-copy-link {
-  font-size: clamp(20px, 3vw, 38px);
+  font-size: clamp(14px, min(2.4vw, 3.6vh), 34px);
 }
 
 /* ============================================================
