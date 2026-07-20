@@ -209,8 +209,8 @@ export default function HeroKinetic() {
               <span className="heroB-h-grotesk">řemeslo.</span>
             </h1>
             <p className="heroB-lead">
-              Od nuly, bez šablon — moderní design, čistý kód a chytré funkce,
-              které pracují za vás.
+              Tvořím weby na zakázku, od nuly a bez šablon — moderní design,
+              čistý kód a chytré funkce, které pracují za vás.
             </p>
 
             <div className="heroB-meta">
@@ -255,7 +255,7 @@ export default function HeroKinetic() {
                 <video
                   ref={videoRef}
                   className="heroB-video"
-                  poster="/mac-poster.jpg"
+                  poster="/mac-poster.webp"
                   muted
                   playsInline
                   preload="none"

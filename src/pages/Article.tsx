@@ -1,6 +1,9 @@
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { articles, img, type ArticleBlock } from "../data/articles";
+import { useSeo } from "../lib/seo";
+
+const SITE_URL = "https://filiphirt.cz";
 
 function Block({ block }: { block: ArticleBlock }) {
   switch (block.type) {
@@ -27,15 +30,31 @@ export default function Article({ params }: { params: { slug: string } }) {
   const next = article ? articles[(idx + 1) % articles.length] : null;
   const progressRef = useRef<HTMLDivElement>(null);
 
-  // new article → start at the top, name the tab
+  const articleUrl = article ? `${SITE_URL}/zurnal/${article.slug}` : undefined;
+  const articleImage = article ? img(article.image, 1200) : undefined;
+
+  useSeo(
+    article
+      ? {
+          title: `${article.title} — Filip Hirt`,
+          description: article.excerpt,
+          canonical: articleUrl,
+          ogType: "article",
+          ogTitle: article.title,
+          ogDescription: article.excerpt,
+          ogUrl: articleUrl,
+          ogImage: articleImage,
+          twitterTitle: article.title,
+          twitterDescription: article.excerpt,
+          twitterImage: articleImage,
+        }
+      : { title: "Ztraceno v zápisníku — Filip Hirt", robots: "noindex" }
+  );
+
+  // new article → start at the top
   useEffect(() => {
     window.scrollTo(0, 0);
-    const prev = document.title;
-    if (article) document.title = `${article.title} — Filip Hirt`;
-    return () => {
-      document.title = prev;
-    };
-  }, [params.slug, article]);
+  }, [params.slug]);
 
   // reading progress bar (same treatment as the home page)
   useEffect(() => {

@@ -5,7 +5,7 @@ export default function JournalPanel() {
   return (
     <section className="panel panel--journal panel--wide" id="journal">
       <div className="panel-bg" data-parallax="0.12" aria-hidden="true">
-        <div className="panel-bg-img" style={{ backgroundImage: "url('/hero-art.jpg')" }} />
+        <div className="panel-bg-img" style={{ backgroundImage: "url('/hero-art.webp')" }} />
       </div>
 
       <div className="panel-inner journal-inner">

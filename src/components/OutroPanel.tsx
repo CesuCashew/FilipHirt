@@ -10,12 +10,13 @@ export default function OutroPanel() {
   return (
     <section className="panel panel--outro" id="social">
       <div className="panel-bg" data-parallax="0.08" aria-hidden="true">
-        <div className="panel-bg-img" style={{ backgroundImage: "url('/hero-art.jpg')" }} />
+        <div className="panel-bg-img" style={{ backgroundImage: "url('/hero-art.webp')" }} />
       </div>
 
       <div className="panel-inner outro-inner">
         <h2 className="outro-word">DÍKY ZA<br />NÁVŠTĚVU</h2>
         <p className="outro-line">Pojďme spolu něco postavit.</p>
+        <p className="outro-sub">Tvořím weby na zakázku v Chebu a po celé ČR.</p>
 
         <div className="outro-links">
           {socials.map((s) => (

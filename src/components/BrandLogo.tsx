@@ -25,7 +25,7 @@ export default function BrandLogo() {
         <span className="brand-signature-wrap" aria-hidden="true">
           <span className="brand-signature-clip">
             <img
-              src="/signature-final.png"
+              src="/signature-final.webp"
               alt=""
               className="brand-signature-img"
               draggable={false}

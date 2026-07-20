@@ -13,13 +13,13 @@ export default function ServicesPanel() {
   return (
     <section className="panel panel--services panel--ultrawide" id="services">
       <div className="panel-bg" aria-hidden="true">
-        <div className="panel-bg-img svc-bg-img" style={{ backgroundImage: "url('/services-bg.jpg')" }} />
+        <div className="panel-bg-img svc-bg-img" style={{ backgroundImage: "url('/services-bg.webp')" }} />
         <div className="svc-overlay" />
       </div>
 
       {/* thermo centerpiece — lags behind the type for depth (à la the tiger) */}
       <div className="svc-thermo" data-parallax="0.34" aria-hidden="true">
-        <img src="/termos.png" alt="" />
+        <img src="/termos.webp" alt="" loading="lazy" decoding="async" />
       </div>
 
       <div className="panel-inner svc-inner">

@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 /**
  * Vybrané práce — two live projects on real silver iMac 24" mockups
  * (LS Graphics freebie, free for commercial use; resized render in
- * public/imac-silver.png, transparent background).
+ * public/imac-silver.webp, transparent background).
  *
  * The screen area of the render (measured on the source PNG) is covered by
  * a live DOM overlay holding a full-page screenshot of the site. At rest the
@@ -14,7 +14,7 @@ import { useEffect, useRef } from "react";
  * (--dur) onto each monitor — no container-query units involved.
  * On touch devices (hover: none) the glide runs as a slow autonomous loop.
  *
- * Screenshots live in public/work-*.jpg — re-capture when the sites change.
+ * Screenshots live in public/work-*.webp — re-capture when the sites change.
  */
 
 const works = [
@@ -22,14 +22,14 @@ const works = [
     title: "FINC a.s.",
     cat: "Finance / M&A",
     year: "2026",
-    shot: "/work-finc.jpg",
+    shot: "/work-finc.webp",
     note: "Korporátní web pro poradenskou firmu — fúze, akvizice a čísla, kterým se dá věřit.",
   },
   {
     title: "Mezičas",
     cat: "Kavárna / Music bar",
     year: "2026",
-    shot: "/work-mezicas.jpg",
+    shot: "/work-mezicas.webp",
     note: "Zin o jedné kavárně — web, který mění tvář podle denní doby.",
   },
 ];
@@ -94,7 +94,7 @@ export default function PortfolioPanel() {
               <div className="wm">
                 <img
                   className="wm-frame"
-                  src="/imac-silver.png"
+                  src="/imac-silver.webp"
                   alt=""
                   loading="lazy"
                   decoding="async"
