@@ -213,9 +213,7 @@ export default function CollabFlow() {
     <section id="spoluprace" className="collab" ref={rootRef} data-nav-theme="light">
       <div className="collab-sticky">
         <header className="collab-head">
-          <p className="collab-label">
-            Jak to probíhá <span className="collab-label-star">✳</span>
-          </p>
+          <p className="collab-label">Jak to probíhá</p>
           <h2 className="collab-title">
             Spolupráce od nápadu{" "}
             <span className="collab-title-it">ke spuštění</span>

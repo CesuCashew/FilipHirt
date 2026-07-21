@@ -37,10 +37,24 @@ export default function HeroKinetic() {
       window.matchMedia("(prefers-reduced-motion: reduce)").matches
   );
 
+  // Mobile: no pinned scrub — the section is one screen tall, CSS forces the
+  // revealed state (--p: 1) and the restored machine shows as a still image.
+  const [mobile, setMobile] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(max-width: 900px)").matches
+  );
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 900px)");
+    const onChange = () => setMobile(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
   // ---- cursor parallax (the stage + photo chip drift to the pointer) ----
   useEffect(() => {
     const root = rootRef.current;
-    if (!root || reduced) return;
+    if (!root || reduced || mobile) return;
     const layers = Array.from(root.querySelectorAll<HTMLElement>("[data-depth]"));
     let raf = 0;
     const target = { x: 0, y: 0 };
@@ -64,7 +78,7 @@ export default function HeroKinetic() {
       window.removeEventListener("mousemove", onMove);
       cancelAnimationFrame(raf);
     };
-  }, [reduced]);
+  }, [reduced, mobile]);
 
   // ---- shared scroll timeline: reveal + video scrub, one lerped progress ----
   // This runs for everyone, including prefers-reduced-motion: the scrub and
@@ -74,7 +88,7 @@ export default function HeroKinetic() {
   useEffect(() => {
     const root = rootRef.current;
     const video = videoRef.current;
-    if (!root) return;
+    if (!root || mobile) return;
 
     // lazily attach the source only when the section nears the viewport
     let sourced = false;
@@ -190,8 +204,9 @@ export default function HeroKinetic() {
       document.removeEventListener("visibilitychange", onVis);
       window.removeEventListener("touchstart", kick);
       video?.removeEventListener("loadedmetadata", onMeta);
+      root.style.removeProperty("--p");
     };
-  }, []);
+  }, [mobile]);
 
   return (
     <section id="home" className="heroB" ref={rootRef} data-nav-theme="dark">
@@ -252,17 +267,26 @@ export default function HeroKinetic() {
               </svg>
 
               <div className="heroB-screen">
-                <video
-                  ref={videoRef}
-                  className="heroB-video"
-                  poster="/mac-poster.webp"
-                  muted
-                  playsInline
-                  preload="none"
-                  tabIndex={-1}
-                  aria-hidden="true"
-                  disablePictureInPicture
-                />
+                {mobile ? (
+                  <img
+                    src="/mac-final.webp"
+                    alt=""
+                    decoding="async"
+                    aria-hidden="true"
+                  />
+                ) : (
+                  <video
+                    ref={videoRef}
+                    className="heroB-video"
+                    poster="/mac-poster.webp"
+                    muted
+                    playsInline
+                    preload="none"
+                    tabIndex={-1}
+                    aria-hidden="true"
+                    disablePictureInPicture
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -271,7 +295,9 @@ export default function HeroKinetic() {
 
         {/* Title card — the resting state before any scroll. Decorative twin of
             the real <h1>; letters rise once `body.loading` is removed, then the
-            whole card cross-fades out over the first ~12% of scroll. */}
+            whole card cross-fades out over the first ~12% of scroll. Mobile
+            skips it — the hero starts in the revealed state. */}
+        {!mobile && (
         <div className="heroB-intro" aria-hidden="true">
           <p className="heroB-intro-name">
             {/* the word gap maps to U+00A0 so the span keeps its width */}
@@ -285,14 +311,12 @@ export default function HeroKinetic() {
               </span>
             ))}
           </p>
-          <p className="heroB-intro-role">
-            <span className="heroB-intro-star">✳</span> Web designer &amp;
-            developer
-          </p>
+          <p className="heroB-intro-role">Web designer &amp; developer</p>
           <div className="heroB-intro-hint">
             <span className="heroB-intro-hint-line" />
           </div>
         </div>
+        )}
       </div>
     </section>
   );

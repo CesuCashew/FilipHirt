@@ -1,0 +1,12 @@
+{
+  "name": "Filip Hirt — Webdesignér & vývojář",
+  "short_name": "Filip Hirt",
+  "icons": [
+    { "src": "/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#B23A17",
+  "background_color": "#E8D8BD",
+  "display": "standalone",
+  "start_url": "/"
+}

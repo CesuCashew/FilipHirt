@@ -143,9 +143,7 @@ export default function WhyMe() {
     <section id="proc-ja" className="why" ref={rootRef} data-nav-theme="light">
       <div className="why-sticky">
         <header className="why-head">
-          <p className="why-label">
-            Proč já <span className="why-label-star">✳</span>
-          </p>
+          <p className="why-label">Proč já</p>
           <h2 className="why-title">
             Důvody, které se <span className="why-title-it">nedají okopírovat</span>
           </h2>
