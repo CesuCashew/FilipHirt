@@ -3474,7 +3474,10 @@ section {
 }
 
 .footer-giant .giant-name {
-  font-size: clamp(58px, 15vw, 230px);
+  /* the footer's own container caps out at 1144px content width, so this
+     must stop growing before "FILIP HIRT" gets wider than that — 230px
+     was past the point where "T" started clipping on wide desktops */
+  font-size: clamp(58px, 15vw, 195px);
   color: rgba(58, 20, 13, 0.05);
   -webkit-text-stroke: 1.5px var(--line-strong);
   display: block;
