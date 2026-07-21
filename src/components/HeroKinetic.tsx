@@ -313,6 +313,7 @@ export default function HeroKinetic() {
           </p>
           <p className="heroB-intro-role">Web designer &amp; developer</p>
           <div className="heroB-intro-hint">
+            <span className="heroB-intro-hint-label">Scroll</span>
             <span className="heroB-intro-hint-line" />
           </div>
         </div>
