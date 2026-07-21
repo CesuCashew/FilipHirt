@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "wouter";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -135,6 +136,10 @@ export default function Contact() {
               <button type="submit" className="btn-primary" disabled={isSubmitting}>
                 {isSubmitting ? "Odesílám..." : submitted ? "Odesláno ✓" : "Odeslat Zprávu"}
               </button>
+              <p className="form-privacy-note">
+                Odesláním souhlasíte se zpracováním údajů podle{" "}
+                <Link href="/soukromi">zásad ochrany osobních údajů</Link>.
+              </p>
             </div>
           </form>
 

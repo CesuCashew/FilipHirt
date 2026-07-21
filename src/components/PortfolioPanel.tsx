@@ -24,6 +24,7 @@ const works = [
     year: "2026",
     shot: "/work-finc.webp",
     note: "Korporátní web pro poradenskou firmu — fúze, akvizice a čísla, kterým se dá věřit.",
+    url: "https://cesucashew.github.io/FINC/",
   },
   {
     title: "Mezičas",
@@ -31,6 +32,7 @@ const works = [
     year: "2026",
     shot: "/work-mezicas.webp",
     note: "Zin o jedné kavárně — web, který mění tvář podle denní doby.",
+    url: "https://cesucashew.github.io/mezicas/",
   },
 ];
 
@@ -76,7 +78,7 @@ export default function PortfolioPanel() {
   }, []);
 
   return (
-    <section className="panel panel--portfolio" id="portfolio" ref={rootRef}>
+    <section className="panel panel--portfolio" id="portfolio" ref={rootRef} data-nav-theme="light">
       <div className="panel-inner portfolio-inner">
         <header className="portfolio-head">
           <span className="panel-folio">Práce</span>
@@ -86,9 +88,12 @@ export default function PortfolioPanel() {
 
         <div className="works">
           {works.map((w, i) => (
-            <article
+            <a
               className="work reveal"
               key={w.title}
+              href={w.url}
+              target="_blank"
+              rel="noopener noreferrer"
               style={{ transitionDelay: `${i * 0.12}s` }}
             >
               <div className="wm">
@@ -125,8 +130,11 @@ export default function PortfolioPanel() {
                 </div>
                 <h3 className="work-title">{w.title}</h3>
                 <p className="work-note">{w.note}</p>
+                <span className="work-link">
+                  Zobrazit živě <span aria-hidden="true">↗</span>
+                </span>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </div>

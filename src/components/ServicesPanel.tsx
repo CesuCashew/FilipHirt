@@ -11,7 +11,7 @@ const skills: Skill[] = [
 
 export default function ServicesPanel() {
   return (
-    <section className="panel panel--services panel--ultrawide" id="services">
+    <section className="panel panel--services panel--ultrawide" id="services" data-nav-theme="dark">
       <div className="panel-bg" aria-hidden="true">
         <div className="panel-bg-img svc-bg-img" style={{ backgroundImage: "url('/services-bg.webp')" }} />
         <div className="svc-overlay" />

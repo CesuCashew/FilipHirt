@@ -543,10 +543,6 @@
 .nav.scrolled {
   padding-top: 12px;
   padding-bottom: 12px;
-  background: rgba(232, 216, 189, 0.72);
-  backdrop-filter: blur(14px) saturate(1.3);
-  -webkit-backdrop-filter: blur(14px) saturate(1.3);
-  border-bottom: 1px solid var(--line);
 }
 
 /* On the dark hero, nav text starts light; after scroll it flips to ink */
@@ -559,7 +555,7 @@
   transition: color 0.4s ease;
 }
 
-.nav.scrolled .nav-brand {
+.nav--light .nav-brand {
   color: var(--ink);
 }
 
@@ -570,9 +566,18 @@
   letter-spacing: -0.02em;
 }
 
-.nav-brand-dot {
-  color: var(--terracotta);
-  font-family: var(--font-display);
+/* small version of the giant footer wordmark — same condensed poster face,
+   filled instead of hollow: the outline-only treatment only reads at giant
+   size, where the stroke has room to breathe. Shrunk down, the thin lines
+   just blur together, so this is a solid mark, not a downsized outline. */
+.nav-brand-mark {
+  font-family: 'Sprat Condensed', var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  font-size: 23px;
+  line-height: 1;
+  color: currentColor;
 }
 
 .nav-brand-tag {
@@ -605,17 +610,17 @@
   transition: color 0.3s ease;
 }
 
-.nav.scrolled .nav-links a {
+.nav--light .nav-links a {
   color: var(--ink-soft);
 }
 
 .nav-links a:hover,
-.nav.scrolled .nav-links a:hover {
+.nav--light .nav-links a:hover {
   color: var(--terracotta);
 }
 
 .nav-links a.active,
-.nav.scrolled .nav-links a.active {
+.nav--light .nav-links a.active {
   color: var(--terracotta);
 }
 
@@ -650,7 +655,7 @@
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.nav.scrolled .nav-cta {
+.nav--light .nav-cta {
   color: var(--ink);
   border-color: var(--line-strong);
 }
@@ -786,7 +791,7 @@
   transition: all 0.3s ease;
 }
 
-.nav.scrolled .nav-burger span {
+.nav--light .nav-burger span {
   background: var(--ink);
 }
 
@@ -2900,6 +2905,25 @@ section {
   margin-bottom: 10px;
 }
 
+.form-privacy-note {
+  margin: 14px 0 0;
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-mute);
+}
+
+.form-privacy-note a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.25s ease;
+}
+
+.form-privacy-note a:hover {
+  color: var(--terracotta);
+}
+
 /* ============================================================
    BLOG / JOURNAL — replaces testimonials
    ============================================================ */
@@ -3343,10 +3367,11 @@ section {
 }
 
 .footer-brand-name {
-  font-family: var(--font-display);
-  font-weight: 700;
-  font-size: 24px;
-  letter-spacing: -0.02em;
+  font-family: 'Sprat Condensed', var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  font-size: 26px;
   color: var(--ink);
 }
 
@@ -3431,6 +3456,15 @@ section {
   color: var(--ink-mute);
 }
 
+.footer-legal {
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-legal:hover {
+  color: var(--terracotta);
+}
+
 /* giant name footer backdrop */
 .footer-giant {
   overflow: hidden;
@@ -3441,8 +3475,8 @@ section {
 
 .footer-giant .giant-name {
   font-size: clamp(58px, 15vw, 230px);
-  color: transparent;
-  -webkit-text-stroke: 1.2px var(--line-strong);
+  color: rgba(58, 20, 13, 0.05);
+  -webkit-text-stroke: 1.5px var(--line-strong);
   display: block;
   text-align: center;
 }
@@ -3695,6 +3729,13 @@ section {
 .panel--wide {
   flex-basis: 132vw;
   width: 132vw;
+}
+
+/* journal needs to seat 6 cards in one row — wider than the standard
+   "wide" panel, but not as extreme as the services word-cloud ultrawide */
+.panel--journal.panel--wide {
+  flex-basis: 224vw;
+  width: 224vw;
 }
 
 .panel-bg {
@@ -4128,6 +4169,7 @@ section {
   flex-direction: column;
   gap: clamp(14px, 2.2vh, 24px);
   color: inherit;
+  text-decoration: none;
 }
 
 /* ---- real silver iMac 24" render; the screen is a live DOM overlay ---- */
@@ -4219,6 +4261,22 @@ section {
   color: var(--ink-soft);
   max-width: 46ch;
 }
+.work-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--persimmon-d);
+  margin-top: 4px;
+  transition: gap 0.25s ease;
+}
+.work:hover .work-link {
+  gap: 10px;
+}
 
 @media (prefers-reduced-motion: reduce) {
   /* no autonomous glide; the hover glide stays (user-initiated), the zoom
@@ -4278,7 +4336,8 @@ section {
   flex: 1;
   min-height: 0;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
   gap: clamp(16px, 1.8vw, 30px);
   align-items: stretch;
 }
@@ -6067,6 +6126,182 @@ body:not(.loading) .heroB-intro-hint {
 }
 
 /* ============================================================
+   PRICE PAGE (/cena) — "Cena je rozhovor". Three horizontal panels,
+   same hgallery mechanism as the home page, reusing .panel/.panel-inner/
+   .panel-folio/.poster-title. No numbers anywhere on purpose.
+   ============================================================ */
+.price-page {
+  position: relative;
+  z-index: var(--z-base);
+  min-height: 100vh;
+  background: var(--cream);
+}
+
+.price-intro-inner,
+.price-factors-inner,
+.price-cta-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(24px, 4vh, 44px);
+  max-width: 1100px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.price-head {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.price-word {
+  color: var(--persimmon);
+}
+
+.price-word--sm {
+  font-size: clamp(32px, 4.2vw, 64px);
+  line-height: 0.95;
+}
+
+.panel--price-intro {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.price-intro-body {
+  max-width: 62ch;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.price-intro-body p {
+  font-family: var(--font-body);
+  font-size: clamp(15px, 1.1vw, 18px);
+  line-height: 1.66;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+.price-intro-body p.price-lead {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(20px, 2.4vw, 32px);
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.panel--price-factors {
+  background: var(--marigold);
+  color: var(--oxblood);
+}
+
+.price-factor-grid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 48px);
+  align-content: center;
+}
+
+.price-factor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.price-factor-no {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  color: var(--terracotta);
+}
+
+.price-factor-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(20px, 2vw, 28px);
+  margin: 0;
+  color: var(--oxblood);
+}
+
+.price-factor-text {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1vw, 16px);
+  line-height: 1.55;
+  color: var(--oxblood);
+  opacity: 0.82;
+  max-width: 42ch;
+  margin: 0;
+}
+
+.panel--price-cta {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.price-cta-lead {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 1.3vw, 19px);
+  line-height: 1.6;
+  color: var(--ink-soft);
+  max-width: 58ch;
+  margin: 0;
+}
+
+.price-cta-lead a {
+  color: var(--terracotta);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.price-cta-btn {
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+.price-reads {
+  margin-top: clamp(20px, 3vh, 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.price-reads-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+}
+
+.price-reads-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.price-reads-list a {
+  font-family: var(--font-display);
+  font-size: clamp(16px, 1.3vw, 20px);
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.price-reads-list a:hover {
+  color: var(--terracotta);
+  border-color: var(--terracotta);
+}
+
+/* ============================================================
    ARTICLE PAGE (/zurnal/:slug) — the journal, opened up.
    Carries the journal panel's identity: the sage-cream paper,
    teal poster titles, persimmon accents, heavy print frames.
@@ -6104,14 +6339,33 @@ body:not(.loading) .heroB-intro-hint {
 }
 
 .article-brand {
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-family: 'Sprat Condensed', var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
   font-size: 19px;
   color: var(--ink);
   text-decoration: none;
 }
 
-.article-brand span {
+.article-top-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 2.4vw, 28px);
+}
+
+.article-top-links a {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.article-top-links a:hover {
   color: var(--persimmon-d);
 }
 
@@ -6252,6 +6506,24 @@ body:not(.loading) .heroB-intro-hint {
   font-size: 19px;
   color: var(--ink-soft);
   margin: 2.4em 0 0;
+}
+
+.article-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  margin: 2em 0;
+  padding: clamp(20px, 3vw, 32px);
+  background: var(--cream-3);
+  border: 1px solid var(--line);
+}
+
+.article-cta-text {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
 }
 
 /* ---------- end / next ---------- */

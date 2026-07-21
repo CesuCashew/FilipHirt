@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import CollabFlow from "../components/CollabFlow";
 import WhyMe from "../components/WhyMe";
@@ -9,8 +10,29 @@ import JournalPanel from "../components/JournalPanel";
 import OutroPanel from "../components/OutroPanel";
 import Contact from "../components/Contact";
 import HorizontalGallery from "../components/HorizontalGallery";
+import Footer from "../components/Footer";
+import { useSeo } from "../lib/seo";
+
+const SITE_URL = "https://filiphirt.cz";
 
 export default function Home() {
+  // resets title/meta when navigating back here client-side (e.g. from a
+  // journal article or /cena, which set their own via useSeo)
+  useSeo({
+    title: "Tvorba webů na zakázku Cheb | Filip Hirt — webdesignér & vývojář",
+    description:
+      "Tvorba webů na zakázku v Chebu a po celé ČR. Filip Hirt — webdesignér a vývojář. Stavím weby od nuly: precizní řemeslo, teplý vizuál a chytré funkce, které pracují za vás. Restaurace, e-shopy, firemní weby i řešení s AI.",
+    canonical: `${SITE_URL}/`,
+    ogType: "website",
+    ogTitle: "Tvorba webů na zakázku Cheb | Filip Hirt — webdesignér & vývojář",
+    ogDescription: "Weby stavěné jako řemeslo. Teplý design, čistý kód a funkce, které mají smysl. Cheb & celá ČR.",
+    ogUrl: `${SITE_URL}/`,
+    ogImage: `${SITE_URL}/opengraph.jpg`,
+    twitterTitle: "Tvorba webů na zakázku Cheb | Filip Hirt",
+    twitterDescription: "Weby stavěné jako řemeslo. Teplý design, čistý kód a funkce, které mají smysl.",
+    twitterImage: `${SITE_URL}/opengraph.jpg`,
+  });
+
   // skip the intro loader on #now and on return visits within the session
   // (e.g. coming back from a journal article)
   const instant =
@@ -86,6 +108,7 @@ export default function Home() {
 
   return (
     <>
+      <Navbar />
       {!loaderDone && (
         <div
           className="page-loader"
@@ -118,10 +141,11 @@ export default function Home() {
             <ServicesPanel />
             <PortfolioPanel />
             <JournalPanel />
-            <section className="panel panel--contact" id="contact"><Contact /></section>
+            <section className="panel panel--contact" id="contact" data-nav-theme="light"><Contact /></section>
             <OutroPanel />
           </HorizontalGallery>
         </main>
+        <Footer />
       </div>
     </>
   );

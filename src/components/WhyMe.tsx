@@ -140,7 +140,7 @@ export default function WhyMe() {
   }, [pinned]);
 
   return (
-    <section id="proc-ja" className="why" ref={rootRef}>
+    <section id="proc-ja" className="why" ref={rootRef} data-nav-theme="light">
       <div className="why-sticky">
         <header className="why-head">
           <p className="why-label">

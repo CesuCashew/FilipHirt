@@ -5,7 +5,8 @@ export type ArticleBlock =
   | { type: "p"; text: string }
   | { type: "h2"; text: string }
   | { type: "quote"; text: string }
-  | { type: "list"; items: string[] };
+  | { type: "list"; items: string[] }
+  | { type: "cta"; text: string; href: string; label: string };
 
 export interface Article {
   slug: string;
@@ -14,9 +15,12 @@ export interface Article {
   title: string;
   excerpt: string;
   image: string;
+  /** CSS object-position for the image crop; defaults to "center" */
+  imagePosition?: string;
   alt: string;
   lead: string;
   blocks: ArticleBlock[];
+  tags?: string[];
 }
 
 export const articles: Article[] = [
@@ -170,6 +174,146 @@ export const articles: Article[] = [
       {
         type: "p",
         text: "Výsledek se nedá okecat. Web buď odsýpá, nebo ne — a pozná to každý, i když neumí říct proč. Právě proto řeším rychlost dřív, než klient vůbec ví, že by ji měl chtít. Je to zdvořilost, kterou na první pohled nikdo nevidí. Jen web najednou působí… slušně vychovaně.",
+      },
+    ],
+  },
+  {
+    slug: "kolik-stoji-web",
+    cat: "Byznys · 6 min",
+    date: "červenec 2026",
+    title: "Kolik stojí web v roce 2026 (a proč je to špatná otázka)",
+    excerpt: "Cena webu není jedno číslo. Je to součet rozhodnutí, která ještě nikdo neudělal — dokud si nepromluvíme.",
+    image: "1560415903-cca53660d61d",
+    imagePosition: "center 85%",
+    tags: ["cena"],
+    alt: "Starý psací stroj a stolní lampa v teplém přítmí",
+    lead:
+      "Kolikrát mi tuhle otázku položili už při prvním hovoru, ještě než jsem věděl, co vlastně chcete postavit. Chápu to — potřebujete si to nějak zaškatulkovat. Jenže „web“ není jednotka, po které se ptáte v pekárně. Je to rozsah práce, který se teprve musí definovat.",
+    blocks: [
+      { type: "h2", text: "Proč se ptáte špatně" },
+      {
+        type: "p",
+        text: "Zeptat se „kolik stojí web“ je jako zeptat se „kolik stojí dům“. Chatka na zahradě i vila se čtyřmi patry jsou obě „dům“. Rozdíl dělá všechno kolem toho slova — a u webu je to úplně stejné.",
+      },
+      {
+        type: "p",
+        text: "Vizitka na pár odstavců textu a rezervační systém napojený na platební bránu mají společné jedno: obojí běží v prohlížeči. Jinak nemají skoro nic společného — ani čas, ani náročnost, ani cenu.",
+      },
+      { type: "h2", text: "Co skutečně určuje cenu" },
+      {
+        type: "list",
+        items: [
+          "Kolik podstránek a funkcí web potřebuje",
+          "Jestli existuje obsah a grafika, nebo se tvoří od nuly",
+          "Jak moc je řešení na míru — administrace, AI, platby, propojení na jiné systémy",
+          "Jak rychle to musí být hotové",
+        ],
+      },
+      {
+        type: "quote",
+        text: "Cena webu se nedá spočítat z názvu projektu. Dá se spočítat jen z toho, co má web umět.",
+      },
+      { type: "h2", text: "Proč radši mluvím, než počítám" },
+      {
+        type: "p",
+        text: "Mohl bych na web hodit tabulku s čísly a nechat vás hádat, do které kolonky zapadáte. Skoro vždycky by to bylo špatně — buď byste přeplatili za jednoduchý web, nebo doplatili na to, že vaše „jednoduché“ zadání jednoduché vůbec nebylo.",
+      },
+      {
+        type: "p",
+        text: "Proto radši nejdřív slyším, co potřebujete. Trvá to pár vět z vaší strany a pár otázek z mé — a na konci dostanete číslo, které sedí na váš projekt, ne na průměr trhu.",
+      },
+      {
+        type: "cta",
+        text: "Chcete vědět, jak k té ceně doopravdy docházím?",
+        href: "/cena",
+        label: "Cena je rozhovor",
+      },
+    ],
+  },
+  {
+    slug: "proc-nemam-cenik",
+    cat: "Esej · 5 min",
+    date: "červenec 2026",
+    title: "Proč nemám ceník",
+    excerpt: "Ceník by mi ušetřil pár e-mailů. Rozhodl jsem se ho i tak nemít — a tady je proč.",
+    image: "1661956602868-6ae368943878",
+    tags: ["cena"],
+    alt: "Šálek kávy vedle notebooku a diáře na pracovním stole",
+    lead:
+      "Občas mi někdo napíše, ať prostě dám na web tabulku s cenami, ať to zjednoduším. Rozumím tomu popudu — sám mám radši weby, které říkají věci na rovinu. Jenže ceník by tady na rovinu neříkal nic. Říkal by jen půlku pravdy.",
+    blocks: [
+      { type: "h2", text: "Co ceník slibuje a co nedokáže splnit" },
+      {
+        type: "p",
+        text: "Ceník vypadá jako transparentnost. Ve skutečnosti je to zjednodušení, které funguje jen tehdy, když všichni klienti chtějí skoro to samé. U agentury s balíčky služeb to dává smysl. U mě šablona není ani ve výsledku, natož v ceně.",
+      },
+      {
+        type: "p",
+        text: "Kdybych napsal „web od 15 000 Kč“, bude to pravda pro někoho a lež pro někoho jiného — a vy byste to nepoznali, dokud byste mi nenapsali a nezjistili, do které skupiny patříte. Takže tu zprávu radši čekám rovnou, jen bez zavádějícího čísla nad ní.",
+      },
+      { type: "h2", text: "Přímý kontakt bez agenturní vrstvy" },
+      {
+        type: "p",
+        text: "Nejsem agentura s ceníkem služeb a obchodním oddělením mezi vámi a tím, kdo web skutečně staví. Jsem jeden člověk, který se s vámi baví o projektu a pak ho postaví. Cena vychází z toho rozhovoru, ne z ceníku vytištěného před rokem pro úplně jiné klienty.",
+      },
+      {
+        type: "quote",
+        text: "Ceník je odpověď na otázku, kterou jste ještě nepoložili. Radši slyším tu vaši.",
+      },
+      { type: "h2", text: "Co tím získáváte vy" },
+      {
+        type: "p",
+        text: "Žádné škatulkování do balíčků, které vám buď nesedí, nebo vás nutí platit za funkce, které nepotřebujete. Popíšete projekt tak, jak ho vidíte vy, a já vám řeknu, co reálně obnáší — časově i finančně.",
+      },
+      {
+        type: "cta",
+        text: "Chcete vidět, co přesně cenu ovlivňuje?",
+        href: "/cena",
+        label: "Cena je rozhovor",
+      },
+    ],
+  },
+  {
+    slug: "co-je-v-cene-webu",
+    cat: "Vývoj · 7 min",
+    date: "červenec 2026",
+    title: "Co všechno je v ceně webu, o kterém se obvykle nemluví",
+    excerpt: "Cena webu není jen sazba za hodiny u klávesnice. Hosting, doména, údržba i SEO základ — co všechno se schovává pod jedním číslem.",
+    image: "1761322572550-967ea8c0bfd9",
+    tags: ["cena"],
+    alt: "Otevřený zápisník s perem a tužkami na dřevěném stole",
+    lead:
+      "Když klient slyší cenu za web, málokdy se ptá, co všechno je v ní schované. A přitom je to fér otázka — protože „web“ nekončí ve chvíli, kdy ho spustíte. Tady je seznam věcí, které se do ceny počítají, i když je na první pohled nevidíte.",
+    blocks: [
+      { type: "h2", text: "Co se stane před spuštěním" },
+      {
+        type: "list",
+        items: [
+          "Návrh struktury a obsahu, ne jen „nakódování“",
+          "Texty a jejich sladění s tím, jak má firma znít",
+          "SEO základ — meta popisky, rychlost, mobilní verze — od prvního řádku, ne jako dodatečná služba",
+          "Testování na různých telefonech a prohlížečích, ne jen na mém monitoru",
+        ],
+      },
+      { type: "h2", text: "Co se řeší po spuštění" },
+      {
+        type: "p",
+        text: "Doména a hosting jsou obvykle oddělená položka, kterou platíte přímo poskytovateli — pomůžu je vybrat a nastavit, ale nejsou schované v ceně webu. Údržba je jiná věc: opravy, drobné úpravy, obnova po výpadku. Řeknu vám předem, jestli váš web nějakou pravidelnou péči potřebuje a kolik by stála — žádná položka, na kterou přijdete až po faktuře.",
+      },
+      {
+        type: "quote",
+        text: "Web, který jen „existuje“, a web, který vám přivádí zákazníky, se liší v detailech, které nejsou vidět na první pohled — a přesně tam mizí většina rozpočtu.",
+      },
+      { type: "h2", text: "Proč o tom mluvím dopředu" },
+      {
+        type: "p",
+        text: "Nerad bych, aby vás cena po měsíci provozu překvapila položkou, o které jste nevěděli. Radši to projdeme hned na začátku — co je jednorázové, co se opakuje a co si klidně můžete zajistit sami.",
+      },
+      {
+        type: "cta",
+        text: "Chcete vidět, jak celý rozhovor o ceně probíhá?",
+        href: "/cena",
+        label: "Cena je rozhovor",
       },
     ],
   },

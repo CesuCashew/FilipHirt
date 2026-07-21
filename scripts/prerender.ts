@@ -4,7 +4,12 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { articles } from "../src/data/articles";
 
-const routes = ["/", ...articles.map((a) => `/zurnal/${a.slug}`)];
+const routes = [
+  "/",
+  "/cena",
+  "/soukromi",
+  ...articles.map((a) => `/zurnal/${a.slug}`),
+];
 
 async function main() {
   const server = await preview({ preview: { port: 4173, strictPort: false } });
@@ -20,7 +25,7 @@ async function main() {
     const url = new URL(navPath, base).toString();
 
     await page.goto(url, { waitUntil: "domcontentloaded", timeout: 30000 });
-    await page.waitForSelector("main, .article-page", { timeout: 15000 }).catch(() => {});
+    await page.waitForSelector("main, .article-page, .price-page", { timeout: 15000 }).catch(() => {});
     await page.waitForTimeout(1200); // let React mount + Helmet write head tags
 
     const html = await page.content();

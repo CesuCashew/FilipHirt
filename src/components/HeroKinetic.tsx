@@ -194,7 +194,7 @@ export default function HeroKinetic() {
   }, []);
 
   return (
-    <section id="home" className="heroB" ref={rootRef}>
+    <section id="home" className="heroB" ref={rootRef} data-nav-theme="dark">
       <div className="heroB-sticky" ref={stickyRef}>
         {/* night-street photo that fades up out of the brown as you scroll */}
         <div className="heroB-bg" aria-hidden="true" />

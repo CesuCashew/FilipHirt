@@ -1,6 +1,6 @@
 export default function AboutPanel() {
   return (
-    <section className="panel panel--about panel--wide" id="about">
+    <section className="panel panel--about panel--wide" id="about" data-nav-theme="light">
       <div className="panel-bg" data-parallax="0.1" aria-hidden="true">
         <div className="panel-bg-img" style={{ backgroundImage: "url('/hero-art.webp')" }} />
       </div>

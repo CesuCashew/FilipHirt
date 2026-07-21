@@ -210,7 +210,7 @@ export default function CollabFlow() {
   }, [pinned]);
 
   return (
-    <section id="spoluprace" className="collab" ref={rootRef}>
+    <section id="spoluprace" className="collab" ref={rootRef} data-nav-theme="light">
       <div className="collab-sticky">
         <header className="collab-head">
           <p className="collab-label">

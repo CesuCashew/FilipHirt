@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { Link } from "wouter";
 import { articles, img, type ArticleBlock } from "../data/articles";
 import { useSeo } from "../lib/seo";
+import Footer from "../components/Footer";
 
 const SITE_URL = "https://filiphirt.cz";
 
@@ -18,6 +19,15 @@ function Block({ block }: { block: ArticleBlock }) {
             <li key={item}>{item}</li>
           ))}
         </ul>
+      );
+    case "cta":
+      return (
+        <p className="article-cta">
+          <span className="article-cta-text">{block.text}</span>
+          <Link href={block.href} className="btn-primary">
+            {block.label}
+          </Link>
+        </p>
       );
     default:
       return <p className="article-p">{block.text}</p>;
@@ -73,13 +83,18 @@ export default function Article({ params }: { params: { slug: string } }) {
       <div className="article-page">
         <header className="article-top">
           <Link href="/#journal" className="article-back">← Žurnál</Link>
-          <Link href="/" className="article-brand">Filip Hirt<span>.</span></Link>
+          <Link href="/" className="article-brand">Filip Hirt</Link>
+          <nav className="article-top-links" aria-label="Rychlé odkazy">
+            <Link href="/cena">Cena</Link>
+            <Link href="/#contact">Kontakt</Link>
+          </nav>
         </header>
         <main className="article-main article-missing">
           <h1 className="article-title">Ztraceno v zápisníku</h1>
           <p className="article-lead">Tenhle článek tu není — buď se odstěhoval, nebo nikdy nevznikl.</p>
           <Link href="/#journal" className="article-home">← Zpět na žurnál</Link>
         </main>
+        <Footer />
       </div>
     );
   }
@@ -90,7 +105,11 @@ export default function Article({ params }: { params: { slug: string } }) {
 
       <header className="article-top">
         <Link href="/#journal" className="article-back">← Žurnál</Link>
-        <Link href="/" className="article-brand">Filip Hirt<span>.</span></Link>
+        <Link href="/" className="article-brand">Filip Hirt</Link>
+        <nav className="article-top-links" aria-label="Rychlé odkazy">
+          <Link href="/cena">Cena</Link>
+          <Link href="/#contact">Kontakt</Link>
+        </nav>
       </header>
 
       <main className="article-main">
@@ -106,7 +125,11 @@ export default function Article({ params }: { params: { slug: string } }) {
           </header>
 
           <figure className="article-media">
-            <img src={img(article.image, 1600)} alt={article.alt} />
+            <img
+              src={img(article.image, 1600)}
+              alt={article.alt}
+              style={article.imagePosition ? { objectPosition: article.imagePosition } : undefined}
+            />
           </figure>
 
           <div className="article-body">
@@ -128,6 +151,7 @@ export default function Article({ params }: { params: { slug: string } }) {
           </div>
         </footer>
       </main>
+      <Footer />
     </div>
   );
 }

@@ -1,14 +1,31 @@
+import { Link, useLocation } from "wouter";
+
 export default function Footer() {
   const year = new Date().getFullYear();
+  const [pathname] = useLocation();
+  const isHome = pathname === "/";
+
+  const hashLink = (label: string, hash: string) =>
+    isHome ? (
+      <a href={hash}>{label}</a>
+    ) : (
+      <Link href={`/${hash}`}>{label}</Link>
+    );
 
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-inner">
           <div>
-            <a href="#home" style={{ display: "inline-block", textDecoration: "none" }}>
-              <span className="footer-brand-name">Filip Hirt<span style={{ color: "var(--terracotta)" }}>.</span></span>
-            </a>
+            {isHome ? (
+              <a href="#home" style={{ display: "inline-block", textDecoration: "none" }}>
+                <span className="footer-brand-name">Filip Hirt</span>
+              </a>
+            ) : (
+              <Link href="/" style={{ display: "inline-block", textDecoration: "none" }}>
+                <span className="footer-brand-name">Filip Hirt</span>
+              </Link>
+            )}
             <p className="footer-tagline">
               Webdesignér a vývojář z Chebu. Stavím weby jako řemeslo — s teplem,
               precizností a citem pro detail.
@@ -18,18 +35,13 @@ export default function Footer() {
           <div>
             <div className="footer-col-title">Navigace</div>
             <ul className="footer-links-list">
-              {[
-                ["Domů", "#home"],
-                ["O mně", "#about"],
-                ["Služby", "#services"],
-                ["Práce", "#portfolio"],
-                ["Žurnál", "#journal"],
-                ["Kontakt", "#contact"],
-              ].map(([label, href]) => (
-                <li key={href}>
-                  <a href={href}>{label}</a>
-                </li>
-              ))}
+              <li>{hashLink("Domů", "#home")}</li>
+              <li>{hashLink("O mně", "#about")}</li>
+              <li>{hashLink("Služby", "#services")}</li>
+              <li>{hashLink("Práce", "#portfolio")}</li>
+              <li>{hashLink("Žurnál", "#journal")}</li>
+              <li><Link href="/cena">Cena</Link></li>
+              <li>{hashLink("Kontakt", "#contact")}</li>
             </ul>
           </div>
 
@@ -42,9 +54,7 @@ export default function Footer() {
                 "Weby pro restaurace",
                 "Firemní prezentace",
               ].map((s) => (
-                <li key={s}>
-                  <a href="#services">{s}</a>
-                </li>
+                <li key={s}>{hashLink(s, "#services")}</li>
               ))}
             </ul>
           </div>
@@ -99,6 +109,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <span className="footer-copy">© {year} Filip Hirt. Všechna práva vyhrazena.</span>
           <span className="footer-copy">Webdesignér &amp; vývojář — Cheb, Česká republika</span>
+          <Link href="/soukromi" className="footer-copy footer-legal">Ochrana osobních údajů</Link>
         </div>
       </div>
     </footer>

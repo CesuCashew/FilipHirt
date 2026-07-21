@@ -8,7 +8,7 @@ export default function OutroPanel() {
   const toTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    <section className="panel panel--outro" id="social">
+    <section className="panel panel--outro" id="social" data-nav-theme="dark">
       <div className="panel-bg" data-parallax="0.08" aria-hidden="true">
         <div className="panel-bg-img" style={{ backgroundImage: "url('/hero-art.webp')" }} />
       </div>
