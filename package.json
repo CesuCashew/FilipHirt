@@ -6,6 +6,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build && tsx scripts/generate-sitemap.ts && tsx scripts/prerender.ts",
+        "postinstall": "playwright install chromium",
         "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
         "typecheck": "tsc -p tsconfig.json --noEmit"
     },
