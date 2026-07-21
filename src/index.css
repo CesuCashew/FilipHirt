@@ -6089,8 +6089,8 @@ body:not(.loading) .heroB-intro-hint {
     left: 50%;
     width: min(92%, 940px);
     z-index: 3;
-    --in: clamp(0, calc(var(--p) / 0.06), 1);
-    --out: clamp(0, calc((var(--p) - 0.1) / 0.09), 1);
+    --in: clamp(0, calc(var(--p) / 0.035), 1);
+    --out: clamp(0, calc((var(--p) - 0.13) / 0.1), 1);
     opacity: calc(var(--in) * (1 - var(--out)));
     translate: -50% calc((1 - var(--in)) * 24px - var(--out) * 70px);
   }
