@@ -14,7 +14,7 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("f.hirt@seznam.cz").then(() => {
+    navigator.clipboard.writeText("info@filiphirt.cz").then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2500);
     });
@@ -168,7 +168,7 @@ export default function Contact() {
               onClick={copyEmail}
               aria-label="Kopírovat emailovou adresu do schránky"
             >
-              f.hirt@seznam.cz
+              info@filiphirt.cz
             </button>
             <div className={`copy-toast${copied ? " show" : ""}`}>Email zkopírován ✓</div>
           </div>

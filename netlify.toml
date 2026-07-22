@@ -6,6 +6,14 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
 
+# Stará *.netlify.app adresa musí 301 na finální doménu, jinak ji Google
+# indexuje jako duplicitu vedle filiphirt.cz.
+[[redirects]]
+  from = "https://filiphirt.netlify.app/*"
+  to = "https://filiphirt.cz/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"

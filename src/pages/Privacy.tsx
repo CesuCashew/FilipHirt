@@ -41,7 +41,7 @@ export default function Privacy() {
               Filip Hirt, webdesignér a vývojář se sídlem v Chebu. Nejsem
               zapsán jako OSVČ — údaje zpracovávám jako fyzická osoba
               provozující tento web. Kontakt:{" "}
-              <a href="mailto:f.hirt@seznam.cz">f.hirt@seznam.cz</a>.
+              <a href="mailto:info@filiphirt.cz">info@filiphirt.cz</a>.
             </p>
 
             <h2 className="article-h2">Jaké údaje sbírám a proč</h2>
@@ -85,7 +85,7 @@ export default function Privacy() {
               Podle GDPR máte právo na přístup ke svým údajům, jejich opravu
               nebo výmaz, omezení zpracování, přenositelnost a právo vznést
               námitku. Stačí napsat na{" "}
-              <a href="mailto:f.hirt@seznam.cz">f.hirt@seznam.cz</a> — ozvu se
+              <a href="mailto:info@filiphirt.cz">info@filiphirt.cz</a> — ozvu se
               obvykle do pár dní. Pokud máte pocit, že se zpracováním údajů
               není něco v pořádku, máte právo podat stížnost u{" "}
               <a

@@ -110,7 +110,7 @@ function getContactEmailHTML(formData) {
             </table>
 
             <!-- Patička mimo rám -->
-            <p style="margin:16px 0 0;font-family:${sans};font-size:12px;line-height:1.5;color:#7C5A36;">Odesláno z formuláře na filiphirt.netlify.app&nbsp;&middot;&nbsp;${sentAt}</p>
+            <p style="margin:16px 0 0;font-family:${sans};font-size:12px;line-height:1.5;color:#7C5A36;">Odesláno z formuláře na filiphirt.cz&nbsp;&middot;&nbsp;${sentAt}</p>
 
         </td></tr>
     </table>

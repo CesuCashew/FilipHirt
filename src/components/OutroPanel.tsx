@@ -24,8 +24,8 @@ export default function OutroPanel() {
               {s.label} <span aria-hidden="true">↗</span>
             </a>
           ))}
-          <a className="outro-social outro-mail" href="mailto:f.hirt@seznam.cz">
-            f.hirt@seznam.cz
+          <a className="outro-social outro-mail" href="mailto:info@filiphirt.cz">
+            info@filiphirt.cz
           </a>
         </div>
 
