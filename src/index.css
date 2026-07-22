@@ -6859,39 +6859,6 @@ body:not(.loading) .heroB-intro-hint {
   color: var(--noc-sodium);
 }
 
-/* ---------- noční hodiny (fixní, scroll je přetáčí) ---------- */
-.noc-clock {
-  position: fixed;
-  right: clamp(16px, 3vw, 44px);
-  bottom: clamp(16px, 3.4vh, 40px);
-  z-index: var(--z-sticky);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 2px;
-  pointer-events: none;
-}
-
-.noc-clock-time {
-  font-family: var(--font-poster);
-  font-size: clamp(30px, 3.6vw, 52px);
-  line-height: 1;
-  letter-spacing: 0.04em;
-  font-variant-numeric: tabular-nums;
-  color: var(--noc-sodium);
-  text-shadow: 0 0 26px rgba(231, 162, 28, 0.45);
-}
-
-.noc-clock-place {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 10px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--noc-mute);
-  padding-right: 2px;
-}
-
 /* ---------- intro ---------- */
 .noc-intro {
   position: relative;
@@ -7242,11 +7209,6 @@ body:not(.loading) .heroB-intro-hint {
 
 /* ---------- responsive ---------- */
 @media (max-width: 760px) {
-  .noc-clock-time {
-    font-size: 26px;
-    text-shadow: 0 0 16px rgba(231, 162, 28, 0.4);
-  }
-
   .noc-stop {
     padding-inline: 20px;
     justify-content: center;

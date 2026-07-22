@@ -1,14 +1,9 @@
-import { Fragment, useEffect, useRef, type ReactNode } from "react";
+import { Fragment, useEffect, type ReactNode } from "react";
 import { Link } from "wouter";
 import Footer from "../components/Footer";
 import { useSeo } from "../lib/seo";
 
 const SITE_URL = "https://filiphirt.cz";
-
-// Noc začíná ve 21:47 a končí svítáním ve 4:58 — scroll přetáčí čas mezi nimi.
-const NIGHT_START = 21 * 60 + 47;
-const NIGHT_END = 4 * 60 + 58;
-const NIGHT_SPAN = 24 * 60 - NIGHT_START + NIGHT_END;
 
 type Stop = {
   src: string;
@@ -103,38 +98,6 @@ export default function MimoMonitor() {
     twitterImage: `${SITE_URL}/noc-4.webp`,
   });
 
-  const clockRef = useRef<HTMLSpanElement>(null);
-  const clockBoxRef = useRef<HTMLDivElement>(null);
-
-  // Noční hodiny — scroll přetáčí čas od 21:47 do 4:58; se svítáním lampa
-  // (i hodiny) zhasne
-  useEffect(() => {
-    let raf = 0;
-    const tick = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      const p = max > 0 ? Math.min(Math.max(window.scrollY / max, 0), 1) : 0;
-      const minutes = (NIGHT_START + Math.round(p * NIGHT_SPAN)) % (24 * 60);
-      const el = clockRef.current;
-      if (el) {
-        const hh = String(Math.floor(minutes / 60)).padStart(2, "0");
-        const mm = String(minutes % 60).padStart(2, "0");
-        el.textContent = `${hh}:${mm}`;
-      }
-      const box = clockBoxRef.current;
-      if (box) box.style.opacity = String(Math.max(0, Math.min(1, (0.96 - p) / 0.08)));
-    };
-    const onScroll = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(tick);
-    };
-    window.addEventListener("scroll", onScroll, { passive: true });
-    tick();
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      cancelAnimationFrame(raf);
-    };
-  }, []);
-
   // scroll-reveal + „vyvolávání" polaroidů — stejný vzor jako Home:
   // základní stav je plně viditelný, JS teprve přidá skrytý stav a odhaluje
   useEffect(() => {
@@ -171,12 +134,6 @@ export default function MimoMonitor() {
           <Link href="/#contact">Kontakt</Link>
         </nav>
       </header>
-
-      {/* noční hodiny — čistě dekorační, čas „utíká" se scrollem */}
-      <div className="noc-clock" aria-hidden="true" ref={clockBoxRef}>
-        <span className="noc-clock-time" ref={clockRef}>21:47</span>
-        <span className="noc-clock-place">Cheb</span>
-      </div>
 
       <main className="noc-main">
         <section className="noc-intro">
