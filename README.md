@@ -45,21 +45,18 @@ Hodnoty drž v `.env` (je v `.gitignore`, **nikdy necommitovat**). Vzor je v [`.
 
 | Proměnná | Použití | Povinná |
 |----------|---------|---------|
-| `NETLIFY_DATABASE_URL` | Connection string k Neon — čte ji `submit-contact` za běhu. Netlify ji vyplní automaticky při napojení Neon integrace. | ano (runtime) |
-| `NEON_DATABASE_URL` | Connection string k Neon — používá ji lokální setup skript databáze. | ano (setup) |
+| `NETLIFY_DATABASE_URL` | Connection string k Neon — čte ji `submit-contact` za běhu i setup skript. Netlify ji vyplní automaticky při napojení Neon integrace. | ano |
 | `GMAIL_USER` | Gmail adresa, ze které se odesílají notifikace. | ano |
 | `GMAIL_APP_PASSWORD` | App password ke Gmailu (https://myaccount.google.com/apppasswords, vyžaduje 2FA). | ano |
 | `RECIPIENT_EMAIL` | E-mail, kam chodí notifikace o nové poptávce. | ne (fallback je `GMAIL_USER`) |
 | `GROQ_API_KEY` | Klíč pro Groq API — pokud je nastaven, chatbot běží přes Groq. | ne |
 | `OLLAMA_API_URL` | URL lokálního Ollama serveru pro chatbot (default `http://127.0.0.1:11434`). | ne |
 
-> ℹ️ Pozn.: runtime funkce čte `NETLIFY_DATABASE_URL`, zatímco setup skript a `.env.example` používají `NEON_DATABASE_URL`. Lokálně nastav obě na stejnou hodnotu, ať vše funguje.
-
 ## 🗃️ Databáze
 
 Tabulku `contact_submissions` vytvoříš jednorázově setup skriptem:
 ```bash
-node netlify/functions/setup-database.js
+node scripts/setup-database.js
 ```
 **Očekávaný výstup**: `✅ Table created successfully!`
 
@@ -118,11 +115,11 @@ Portfolio/
 │   └── main.tsx         # Vstupní bod
 ├── netlify/
 │   └── functions/
-│       ├── submit-contact.js   # Příjem formuláře → DB + e-mail
-│       ├── chat.js             # AI chatbot (Groq/Ollama)
-│       ├── setup-database.js   # Vytvoření tabulky v Neon
-│       └── templates/
-│           └── contact-email.js
+│       └── submit-contact.js   # Příjem formuláře → DB + e-mail
+├── scripts/
+│   ├── generate-sitemap.ts     # Sitemap při buildu
+│   ├── prerender.ts            # Prerender stránek pro SEO
+│   └── setup-database.js       # Jednorázové vytvoření tabulky v Neon
 ├── public/             # Statická aktiva (fonty, obrázky, favicon)
 ├── index.html          # HTML shell + meta/SEO
 ├── netlify.toml        # Konfigurace Netlify
@@ -143,8 +140,8 @@ Portfolio/
 ## 🔧 Troubleshooting
 
 **„Database connection failed"**
-- Zkontroluj `NETLIFY_DATABASE_URL` / `NEON_DATABASE_URL` v `.env` i v Netlify.
-- Ověř, že tabulka existuje (`node netlify/functions/setup-database.js`).
+- Zkontroluj `NETLIFY_DATABASE_URL` v `.env` i v Netlify.
+- Ověř, že tabulka existuje (`node scripts/setup-database.js`).
 
 **„Email not sent"**
 - Zkontroluj `GMAIL_USER` a `GMAIL_APP_PASSWORD` (v Netlify env i lokálně v `.env`). App password se generuje na https://myaccount.google.com/apppasswords a vyžaduje zapnuté dvoufázové ověření; vkládá se bez mezer.

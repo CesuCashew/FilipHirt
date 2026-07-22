@@ -20,7 +20,7 @@ export default function ScrambleText({
   as = "span",
 }: Props) {
   const { output, elRef } = useScramble(text, { trigger, duration, speed, delay });
-  const Tag = as as keyof JSX.IntrinsicElements;
+  const Tag = as;
   return (
     <Tag
       ref={elRef as never}

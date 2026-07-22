@@ -28,6 +28,9 @@ desktop.ini
 .agents/
 .gemini/
 .impeccable/
+.codex/
+.playwright-mcp/
+.mcp.json
 
 # Raw source assets (not for repo)
 podklady/
@@ -39,6 +42,6 @@ chyby/
 DESIGN.md
 PRODUCT.md
 
-# Temp files
-*.webm
+# Temp files (jen v rootu — public/*.webm jsou assety webu)
+/*.webm
 deno.lock

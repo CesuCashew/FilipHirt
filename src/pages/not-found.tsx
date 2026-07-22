@@ -1,7 +1,12 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { AlertCircle } from "lucide-react";
+import { useSeo } from "@/lib/seo";
 
 export default function NotFound() {
+  // SPA fallback vrací i pro neexistující URL status 200 — noindex brání
+  // Googlu indexovat tyhle „soft 404" stránky.
+  useSeo({ title: "404 — Filip Hirt", robots: "noindex" });
+
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-gray-50">
       <Card className="w-full max-w-md mx-4">

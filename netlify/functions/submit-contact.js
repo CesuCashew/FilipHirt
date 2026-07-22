@@ -118,18 +118,43 @@ function getContactEmailHTML(formData) {
 </html>`;
 }
 
-// CORS headers
+// Formulář se odesílá výhradně same-origin, takže žádné CORS hlavičky —
+// cizí weby tím pádem nemohou endpoint volat z prohlížeče.
 const headers = {
-    'Access-Control-Allow-Origin': '*',
-    'Access-Control-Allow-Headers': 'Content-Type',
-    'Access-Control-Allow-Methods': 'POST, OPTIONS',
     'Content-Type': 'application/json'
 };
 
+// Limity délek — drží se schématu DB (VARCHAR(255)/VARCHAR(50)) s rezervou,
+// aby přetečení nespadlo až na INSERTu jako 500.
+const LIMITS = { name: 200, email: 255, phone: 50, message: 5000 };
+const SERVICE_CODES = ['smart-web', 'eshop', 'restaurant', 'corporate', 'other'];
+
+// Per-instance rate limit (serverless instance žije jen chvíli, ale proti
+// naivnímu skriptovanému spamu z jedné IP stačí).
+const RATE_LIMIT = { max: 5, windowMs: 10 * 60 * 1000 };
+const hits = new Map();
+
+function isRateLimited(ip) {
+    const now = Date.now();
+    const recent = (hits.get(ip) || []).filter((t) => now - t < RATE_LIMIT.windowMs);
+    recent.push(now);
+    hits.set(ip, recent);
+    if (hits.size > 500) {
+        for (const [key, times] of hits) {
+            if (times.every((t) => now - t >= RATE_LIMIT.windowMs)) hits.delete(key);
+        }
+    }
+    return recent.length > RATE_LIMIT.max;
+}
+
+// CR/LF nemá v žádném poli co dělat (kromě zprávy) — brání e-mail header injection.
+function cleanLine(value, maxLen) {
+    return String(value).replace(/[\r\n]+/g, ' ').trim().slice(0, maxLen);
+}
+
 exports.handler = async (event) => {
-    // Handle CORS preflight
     if (event.httpMethod === 'OPTIONS') {
-        return { statusCode: 200, headers, body: '' };
+        return { statusCode: 204, headers, body: '' };
     }
 
     // Only allow POST
@@ -142,17 +167,53 @@ exports.handler = async (event) => {
     }
 
     try {
-        // Parse form data
-        const formData = JSON.parse(event.body);
+        const raw = JSON.parse(event.body);
+
+        // Honeypot: skryté pole, které vyplní jen boti. Vracíme "úspěch",
+        // ať bot nepozná, že narazil.
+        if (raw.website) {
+            return {
+                statusCode: 200,
+                headers,
+                body: JSON.stringify({ success: true, message: 'Zpráva byla úspěšně odeslána!' })
+            };
+        }
+
+        const clientIp = event.headers['x-nf-client-connection-ip']
+            || (event.headers['x-forwarded-for'] || '').split(',')[0].trim()
+            || 'unknown';
+        if (isRateLimited(clientIp)) {
+            return {
+                statusCode: 429,
+                headers,
+                body: JSON.stringify({ error: 'Příliš mnoho zpráv za sebou. Zkuste to prosím za pár minut.' })
+            };
+        }
 
         // Validate required fields
-        if (!formData.name || !formData.email || !formData.message) {
+        if (!raw.name || !raw.email || !raw.message) {
             return {
                 statusCode: 400,
                 headers,
                 body: JSON.stringify({
                     error: 'Chybí povinná pole (jméno, email, zpráva)'
                 })
+            };
+        }
+
+        const formData = {
+            name: cleanLine(raw.name, LIMITS.name),
+            email: cleanLine(raw.email, LIMITS.email),
+            phone: raw.phone ? cleanLine(raw.phone, LIMITS.phone) : '',
+            service: SERVICE_CODES.includes(raw.service) ? raw.service : '',
+            message: String(raw.message).trim().slice(0, LIMITS.message),
+        };
+
+        if (!formData.name || !formData.message) {
+            return {
+                statusCode: 400,
+                headers,
+                body: JSON.stringify({ error: 'Chybí povinná pole (jméno, email, zpráva)' })
             };
         }
 

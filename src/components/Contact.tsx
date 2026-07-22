@@ -9,6 +9,7 @@ export default function Contact() {
     phone: "",
     service: "",
     message: "",
+    website: "", // honeypot — skryté pole, lidé ho nevidí, boti ho vyplní
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -41,7 +42,7 @@ export default function Contact() {
       if (response.ok) {
         setSubmitted(true);
         setTimeout(() => setSubmitted(false), 3000);
-        setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", service: "", message: "", website: "" });
       } else {
         setSubmitError(result.error || "Něco se pokazilo. Zkuste to prosím znovu.");
       }
@@ -64,6 +65,19 @@ export default function Contact() {
           <p className="contact-sub">Máte nápad, web k oživení, nebo jen chuť to probrat? Napište pár vět — ozvu se obvykle do dne.</p>
 
           <form className="contact-form" onSubmit={handleSubmit}>
+            {/* Honeypot proti spam botům — vizuálně i pro čtečky skryté */}
+            <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: 1, height: 1, overflow: "hidden" }}>
+              <label htmlFor="field-website">Nevyplňujte</label>
+              <input
+                id="field-website"
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                value={formData.website}
+                onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+              />
+            </div>
             <div className="form-group">
               <label htmlFor="field-name" className="form-label">Jméno *</label>
               <input
@@ -72,6 +86,7 @@ export default function Contact() {
                 className="form-input"
                 placeholder="Vaše jméno"
                 required
+                maxLength={200}
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               />
@@ -84,6 +99,7 @@ export default function Contact() {
                 className="form-input"
                 placeholder="vas@email.cz"
                 required
+                maxLength={255}
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               />
@@ -95,6 +111,7 @@ export default function Contact() {
                 type="tel"
                 className="form-input"
                 placeholder="+420 123 456 789"
+                maxLength={50}
                 value={formData.phone}
                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               />
@@ -122,6 +139,7 @@ export default function Contact() {
                 className="form-textarea"
                 placeholder="Popište váš projekt..."
                 required
+                maxLength={5000}
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
               />

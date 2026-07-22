@@ -3,12 +3,12 @@ require('dotenv').config();
 const { neon } = require('@neondatabase/serverless');
 
 async function setupDatabase() {
-    const databaseUrl = process.env.NEON_DATABASE_URL;
+    const databaseUrl = process.env.NETLIFY_DATABASE_URL || process.env.NEON_DATABASE_URL;
 
     if (!databaseUrl) {
-        console.error('❌ NEON_DATABASE_URL environment variable not set!');
+        console.error('❌ NETLIFY_DATABASE_URL environment variable not set!');
         console.log('\nPlease set it in your .env file or Netlify dashboard:');
-        console.log('NEON_DATABASE_URL=postgresql://user:password@ep-xxx.region.aws.neon.tech/dbname?sslmode=require');
+        console.log('NETLIFY_DATABASE_URL=postgresql://user:password@ep-xxx.region.aws.neon.tech/dbname?sslmode=require');
         process.exit(1);
     }
 
