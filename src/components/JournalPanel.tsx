@@ -1,9 +1,9 @@
 import { Link } from "wouter";
-import { articles, img } from "../data/articles";
+import { articles } from "../data/articles";
 
 export default function JournalPanel() {
   return (
-    <section className="panel panel--journal panel--wide" id="journal" data-nav-theme="light">
+    <section className="panel panel--journal" id="journal" data-nav-theme="light">
       <div className="panel-bg" data-parallax="0.12" aria-hidden="true">
         <div className="panel-bg-img" style={{ backgroundImage: "url('/hero-art.webp')" }} />
       </div>
@@ -18,15 +18,10 @@ export default function JournalPanel() {
         <div className="journal-row">
           {articles.map((p) => (
             <Link href={`/zurnal/${p.slug}`} className="jcard" key={p.slug}>
-              <div className="jcard-media">
-                <img
-                  src={img(p.image)}
-                  alt={p.alt}
-                  loading="lazy"
-                  style={p.imagePosition ? { objectPosition: p.imagePosition } : undefined}
-                />
+              <div className="jcard-meta">
+                <span className="jcard-cat">{p.cat}</span>
+                <span className="jcard-date">{p.date}</span>
               </div>
-              <span className="jcard-cat">{p.cat}</span>
               <h3 className="jcard-title">{p.title}</h3>
               <p className="jcard-excerpt">{p.excerpt}</p>
               <span className="jcard-read">Číst →</span>

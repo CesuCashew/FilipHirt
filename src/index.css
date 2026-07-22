@@ -3811,6 +3811,11 @@ section {
 }
 
 .panel {
+  /* overrides the generic `section { padding: clamp(90px,13vh,150px) 0 }`
+     base rule (index.css ~930) — panels own their spacing entirely via
+     .panel-inner's own padding, so the generic rule otherwise silently
+     eats top/bottom space from every panel's height:100% */
+  padding: 0;
   position: relative;
   flex: 0 0 100vw;
   width: 100vw;
@@ -3825,12 +3830,8 @@ section {
   width: 132vw;
 }
 
-/* journal needs to seat 6 cards in one row — wider than the standard
-   "wide" panel, but not as extreme as the services word-cloud ultrawide */
-.panel--journal.panel--wide {
-  flex-basis: 224vw;
-  width: 224vw;
-}
+/* journal is a contained 3×2 grid on a single-viewport stop — no extra
+   width; the card block is centred inside via .journal-inner max-width */
 
 .panel-bg {
   position: absolute;
@@ -4409,85 +4410,75 @@ section {
    ============================================================ */
 .journal-inner {
   gap: clamp(14px, 2vh, 26px);
+  max-width: 1120px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .journal-head {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .panel--journal .poster-title {
-  font-size: clamp(38px, 4.6vw, 92px);
+  font-size: clamp(32px, 3.6vw, 66px);
 }
 
 .journal-sub {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: clamp(15px, 1.4vw, 21px);
+  font-size: clamp(15px, 1.3vw, 20px);
   color: var(--ink-soft);
-  margin: 4px 0 0;
+  margin: 2px 0 0;
 }
 
+/* 3 sloupce × 2 řady (stejná formace jako předtím), ale karty se v každé
+   buňce nenatahují — sedí buď u horní, nebo dolní hrany a v šachovnicovém
+   rytmu se střídají (nahoře/dole/nahoře…). V každé buňce tak vždy chybí
+   buď horní, nebo dolní kus prostoru — karty do sebe zapadají jako cihly. */
 .journal-row {
   flex: 1;
   min-height: 0;
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: 1fr;
-  gap: clamp(16px, 1.8vw, 30px);
-  align-items: stretch;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: clamp(10px, 1.4vh, 22px) clamp(14px, 1.4vw, 26px);
 }
 
+.jcard:nth-child(odd) {
+  align-self: start;
+}
+
+.jcard:nth-child(even) {
+  align-self: end;
+}
+
+/* text-only editorial cards — the title carries the weight, framed like a
+   print clipping; no photography */
 .jcard {
   display: flex;
   flex-direction: column;
-  min-height: 0;
   background: var(--cream);
-  border: 3px solid var(--frame);
-  padding: 13px;
+  border: 2px solid var(--frame);
+  padding: clamp(18px, 1.6vw, 28px);
   text-decoration: none;
+  transition: background 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.jcard-media {
-  position: relative;
-  flex: 1;
-  min-height: 80px;
-  overflow: hidden;
-  background: var(--cream-3);
-  margin-bottom: 12px;
+.jcard:hover {
+  background: #fff;
+  transform: translateY(-4px);
 }
 
-.jcard-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: saturate(1.06) sepia(0.08);
-  transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.jcard:hover .jcard-media img {
-  transform: scale(1.05);
-}
-
-.jcard-media::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(90, 26, 18, 0.08);
-  mix-blend-mode: multiply;
-}
-
-.jcard-n {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  z-index: 2;
-  font-family: var(--font-poster);
-  font-size: 16px;
-  color: var(--cream-ink);
-  background: rgba(36, 14, 8, 0.55);
-  padding: 2px 9px;
+.jcard-meta {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid var(--line);
 }
 
 .jcard-cat {
@@ -4499,20 +4490,37 @@ section {
   color: var(--persimmon-d);
 }
 
+.jcard-date {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--ink-mute);
+  white-space: nowrap;
+}
+
 .jcard-title {
   font-family: var(--font-display);
-  font-size: clamp(18px, 1.5vw, 25px);
-  line-height: 1.05;
+  font-size: clamp(20px, 1.7vw, 27px);
+  line-height: 1.12;
   color: var(--ink);
-  margin: 7px 0 8px;
+  margin: 0 0 11px;
+  transition: color 0.3s ease;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.jcard:hover .jcard-title {
+  color: var(--teal);
 }
 
 .jcard-excerpt {
   font-family: var(--font-body);
-  font-size: 13.5px;
-  line-height: 1.5;
+  font-size: clamp(13.5px, 0.95vw, 15px);
+  line-height: 1.55;
   color: var(--ink-soft);
-  margin: 0 0 10px;
+  margin: 0 0 16px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -4715,7 +4723,8 @@ section {
   min-height: 100vh;
 }
 
-.hgallery--vertical .panel--wide {
+.hgallery--vertical .panel--wide,
+.hgallery--vertical .panel--journal {
   width: 100%;
 }
 
@@ -4760,8 +4769,16 @@ section {
   }
 
   .journal-row {
-    grid-template-columns: 1fr;
-    overflow-y: auto;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: none;
+    grid-auto-rows: 1fr;
+  }
+
+  /* zig-zag je pro širokou 3-sloupcovou sestavu — na užších rozvrženích
+     karty prostě vyplní buňku celou */
+  .jcard:nth-child(odd),
+  .jcard:nth-child(even) {
+    align-self: stretch;
   }
 
   .panel--wide {
@@ -4771,6 +4788,10 @@ section {
 
 @media (max-width: 600px) {
   .works { gap: 34px; }
+
+  .journal-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ============================================================
