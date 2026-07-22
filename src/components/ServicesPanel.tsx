@@ -1,3 +1,5 @@
+import { Link } from "wouter";
+
 type Skill = { lbl: string; big: string; left: string; top: string; accent?: boolean; size?: string };
 
 const skills: Skill[] = [
@@ -38,6 +40,12 @@ export default function ServicesPanel() {
             <span className="svc-word-big" style={s.size ? { fontSize: s.size } : undefined}>{s.big}</span>
           </div>
         ))}
+
+        {/* sedmé slovo — otázka, kterou si tu každý položí; vede na /cena */}
+        <Link href="/cena" className="svc-word svc-word--link accent" style={{ left: "240vw", top: "46%" }}>
+          <span className="svc-word-lbl">Kolik to stojí? →</span>
+          <span className="svc-word-big">CENA</span>
+        </Link>
 
         <div className="svc-tab" aria-hidden="true">Služby — Services</div>
       </div>

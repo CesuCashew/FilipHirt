@@ -5,6 +5,7 @@ import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Article from "@/pages/Article";
 import Price from "@/pages/Price";
+import MimoMonitor from "@/pages/MimoMonitor";
 import Privacy from "@/pages/Privacy";
 import Cursor from "@/components/Cursor";
 
@@ -14,6 +15,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/zurnal/:slug" component={Article} />
       <Route path="/cena" component={Price} />
+      <Route path="/mimo-monitor" component={MimoMonitor} />
       <Route path="/soukromi" component={Privacy} />
       <Route component={NotFound} />
     </Switch>

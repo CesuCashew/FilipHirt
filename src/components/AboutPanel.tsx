@@ -1,3 +1,5 @@
+import { Link } from "wouter";
+
 export default function AboutPanel() {
   return (
     <section className="panel panel--about panel--wide" id="about" data-nav-theme="light">
@@ -31,6 +33,12 @@ export default function AboutPanel() {
               SEO od prvního řádku kódu a design, který nejen dobře vypadá, ale
               hlavně přivádí zákazníky. Cíl je vždycky stejný — aby web pracoval
               za vás, ne vy za něj.
+            </p>
+            <p className="about-more">
+              A kdo je ten, kdo to celé staví?{" "}
+              <Link href="/mimo-monitor" className="about-more-link">
+                Poznejte mě mimo monitor →
+              </Link>
             </p>
           </div>
         </div>

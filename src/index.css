@@ -4882,8 +4882,8 @@ section {
    SERVICES panel — iamliu-style horizontal type reveal
    ============================================================ */
 .panel--ultrawide {
-  flex-basis: 244vw;
-  width: 244vw;
+  flex-basis: 286vw;
+  width: 286vw;
 }
 
 .panel--services {
@@ -6794,5 +6794,480 @@ body:not(.loading) .heroB-intro-hint {
   .article-p,
   .article-list li {
     font-size: 16px;
+  }
+}
+
+/* ============================================================
+   MIMO MONITOR (/mimo-monitor) — jedna noc v Chebu.
+   Noční protějšek celého webu: sodíková oranžová na teplé tmě,
+   polaroidy z jedné noci, scrollem utíkající hodiny a svítání,
+   které stránku vrátí zpět do denního krémového papíru.
+   ============================================================ */
+.noc-page {
+  --noc-bg: #140B05;
+  --noc-sodium: var(--marigold);
+  --noc-hot: var(--persimmon);
+  --noc-text: var(--cream-ink);
+  --noc-mute: rgba(247, 239, 221, 0.6);
+  position: relative;
+  z-index: var(--z-base);
+  min-height: 100vh;
+  background: var(--noc-bg);
+  color: var(--noc-text);
+  overflow-x: clip;
+}
+
+.noc-page ::selection {
+  background: var(--noc-sodium);
+  color: var(--noc-bg);
+}
+
+/* tmavá varianta hlavičky převzaté z article/price stránek */
+.noc-top {
+  border-bottom-color: rgba(247, 239, 221, 0.16);
+}
+
+.noc-top .article-back,
+.noc-top .article-brand,
+.noc-top .article-top-links a {
+  color: var(--noc-text);
+}
+
+.noc-top .article-back:hover,
+.noc-top .article-top-links a:hover {
+  color: var(--noc-sodium);
+}
+
+/* ---------- noční hodiny (fixní, scroll je přetáčí) ---------- */
+.noc-clock {
+  position: fixed;
+  right: clamp(16px, 3vw, 44px);
+  bottom: clamp(16px, 3.4vh, 40px);
+  z-index: var(--z-sticky);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  pointer-events: none;
+}
+
+.noc-clock-time {
+  font-family: var(--font-poster);
+  font-size: clamp(30px, 3.6vw, 52px);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+  color: var(--noc-sodium);
+  text-shadow: 0 0 26px rgba(231, 162, 28, 0.45);
+}
+
+.noc-clock-place {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--noc-mute);
+  padding-right: 2px;
+}
+
+/* ---------- intro ---------- */
+.noc-intro {
+  position: relative;
+  min-height: calc(100vh - 62px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(40px, 8vh, 90px) clamp(20px, 6vw, 84px);
+}
+
+/* teplá záře nad titulkem — lampa nad ulicí */
+.noc-intro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 72% 46% at 62% 8%, rgba(231, 162, 28, 0.16), transparent 68%);
+  pointer-events: none;
+}
+
+.noc-title {
+  font-family: 'Sprat Condensed', var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(72px, 16.5vw, 224px);
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--noc-text);
+}
+
+.noc-flicker {
+  color: var(--noc-sodium);
+  text-shadow: 0 0 38px rgba(231, 162, 28, 0.4);
+  animation: noc-flicker 7s linear infinite;
+}
+
+/* sodíková zářivka: dvě krátká škobrtnutí za smyčku, jinak klid */
+@keyframes noc-flicker {
+  0%, 8.4%, 9.4%, 47.5%, 48.9%, 100% {
+    opacity: 1;
+    text-shadow: 0 0 38px rgba(231, 162, 28, 0.4);
+  }
+  8.9% {
+    opacity: 0.32;
+    text-shadow: none;
+  }
+  48.1% {
+    opacity: 0.55;
+    text-shadow: 0 0 18px rgba(231, 162, 28, 0.2);
+  }
+  48.5% {
+    opacity: 0.85;
+  }
+}
+
+.noc-lead {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(19px, 2.1vw, 29px);
+  line-height: 1.35;
+  max-width: 34ch;
+  margin: clamp(22px, 4vh, 40px) 0 0;
+  color: var(--noc-text);
+}
+
+.noc-hint {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--noc-mute);
+  margin: clamp(30px, 7vh, 70px) 0 0;
+}
+
+/* ---------- zastávky noci (polaroidy) ---------- */
+.noc-stop {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  padding: clamp(56px, 12vh, 150px) clamp(20px, 9vw, 150px);
+}
+
+.noc-stop--flip {
+  justify-content: flex-end;
+}
+
+.noc-stop--hero {
+  justify-content: center;
+}
+
+/* obří „duch" času za fotkou */
+.noc-ghost-time {
+  position: absolute;
+  top: 50%;
+  right: 2vw;
+  transform: translateY(-50%);
+  font-family: var(--font-poster);
+  font-size: clamp(110px, 24vw, 330px);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  color: rgba(231, 162, 28, 0.09);
+  user-select: none;
+  z-index: 0;
+}
+
+.noc-stop--flip .noc-ghost-time {
+  right: auto;
+  left: 2vw;
+}
+
+.noc-stop--hero .noc-ghost-time {
+  right: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.noc-polaroid {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  width: min(420px, 82vw);
+  padding: clamp(10px, 1.4vw, 16px) clamp(10px, 1.4vw, 16px) 0;
+  background: var(--cream-ink);
+  transform: rotate(-2.2deg);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.55), 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.noc-stop--flip .noc-polaroid {
+  transform: rotate(1.8deg);
+}
+
+.noc-stop--hero .noc-polaroid {
+  width: min(540px, 86vw);
+  transform: rotate(-1deg);
+}
+
+.noc-polaroid--h {
+  width: min(560px, 86vw);
+  transform: rotate(2.6deg);
+}
+
+/* lepicí páska přes horní roh */
+.noc-polaroid::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  width: 104px;
+  height: 30px;
+  transform: translateX(-50%) rotate(-3deg);
+  background: rgba(247, 239, 221, 0.22);
+  backdrop-filter: blur(1px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.18);
+}
+
+.noc-polaroid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: none;
+  transition: filter 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* „vyvolání" instantní fotky — skrytý stav přidává až JS */
+.noc-develop.will-reveal img {
+  filter: brightness(0.14) saturate(0.2) contrast(1.08) sepia(0.4);
+}
+
+.noc-develop.revealed img {
+  filter: none;
+}
+
+.noc-polaroid figcaption {
+  font-family: 'Bodoni Moda', var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(15px, 1.25vw, 18px);
+  line-height: 1.4;
+  color: var(--ink);
+  padding: 12px 6px 18px;
+}
+
+.noc-caption-time {
+  display: block;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  color: var(--persimmon-d);
+  margin-bottom: 3px;
+}
+
+/* ---------- proslovy ---------- */
+.noc-speech {
+  padding: clamp(30px, 7vh, 90px) clamp(20px, 6vw, 84px);
+  display: flex;
+  justify-content: center;
+}
+
+.noc-speech p {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(25px, 3.4vw, 50px);
+  line-height: 1.22;
+  max-width: 26ch;
+  margin: 0;
+  color: var(--noc-text);
+  text-wrap: pretty;
+}
+
+.noc-speech em {
+  font-style: italic;
+  color: var(--noc-sodium);
+}
+
+/* ---------- motto ---------- */
+.noc-motto {
+  padding: clamp(80px, 18vh, 200px) clamp(20px, 6vw, 84px) clamp(40px, 8vh, 100px);
+  text-align: center;
+}
+
+.noc-motto-line {
+  font-family: 'Sprat Condensed', var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: clamp(56px, 11.5vw, 185px);
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--noc-text);
+}
+
+.noc-motto-line--hot {
+  color: var(--noc-sodium);
+  text-shadow: 0 0 44px rgba(231, 162, 28, 0.35);
+}
+
+/* podpis pod mottem — Bodoni kurzíva místo skenu, jako podpis v tiráži */
+.noc-signature {
+  display: inline-block;
+  font-family: 'Bodoni Moda', var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(42px, 6.6vw, 92px);
+  line-height: 1.15;
+  letter-spacing: 0.01em;
+  color: var(--noc-text);
+  margin: clamp(26px, 5vh, 56px) 0 0;
+  transform: rotate(-3deg);
+  text-shadow: 0 0 36px rgba(231, 162, 28, 0.28);
+}
+
+/* ---------- svítání ---------- */
+.noc-dawn {
+  min-height: 140vh;
+  display: flex;
+  align-items: flex-end;
+  background:
+    radial-gradient(ellipse 90% 30% at 50% 72%, rgba(240, 197, 69, 0.5), transparent 60%),
+    linear-gradient(
+      180deg,
+      var(--noc-bg) 0%,
+      #2b110a 24%,
+      #5a1a12 46%,
+      #c03f12 63%,
+      #e7a21c 77%,
+      var(--cream) 93%
+    );
+}
+
+.noc-dawn-inner {
+  width: 100%;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 48px) clamp(70px, 12vh, 140px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(16px, 3vh, 28px);
+  text-align: center;
+}
+
+.noc-dawn-big {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(30px, 4.6vw, 66px);
+  line-height: 1.14;
+  margin: 0;
+  color: var(--oxblood);
+  text-wrap: balance;
+}
+
+.noc-dawn-text {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 1.3vw, 19px);
+  line-height: 1.6;
+  max-width: 46ch;
+  margin: 0;
+  color: var(--ink);
+}
+
+.noc-dawn-btn {
+  margin-top: 6px;
+}
+
+/* po svítání je den — patička sedí na denním papíru jako na hlavní stránce */
+.noc-page .footer {
+  background: var(--cream);
+}
+
+/* ---------- prokliky na Mimo monitor (About) a Cenu (Services) ---------- */
+.about-text .about-more {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(16px, 1.3vw, 21px);
+  color: var(--ink);
+  margin-top: 6px;
+}
+
+.about-more-link {
+  color: var(--persimmon-d);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  transition: color 0.25s ease;
+  white-space: nowrap;
+}
+
+.about-more-link:hover {
+  color: var(--oxblood);
+}
+
+.svc-word--link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.svc-word--link .svc-word-big {
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.svc-word--link:hover .svc-word-big {
+  color: var(--marigold);
+  text-shadow: 0 0 42px rgba(231, 162, 28, 0.45);
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 760px) {
+  .noc-clock-time {
+    font-size: 26px;
+    text-shadow: 0 0 16px rgba(231, 162, 28, 0.4);
+  }
+
+  .noc-stop {
+    padding-inline: 20px;
+    justify-content: center;
+  }
+
+  .noc-stop--flip {
+    justify-content: center;
+  }
+
+  .noc-ghost-time {
+    font-size: clamp(90px, 30vw, 140px);
+    top: auto;
+    bottom: -0.14em;
+    right: 4vw;
+    transform: none;
+  }
+
+  .noc-stop--flip .noc-ghost-time {
+    left: 4vw;
+    right: auto;
+  }
+
+  .noc-stop--hero .noc-ghost-time {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .noc-dawn {
+    min-height: 120vh;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .noc-flicker {
+    animation: none;
+  }
+
+  .noc-polaroid img {
+    transition: none;
+  }
+
+  .noc-develop.will-reveal img {
+    filter: none !important;
   }
 }

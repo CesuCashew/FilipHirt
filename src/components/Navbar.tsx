@@ -8,6 +8,7 @@ const navItems = [
   { label: "Práce", href: "#portfolio" },
   { label: "Žurnál", href: "#journal" },
   { label: "Cena", href: "/cena" },
+  { label: "Mimo monitor", href: "/mimo-monitor" },
 ];
 
 const isRoute = (href: string) => !href.startsWith("#");

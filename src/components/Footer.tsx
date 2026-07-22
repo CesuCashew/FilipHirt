@@ -41,6 +41,7 @@ export default function Footer() {
               <li>{hashLink("Práce", "#portfolio")}</li>
               <li>{hashLink("Žurnál", "#journal")}</li>
               <li><Link href="/cena">Cena</Link></li>
+              <li><Link href="/mimo-monitor">Mimo monitor</Link></li>
               <li>{hashLink("Kontakt", "#contact")}</li>
             </ul>
           </div>

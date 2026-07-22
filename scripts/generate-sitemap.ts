@@ -8,6 +8,7 @@ const today = new Date().toISOString().slice(0, 10);
 const urls = [
   { loc: `${SITE_URL}/`, changefreq: "weekly", priority: "1.0" },
   { loc: `${SITE_URL}/cena`, changefreq: "monthly", priority: "0.8" },
+  { loc: `${SITE_URL}/mimo-monitor`, changefreq: "monthly", priority: "0.6" },
   ...articles.map((a) => ({
     loc: `${SITE_URL}/zurnal/${a.slug}`,
     changefreq: "monthly",
