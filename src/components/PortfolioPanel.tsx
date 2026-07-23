@@ -79,6 +79,10 @@ export default function PortfolioPanel() {
 
   return (
     <section className="panel panel--portfolio" id="portfolio" ref={rootRef} data-nav-theme="light">
+      <div className="panel-bg" data-parallax="0.1" aria-hidden="true">
+        <div className="panel-bg-img" style={{ backgroundImage: "url('/work-bg.webp')" }} />
+      </div>
+
       <div className="panel-inner portfolio-inner">
         <header className="portfolio-head">
           <span className="panel-folio">Práce</span>

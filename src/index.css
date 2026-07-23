@@ -3850,13 +3850,10 @@ section {
   will-change: transform;
 }
 
-/* per-panel crop variety so the one painting reads differently each stop */
+/* per-panel crop variety — several panels share the same painting, so this
+   varies which part of it shows; others carry their own dedicated image */
 .panel--services .panel-bg-img {
   background-position: 82% 28%;
-}
-
-.panel--journal .panel-bg-img {
-  background-position: 58% 48%;
 }
 
 .panel--contact .panel-bg-img {
@@ -3925,8 +3922,12 @@ section {
 }
 
 .panel--portfolio {
-  background: #fff;
+  background: var(--cream-2);
   color: var(--ink);
+}
+
+.panel--portfolio .panel-bg-img {
+  background-position: center 55%;
 }
 
 .panel--journal {
@@ -4223,6 +4224,9 @@ section {
    ============================================================ */
 .portfolio-inner {
   gap: clamp(18px, 3vh, 34px);
+  /* header + monitors are one composed block, centred as a unit — not
+     pinned top/bottom with a dead gap between them */
+  justify-content: center;
 }
 
 .portfolio-head {
@@ -4243,23 +4247,20 @@ section {
   margin: 6px 0 0;
 }
 
-/* the section is a single 100vw stop now, on clean white — a compact poster
-   title leaves the stage to the two monitors */
+/* the section is a single 100vw stop now — a compact poster title leaves
+   the stage to the two monitors */
 .panel--portfolio .poster-title {
   font-size: clamp(40px, 5vw, 88px);
 }
 
 .works {
-  flex: 1;
-  min-height: 0;
   width: 100%;
   max-width: 1180px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(24px, 4vw, 72px);
-  align-items: end;
-  padding-bottom: clamp(4px, 1vh, 14px);
+  align-items: start;
 }
 
 .work {
@@ -4397,6 +4398,7 @@ section {
   .panel--portfolio .portfolio-inner {
     gap: 10px;
   }
+  .panel--portfolio .portfolio-head,
   .panel--portfolio .works {
     max-width: 760px;
   }
@@ -4433,25 +4435,19 @@ section {
   margin: 2px 0 0;
 }
 
-/* 3 sloupce × 2 řady (stejná formace jako předtím), ale karty se v každé
-   buňce nenatahují — sedí buď u horní, nebo dolní hrany a v šachovnicovém
-   rytmu se střídají (nahoře/dole/nahoře…). V každé buňce tak vždy chybí
-   buď horní, nebo dolní kus prostoru — karty do sebe zapadají jako cihly. */
+/* 3 sloupce × 2 řady, bez mezer — karty sedí těsně vedle sebe jako
+   sazba v novinách. Rámeček je "collapsed": mřížka dodává levou a horní
+   hranu, každá karta jen pravou a spodní, takže sdílené hrany zůstávají
+   tenké (žádné zdvojené linky) a karty do sebe zapadají bez odstupu. */
 .journal-row {
   flex: 1;
   min-height: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: clamp(10px, 1.4vh, 22px) clamp(14px, 1.4vw, 26px);
-}
-
-.jcard:nth-child(odd) {
-  align-self: start;
-}
-
-.jcard:nth-child(even) {
-  align-self: end;
+  gap: 0;
+  border-left: 2px solid var(--frame);
+  border-top: 2px solid var(--frame);
 }
 
 /* text-only editorial cards — the title carries the weight, framed like a
@@ -4460,15 +4456,15 @@ section {
   display: flex;
   flex-direction: column;
   background: var(--cream);
-  border: 2px solid var(--frame);
+  border-right: 2px solid var(--frame);
+  border-bottom: 2px solid var(--frame);
   padding: clamp(18px, 1.6vw, 28px);
   text-decoration: none;
-  transition: background 0.35s ease, transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: background 0.35s ease;
 }
 
 .jcard:hover {
   background: #fff;
-  transform: translateY(-4px);
 }
 
 .jcard-meta {
@@ -4772,13 +4768,6 @@ section {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: none;
     grid-auto-rows: 1fr;
-  }
-
-  /* zig-zag je pro širokou 3-sloupcovou sestavu — na užších rozvrženích
-     karty prostě vyplní buňku celou */
-  .jcard:nth-child(odd),
-  .jcard:nth-child(even) {
-    align-self: stretch;
   }
 
   .panel--wide {
