@@ -74,10 +74,12 @@ export default function Privacy() {
 
             <h2 className="article-h2">Cookies a analytika</h2>
             <p className="article-p">
-              Tenhle web aktuálně nepoužívá žádné sledovací cookies, reklamní
-              pixely ani analytické nástroje. Pokud se to v budoucnu změní,
-              tuto stránku aktualizuju a doplním informaci o konkrétním
-              nástroji.
+              Web používá Cloudflare Web Analytics — počítá návštěvy a
+              základní statistiky (odkud přicházíte, jaké stránky si
+              prohlížíte), ale bez cookies, bez sledování napříč weby a bez
+              ukládání čehokoli, co by šlo přiřadit ke konkrétní osobě.
+              Žádné reklamní pixely ani jiné analytické nástroje web
+              nepoužívá.
             </p>
 
             <h2 className="article-h2">Vaše práva</h2>

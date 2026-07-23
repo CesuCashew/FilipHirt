@@ -26,8 +26,10 @@
   status = 200
 
 # Bezpečnostní hlavičky pro celý web.
-# CSP: vše self-hosted (fonty, skripty, média); jediná výjimka jsou
-# Unsplash obrázky u článků a blob: pro textury z GLB modelu.
+# CSP: vše self-hosted (fonty, skripty, média); výjimky jsou Unsplash obrázky
+# u článků, blob: pro textury z GLB modelu, a Cloudflare Web Analytics beacon
+# (cookieless, bez osobních dat — script-src pro načtení, connect-src pro
+# odeslání measurementu).
 [[headers]]
   for = "/*"
   [headers.values]
@@ -35,7 +37,7 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
-    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://images.unsplash.com; font-src 'self'; connect-src 'self'; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://images.unsplash.com; font-src 'self'; connect-src 'self' https://cloudflareinsights.com https://static.cloudflareinsights.com; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
 
 # Fonty a build assety se nemění — agresivní cache
 [[headers]]
