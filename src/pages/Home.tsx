@@ -21,7 +21,7 @@ export default function Home() {
   useSeo({
     title: "Tvorba webů na zakázku Cheb | Filip Hirt — webdesignér & vývojář",
     description:
-      "Tvorba webů na zakázku v Chebu a po celé ČR. Filip Hirt — webdesignér a vývojář. Stavím weby od nuly: precizní řemeslo, teplý vizuál a chytré funkce, které pracují za vás. Restaurace, e-shopy, firemní weby i řešení s AI.",
+      "Tvorba webů na zakázku v Chebu a po celé ČR. Filip Hirt staví weby od nuly — precizní řemeslo, teplý vizuál a chytré funkce, které pracují za vás.",
     canonical: `${SITE_URL}/`,
     ogType: "website",
     ogTitle: "Tvorba webů na zakázku Cheb | Filip Hirt — webdesignér & vývojář",

@@ -1,6 +1,18 @@
 export const img = (id: string, w = 760) =>
   `https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w}&q=80`;
 
+const CZECH_MONTHS: Record<string, string> = {
+  leden: "01", únor: "02", březen: "03", duben: "04", květen: "05", červen: "06",
+  červenec: "07", srpen: "08", září: "09", říjen: "10", listopad: "11", prosinec: "12",
+};
+
+/** "červenec 2026" -> "2026-07-01" (day is unknown, so ISO 8601 falls back
+    to the 1st — still valid for BlogPosting's datePublished). */
+export function toISODate(czechDate: string): string {
+  const [month, year] = czechDate.split(" ");
+  return `${year}-${CZECH_MONTHS[month] ?? "01"}-01`;
+}
+
 export type ArticleBlock =
   | { type: "p"; text: string }
   | { type: "h2"; text: string }

@@ -26,7 +26,9 @@ export default function ServicesPanel() {
 
       <div className="panel-inner svc-inner">
         <div className="svc-header">
-          <span className="panel-folio">Co nabízím</span>
+          {/* sémantický nadpis sekce — vizuál nese panel-folio styl beze změny,
+              velká slova (DESIGN, FRONT-END…) níž jsou jen dekorativní <span>y */}
+          <h2 className="panel-folio">Co nabízím</h2>
           <p className="svc-sub">Šest způsobů, jak z webu udělat nástroj, který pracuje za vás.</p>
         </div>
 

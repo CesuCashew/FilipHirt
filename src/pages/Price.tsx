@@ -37,6 +37,10 @@ export default function Price() {
     ogDescription:
       "Na webu nenajdete ceník. Každý projekt je jinak velký úkol — napište mi a domluvíme se na rozsahu i ceně napřímo.",
     ogUrl: `${SITE_URL}/cena`,
+    ogImage: `${SITE_URL}/opengraph.jpg`,
+    twitterDescription:
+      "Na webu nenajdete ceník. Každý projekt je jinak velký úkol — napište mi a domluvíme se na rozsahu i ceně napřímo.",
+    twitterImage: `${SITE_URL}/opengraph.jpg`,
   });
 
   return (

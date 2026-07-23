@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link } from "wouter";
-import { articles, img, type ArticleBlock } from "../data/articles";
+import { articles, img, toISODate, type ArticleBlock } from "../data/articles";
 import { useSeo } from "../lib/seo";
 import Footer from "../components/Footer";
 
@@ -57,6 +57,19 @@ export default function Article({ params }: { params: { slug: string } }) {
           twitterTitle: article.title,
           twitterDescription: article.excerpt,
           twitterImage: articleImage,
+          structuredData: {
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: article.title,
+            description: article.excerpt,
+            image: articleImage,
+            datePublished: toISODate(article.date),
+            inLanguage: "cs",
+            author: { "@type": "Person", name: "Filip Hirt", url: SITE_URL },
+            publisher: { "@type": "Person", name: "Filip Hirt" },
+            mainEntityOfPage: { "@type": "WebPage", "@id": articleUrl },
+            url: articleUrl,
+          },
         }
       : { title: "Ztraceno v zápisníku — Filip Hirt", robots: "noindex" }
   );

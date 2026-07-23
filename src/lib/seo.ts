@@ -13,6 +13,9 @@ interface SeoOptions {
   twitterTitle?: string;
   twitterDescription?: string;
   twitterImage?: string;
+  /** JSON-LD for this page (e.g. BlogPosting on an article) — kept separate
+      from the site-wide ProfessionalService/Person graph in index.html. */
+  structuredData?: object;
 }
 
 function setMetaByName(name: string, content: string) {
@@ -61,8 +64,31 @@ function setRobots(content?: string) {
   document.head.appendChild(created);
 }
 
+/** Per-page JSON-LD, identified by data-seo="page" so it never collides with
+    the static site-wide graph already seeded in index.html. */
+function setStructuredData(json?: string) {
+  const existing = document.querySelector<HTMLScriptElement>('script[data-seo="page"]');
+  if (!json) {
+    existing?.remove();
+    return;
+  }
+  if (existing) {
+    existing.textContent = json;
+    return;
+  }
+  const el = document.createElement("script");
+  el.type = "application/ld+json";
+  el.setAttribute("data-seo", "page");
+  el.textContent = json;
+  document.head.appendChild(el);
+}
+
 /** Updates the document head in place (title/meta/canonical already seeded in index.html). */
 export function useSeo(opts: SeoOptions) {
+  // stringified so the effect re-runs on content changes, not on the new
+  // object reference callers pass in on every render
+  const structuredDataJson = opts.structuredData ? JSON.stringify(opts.structuredData) : undefined;
+
   useEffect(() => {
     document.title = opts.title;
     if (opts.description) setMetaByName("description", opts.description);
@@ -76,6 +102,7 @@ export function useSeo(opts: SeoOptions) {
     setMetaByName("twitter:title", opts.twitterTitle ?? opts.title);
     if (opts.twitterDescription) setMetaByName("twitter:description", opts.twitterDescription);
     if (opts.twitterImage) setMetaByName("twitter:image", opts.twitterImage);
+    setStructuredData(structuredDataJson);
   }, [
     opts.title,
     opts.description,
@@ -89,5 +116,6 @@ export function useSeo(opts: SeoOptions) {
     opts.twitterTitle,
     opts.twitterDescription,
     opts.twitterImage,
+    structuredDataJson,
   ]);
 }
